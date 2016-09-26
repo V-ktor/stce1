@@ -1,0 +1,29 @@
+[gd_resource type="SampleLibrary" load_steps=12 format=1]
+
+[ext_resource path="res://sounds/weapons/Laser_01.wav" type="Sample" id=1]
+[ext_resource path="res://sounds/weapons/Laser_02.wav" type="Sample" id=2]
+[ext_resource path="res://sounds/weapons/Laser_06.wav" type="Sample" id=3]
+[ext_resource path="res://sounds/weapons/Laser_08.wav" type="Sample" id=4]
+[ext_resource path="res://sounds/weapons/flaunch.wav" type="Sample" id=5]
+[ext_resource path="res://sounds/weapons/weapon_mg.wav" type="Sample" id=6]
+[ext_resource path="res://sounds/weapons/missile_launch01.wav" type="Sample" id=7]
+[ext_resource path="res://sounds/weapons/weapon_pb.wav" type="Sample" id=8]
+[ext_resource path="res://sounds/weapons/rlaunch.wav" type="Sample" id=9]
+[ext_resource path="res://sounds/weapons/weapon_sh.wav" type="Sample" id=10]
+[ext_resource path="res://sounds/weapons/synthetic_gunshot_2.wav" type="Sample" id=11]
+
+[resource]
+
+samples/Laser_01 = { "db":-6.0, "pitch":1.0, "sample":ExtResource( 1 ) }
+samples/Laser_02 = { "db":-8.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+samples/Laser_06 = { "db":-6.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+samples/Laser_08 = { "db":-8.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+samples/flaunch = { "db":-4.0, "pitch":1.0, "sample":ExtResource( 5 ) }
+samples/mg = { "db":-2.0, "pitch":1.0, "sample":ExtResource( 6 ) }
+samples/missile01 = { "db":-5.0, "pitch":1.1, "sample":ExtResource( 7 ) }
+samples/missile02 = { "db":-6.0, "pitch":1.66, "sample":ExtResource( 7 ) }
+samples/pb = { "db":-2.0, "pitch":1.2, "sample":ExtResource( 8 ) }
+samples/rlaunch = { "db":-8.0, "pitch":1.0, "sample":ExtResource( 9 ) }
+samples/sh = { "db":0.0, "pitch":1.25, "sample":ExtResource( 10 ) }
+samples/synthetic_gunshot_2 = { "db":-4.0, "pitch":1.0, "sample":ExtResource( 11 ) }
+

@@ -1,0 +1,2747 @@
+[gd_scene load_steps=123 format=1]
+
+[ext_resource path="res://scripts/level.gd" type="Script" id=1]
+[ext_resource path="res://images/background/stars.png" type="Texture" id=2]
+[ext_resource path="res://images/background/nebula04.png" type="Texture" id=3]
+[ext_resource path="res://images/background/nebula03.png" type="Texture" id=4]
+[ext_resource path="res://images/background/nebula02.png" type="Texture" id=5]
+[ext_resource path="res://images/background/nebula05.png" type="Texture" id=6]
+[ext_resource path="res://images/background/nebula01.png" type="Texture" id=7]
+[ext_resource path="res://images/background/nebula06.png" type="Texture" id=8]
+[ext_resource path="res://images/background/nebula07.png" type="Texture" id=9]
+[ext_resource path="res://images/background/nebula08.png" type="Texture" id=10]
+[ext_resource path="res://images/background/nebula09.png" type="Texture" id=11]
+[ext_resource path="res://images/background/nebula10.png" type="Texture" id=12]
+[ext_resource path="res://images/background/nebula11.png" type="Texture" id=13]
+[ext_resource path="res://images/background/nebula12.png" type="Texture" id=14]
+[ext_resource path="res://images/background/nebula13.png" type="Texture" id=15]
+[ext_resource path="res://images/background/sun_orange.png" type="Texture" id=16]
+[ext_resource path="res://images/lights/sun01.png" type="Texture" id=17]
+[ext_resource path="res://images/lights/sun_light.png" type="Texture" id=18]
+[ext_resource path="res://scripts/sun.gd" type="Script" id=19]
+[ext_resource path="res://images/background/sun_corona_mask.png" type="Texture" id=20]
+[ext_resource path="res://images/background/sun_corona.png" type="Texture" id=21]
+[ext_resource path="res://scripts/planet.gd" type="Script" id=22]
+[ext_resource path="res://scripts/shader/planet.tres" type="Shader" id=23]
+[ext_resource path="res://images/planets/clouds02.png" type="Texture" id=24]
+[ext_resource path="res://images/planets/planet_n.png" type="Texture" id=25]
+[ext_resource path="res://images/planets/planet_28.png" type="Texture" id=26]
+[ext_resource path="res://images/planets/atmosphere01.png" type="Texture" id=27]
+[ext_resource path="res://images/planets/atmosphere03.png" type="Texture" id=28]
+[ext_resource path="res://scenes/stations/solar02.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/stations/solar01.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/stations/farm01.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/stations/farm02.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scripts/shader/moon.tres" type="Shader" id=33]
+[ext_resource path="res://images/planets/planet_30.png" type="Texture" id=34]
+[ext_resource path="res://images/planets/atmosphere02.png" type="Texture" id=35]
+[ext_resource path="res://images/planets/moon01.png" type="Texture" id=36]
+[ext_resource path="res://scripts/moon.gd" type="Script" id=37]
+[ext_resource path="res://images/planets/clouds01.png" type="Texture" id=38]
+[ext_resource path="res://images/planets/planet_32.png" type="Texture" id=39]
+[ext_resource path="res://images/planets/atmosphere04.png" type="Texture" id=40]
+[ext_resource path="res://images/planets/planet_tiny01_n.png" type="Texture" id=41]
+[ext_resource path="res://images/planets/planet_tiny01.png" type="Texture" id=42]
+[ext_resource path="res://scenes/stations/station01.tscn" type="PackedScene" id=43]
+[ext_resource path="res://scenes/stations/station02.tscn" type="PackedScene" id=44]
+[ext_resource path="res://scenes/stations/shipyard.tscn" type="PackedScene" id=45]
+[ext_resource path="res://images/planets/clouds03.png" type="Texture" id=46]
+[ext_resource path="res://images/planets/planet_13.png" type="Texture" id=47]
+[ext_resource path="res://images/planets/moon02.png" type="Texture" id=48]
+[ext_resource path="res://scenes/stations/mine01.tscn" type="PackedScene" id=49]
+[ext_resource path="res://images/planets/planet_09.png" type="Texture" id=50]
+[ext_resource path="res://images/planets/planet_18.png" type="Texture" id=51]
+[ext_resource path="res://images/planets/moon04.png" type="Texture" id=52]
+[ext_resource path="res://images/planets/moon05.png" type="Texture" id=53]
+[ext_resource path="res://images/planets/moon03.png" type="Texture" id=54]
+[ext_resource path="res://images/planets/moon06.png" type="Texture" id=55]
+[ext_resource path="res://images/planets/moon07.png" type="Texture" id=56]
+[ext_resource path="res://images/planets/planet_19.png" type="Texture" id=57]
+[ext_resource path="res://images/planets/planet_tiny02_n.png" type="Texture" id=58]
+[ext_resource path="res://images/planets/planet_tiny02.png" type="Texture" id=59]
+[ext_resource path="res://images/icons/icon_nav.png" type="Texture" id=60]
+[ext_resource path="res://images/ui/mask2.png" type="Texture" id=61]
+[ext_resource path="res://images/ui/noise.png" type="Texture" id=62]
+[ext_resource path="res://images/ui/mask.png" type="Texture" id=63]
+
+[sub_resource type="CanvasItemShader" id=1]
+
+_code = { "fragment":"COLOR.rgb *= 2;", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+shader/shader = SubResource( 1 )
+shader/shading_mode = 0
+
+[sub_resource type="CircleShape2D" id=3]
+
+custom_solver_bias = 0.0
+radius = 2000.0
+
+[sub_resource type="CanvasItemShader" id=4]
+
+_code = { "fragment":"uniform texture surface;\nvec2 UV2 = (UV-vec2(0.5,0.5))*mat2(vec2(sin(0.057*TIME),-cos(0.057*TIME)),vec2(cos(0.057*TIME),sin(0.057*TIME)))+vec2(0.5,0.5);\nvec2 vec = normalize(UV-vec2(0.5,0.5));\nfloat alpha = 2*abs(0.5-fract(0.0173*TIME+0.5));\nvec3 c1 = tex(surface,UV-vec*(0.25+0.35*fract(0.0173*TIME))).rgb*alpha;\nvec3 c2 = tex(surface,-UV+vec*(0.25+0.35*fract(0.0173*TIME+0.5))).rgb*(1-alpha);\n\nCOLOR = vec4(0.4,0.4,0.4,1.0)*tex(TEXTURE,UV2);\nCOLOR.rgb += 0.4*(c1+c2)*COLOR.a*COLOR.a*COLOR.a;\nCOLOR.rgb *= 0.5;", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+
+[sub_resource type="CanvasItemMaterial" id=5]
+
+shader/shader = SubResource( 4 )
+shader/shading_mode = 0
+shader_param/surface = ExtResource( 20 )
+
+[sub_resource type="CanvasItemMaterial" id=6]
+
+shader/shader = ExtResource( 23 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/clouds = ExtResource( 24 )
+shader_param/cloud_scroll_speed = 0.005
+shader_param/height = -2000.0
+
+[sub_resource type="CanvasItemShader" id=7]
+
+_code = { "fragment":"uniform color colour;\nuniform texture normal;\n\nvec3 norm = tex(normal,UV).rgb;\nNORMAL = vec3(norm.rg*vec2(-2.0,2.0)-vec2(-1.0,1.0),norm.b);\nCOLOR = tex(TEXTURE,UV)*colour;\nCOLOR.rgb *= 0.5;\n", "fragment_ofs":0, "light":"uniform float height;\nvec3 light_vec = -normalize(vec3(-LIGHT_VEC.x,-LIGHT_VEC.y,-(LIGHT_HEIGHT-height)));\n\nvec3 n = normalize(NORMAL);\n\nfloat dp = max(dot(normalize(NORMAL),light_vec),0.0);\nLIGHT = 1.75*vec4(dp)*COLOR*LIGHT_COLOR;\n", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+
+[sub_resource type="CanvasItemMaterial" id=8]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 1, 0, 0, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -2000.0
+
+[sub_resource type="CanvasItemMaterial" id=9]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 1, 0.752941, 0.25098, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -2000.0
+
+[sub_resource type="CanvasItemMaterial" id=10]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.752941, 0.25098, 0.0627451, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -2000.0
+
+[sub_resource type="CanvasItemMaterial" id=11]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -3500.0
+
+[sub_resource type="CanvasItemMaterial" id=12]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.941176, 0.862745, 0, 0.12549 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -3500.0
+
+[sub_resource type="CanvasItemMaterial" id=13]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.12549, 0.12549, 0.188235, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -3500.0
+
+[sub_resource type="CanvasItemMaterial" id=14]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 1, 0.752941, 0.25098, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -3500.0
+
+[sub_resource type="CanvasItemMaterial" id=15]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -4000.0
+
+[sub_resource type="CanvasItemMaterial" id=16]
+
+shader/shader = ExtResource( 23 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/clouds = ExtResource( 38 )
+shader_param/cloud_scroll_speed = 0.001
+shader_param/height = -7000.0
+
+[sub_resource type="CanvasItemMaterial" id=17]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.12549, 0.25098, 1, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -7000.0
+
+[sub_resource type="CanvasItemMaterial" id=18]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.25098, 0.501961, 1, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -7000.0
+
+[sub_resource type="CanvasItemMaterial" id=19]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.25098, 0.705882, 1, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -7000.0
+
+[sub_resource type="CanvasItemMaterial" id=20]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 41 )
+shader_param/height = 2000.0
+
+[sub_resource type="CanvasItemMaterial" id=21]
+
+shader/shader = ExtResource( 23 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/clouds = ExtResource( 46 )
+shader_param/cloud_scroll_speed = -0.002
+shader_param/height = -9000.0
+
+[sub_resource type="CanvasItemMaterial" id=22]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.941176, 0.862745, 0, 0.188235 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -9000.0
+
+[sub_resource type="CanvasItemMaterial" id=23]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.25098, 0.501961, 1, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -9000.0
+
+[sub_resource type="CanvasItemMaterial" id=24]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.25098, 0.501961, 1, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -9000.0
+
+[sub_resource type="CanvasItemMaterial" id=25]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 4000.0
+
+[sub_resource type="CanvasItemMaterial" id=26]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -10000.0
+
+[sub_resource type="CanvasItemMaterial" id=27]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 1, 0.752941, 0.25098, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 0.0
+
+[sub_resource type="CanvasItemMaterial" id=28]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 1, 0.501961, 0.25098, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 0.0
+
+[sub_resource type="CanvasItemMaterial" id=29]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 1, 0.501961, 0.25098, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 0.0
+
+[sub_resource type="CanvasItemMaterial" id=30]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -20000.0
+
+[sub_resource type="CanvasItemMaterial" id=31]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.12549, 0.25098, 1, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -20000.0
+
+[sub_resource type="CanvasItemMaterial" id=32]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.501961, 0.376471, 0.752941, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -20000.0
+
+[sub_resource type="CanvasItemMaterial" id=33]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.25098, 0.376471, 1, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -20000.0
+
+[sub_resource type="CanvasItemMaterial" id=34]
+
+shader/shader = ExtResource( 23 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/clouds = ExtResource( 24 )
+shader_param/cloud_scroll_speed = 0.019
+shader_param/height = -25000.0
+
+[sub_resource type="CanvasItemMaterial" id=35]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 1, 0, 0, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -25000.0
+
+[sub_resource type="CanvasItemMaterial" id=36]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 1, 0.752941, 0.25098, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -25000.0
+
+[sub_resource type="CanvasItemMaterial" id=37]
+
+shader/shader = ExtResource( 23 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/clouds = ExtResource( 46 )
+shader_param/cloud_scroll_speed = -0.004
+shader_param/height = 5000.0
+
+[sub_resource type="CanvasItemMaterial" id=38]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.12549, 0.376471, 1, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 5000.0
+
+[sub_resource type="CanvasItemMaterial" id=39]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.25098, 0.752941, 1, 0.313726 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 5000.0
+
+[sub_resource type="CanvasItemMaterial" id=40]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.25098, 0.705882, 1, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 5000.0
+
+[sub_resource type="CanvasItemMaterial" id=41]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -4000.0
+
+[sub_resource type="CanvasItemMaterial" id=42]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.941176, 0.862745, 0, 0.12549 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -4000.0
+
+[sub_resource type="CanvasItemMaterial" id=43]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.188235, 0.188235, 0.188235, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -4000.0
+
+[sub_resource type="CanvasItemMaterial" id=44]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -10000.0
+
+[sub_resource type="CanvasItemMaterial" id=45]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.941176, 0.862745, 0, 0.12549 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -10000.0
+
+[sub_resource type="CanvasItemMaterial" id=46]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.188235, 0.188235, 0.188235, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -10000.0
+
+[sub_resource type="CanvasItemMaterial" id=47]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -25000.0
+
+[sub_resource type="CanvasItemMaterial" id=48]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.752941, 0.501961, 0, 0.12549 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -25000.0
+
+[sub_resource type="CanvasItemMaterial" id=49]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.188235, 0.188235, 0.188235, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = -25000.0
+
+[sub_resource type="CanvasItemMaterial" id=50]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 8000.0
+
+[sub_resource type="CanvasItemMaterial" id=51]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.12549, 1, 0.25098, 0.376471 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 8000.0
+
+[sub_resource type="CanvasItemMaterial" id=52]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.501961, 1, 0.25098, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 8000.0
+
+[sub_resource type="CanvasItemMaterial" id=53]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.501961, 1, 0.25098, 0.501961 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 8000.0
+
+[sub_resource type="CanvasItemMaterial" id=54]
+
+shader/shader = ExtResource( 33 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 58 )
+shader_param/height = 7000.0
+
+[sub_resource type="CanvasItemMaterial" id=55]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.752941, 0.501961, 0, 0.12549 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 7000.0
+
+[sub_resource type="CanvasItemMaterial" id=56]
+
+shader/shader = SubResource( 7 )
+shader/shading_mode = 0
+shader_param/colour = Color( 0.188235, 0.188235, 0.188235, 0.25098 )
+shader_param/normal = ExtResource( 25 )
+shader_param/height = 7000.0
+
+[sub_resource type="Environment" id=57]
+
+ambient_light/enabled = false
+ambient_light/color = Color( 0, 0, 0, 1 )
+ambient_light/energy = 1.0
+fxaa/enabled = false
+background/mode = 5
+background/color = Color( 0, 0, 0, 1 )
+background/energy = 1.0
+background/scale = 1.0
+background/glow = 0.0
+background/canvas_max_layer = 90
+glow/enabled = true
+glow/blur_passes = 2
+glow/blur_scale = 1.0
+glow/blur_strength = 0.6
+glow/blur_blend_mode = 0
+glow/bloom = 1.0
+glow/bloom_treshold = 0.75
+dof_blur/enabled = false
+dof_blur/blur_passes = 1
+dof_blur/begin = 100.0
+dof_blur/range = 10.0
+hdr/enabled = true
+hdr/tonemapper = 0.0
+hdr/exposure = 0.45
+hdr/white = 1.0
+hdr/glow_treshold = 0.8
+hdr/glow_scale = 0.75
+hdr/min_luminance = 0.4
+hdr/max_luminance = 8.0
+hdr/exposure_adj_speed = 0.3
+fog/enabled = false
+fog/begin = 100.0
+fog/begin_color = Color( 0, 0, 0, 1 )
+fog/end_color = Color( 0, 0, 0, 1 )
+fog/attenuation = 1.0
+fog/bg = true
+bcs/enabled = false
+bcs/brightness = 1.0
+bcs/contrast = 1.0
+bcs/saturation = 1.0
+srgb/enabled = false
+
+[sub_resource type="CanvasItemShader" id=58]
+
+_code = { "fragment":"uniform texture noise_tex;\nuniform texture mask;\nuniform vec2 offset_r;\nuniform vec2 offset_b;\nuniform float noise_alpha;\nuniform float bw_alpha;\n\nfloat scale = 0.4+0.6*tex(TEXTURE,UV).r;\ncolor noise = tex(noise_tex,UV*vec2(1.15,0.9)+vec2(sin(41*TIME*sin(143*TIME)),cos(37*TIME*cos(137*TIME))));\ncolor grey;\nfloat bw = bw_alpha*tex(mask,UV).r;\nCOLOR.r = texscreen(SCREEN_UV+offset_r*scale).r;\nCOLOR.g = texscreen(SCREEN_UV).g;\nCOLOR.b = texscreen(SCREEN_UV+offset_b*scale).b;\ngrey = vec4(vec3((COLOR.r+COLOR.g+COLOR.b)/3.0),1.0);\nCOLOR = 3*((1.0-bw)*COLOR+bw*grey);\nCOLOR += noise_alpha*tex(TEXTURE,UV).g*noise.a*(noise-vec4(0.33,0.33,0.33,0.0));\n", "fragment_ofs":0, "light":"", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+
+[sub_resource type="CanvasItemMaterial" id=59]
+
+shader/shader = SubResource( 58 )
+shader/shading_mode = 0
+shader_param/noise_tex = ExtResource( 62 )
+shader_param/mask = ExtResource( 61 )
+shader_param/offset_r = Vector2( 0, 0 )
+shader_param/offset_b = Vector2( 0, 0 )
+shader_param/noise_alpha = 0.0
+shader_param/bw_alpha = 0.0
+
+[node name="Main" type="Node"]
+
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="Stars" type="Sprite" parent="."]
+
+visibility/light_mask = 0
+z/z = -4000
+texture = ExtResource( 2 )
+region = true
+region_rect = Rect2( 0, 0, 1024, 768 )
+
+[node name="BG" type="Node2D" parent="."]
+
+editor/display_folded = true
+visibility/light_mask = 0
+z/z = -3900
+
+[node name="Nebula" type="Node2D" parent="BG"]
+
+visibility/light_mask = 0
+
+[node name="Yellow01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 1985.61, -3495.11 )
+transform/rot = -187.424
+transform/scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 3 )
+
+[node name="Yellow02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -6003.51, -4363.58 )
+transform/rot = 22.1204
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+
+[node name="Yellow03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -1601.73, 2212.95 )
+transform/rot = 250.583
+transform/scale = Vector2( 2.2, 2.2 )
+texture = ExtResource( 3 )
+flip_h = true
+
+[node name="Yellow04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 1309.23, 5803.08 )
+transform/rot = -5.82273
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 3 )
+flip_v = true
+
+[node name="Yellow05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -11.8592, 17495.3 )
+transform/rot = 91.975
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Yellow06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 2529.23, -13754.7 )
+transform/rot = 22.0906
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+modulate = Color( 0.627451, 1, 1, 1 )
+
+[node name="Yellow07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.75
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -7303.1, 399.381 )
+transform/rot = 22.0906
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+flip_h = true
+modulate = Color( 1, 0.627451, 1, 1 )
+
+[node name="Yellow08" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -13799.8, 14762.8 )
+transform/rot = 306.336
+transform/scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 3 )
+
+[node name="Yellow09" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.75
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 20093.8, -6855.11 )
+transform/rot = 247.251
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+modulate = Color( 0.501961, 1, 1, 1 )
+
+[node name="Gold01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -384.286, 87.7573 )
+transform/rot = -90.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Gold02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -5789.09, -7661.3 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Gold03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.2
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 3583.34, 6475.32 )
+transform/rot = 180.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="Gold04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.25
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 10000, -10000 )
+transform/rot = 90.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+flip_v = true
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Gold05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -2301.71, 21431.4 )
+transform/rot = 27.3152
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Gold06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 10576.5, -13118.5 )
+transform/rot = -61.4125
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+flip_h = true
+
+[node name="Gold07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 22371, 3537.75 )
+transform/rot = -148.779
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+flip_h = true
+modulate = Color( 1, 0.627451, 1, 1 )
+
+[node name="Red01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 2576.01, 2460.81 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="Red02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.2
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -10195.5, -4001.04 )
+transform/rot = 0.55135
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="Red03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.25
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 4106.08, -7096.15 )
+transform/rot = 232.435
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+flip_v = true
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Red04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -18352, 8293.38 )
+transform/rot = -90.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+modulate = Color( 0.501961, 1, 1, 1 )
+
+[node name="Red05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.75
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 1894.8, 21585.2 )
+transform/rot = -208.711
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+flip_v = true
+modulate = Color( 0.376471, 1, 1, 1 )
+
+[node name="Red19" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.3
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -8377.89, -15709.9 )
+transform/rot = -37.0144
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="Red24" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.3
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -18601.2, -15492.4 )
+transform/rot = -52.2037
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="Green01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.1
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 11786.5, -9237.68 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="Green02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.2
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -4395.07, -7087.89 )
+transform/rot = -155.462
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+flip_v = true
+modulate = Color( 1, 0.376471, 0.752941, 1 )
+
+[node name="Green03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.25
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -16114.4, 6863.16 )
+transform/rot = 45.0
+transform/scale = Vector2( 2.2, 2.2 )
+texture = ExtResource( 6 )
+flip_h = true
+modulate = Color( 1, 0.752941, 1, 1 )
+
+[node name="Green04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.3
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -9408.62, 16733.5 )
+transform/rot = 127.069
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+flip_v = true
+modulate = Color( 1, 0.752941, 0.501961, 1 )
+
+[node name="Green05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.2
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 2424.42, -24337.4 )
+transform/rot = 207.551
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+
+[node name="Green21" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 12855.7, -5715.68 )
+transform/rot = 36.0082
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+flip_h = true
+modulate = Color( 0.501961, 0.376471, 1, 1 )
+
+[node name="Green22" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.35
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 9158.29, 15640.9 )
+transform/rot = 17.9098
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+flip_v = true
+modulate = Color( 1, 0.376471, 1, 1 )
+
+[node name="Green26" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 15888.8, -15786.7 )
+transform/rot = 4.0229
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+flip_v = true
+modulate = Color( 0.705882, 0.627451, 1, 1 )
+
+[node name="Cyan01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.15
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 9531.15, 1460.58 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Cyan02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.3
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -3240.29, -10846.5 )
+transform/rot = 90.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Cyan03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.2
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -3000, 14000 )
+transform/rot = -90.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="Cyan04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.3
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -16079.8, 2883.08 )
+transform/rot = 160.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+modulate = Color( 0.501961, 0.752941, 1, 1 )
+
+[node name="Cyan05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.45
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 5096.99, -20778.3 )
+transform/rot = 319.988
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+flip_h = true
+modulate = Color( 1, 0.627451, 1, 1 )
+
+[node name="Cyan06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.15
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 1631.07, 11151.8 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+flip_v = true
+
+[node name="Cyan07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.2
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -7758.46, 9070.43 )
+transform/rot = -18.8181
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+flip_h = true
+flip_v = true
+
+[node name="Cyan08" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.25
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -19333.6, -4837.4 )
+transform/rot = 24.8758
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+flip_v = true
+
+[node name="Cyan09" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.25
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 12098.2, -19433.9 )
+transform/rot = 35.119
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+
+[node name="Green06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 5516.37, -804.03 )
+transform/rot = -45.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+
+[node name="Green07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.75
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -12339.6, 7303.91 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Green08" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 8676.09, -5954.64 )
+transform/rot = -90.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+flip_v = true
+
+[node name="Green09" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -1588.23, -8011.96 )
+transform/rot = -135.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+
+[node name="Green10" type="Sprite" parent="BG/Nebula"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -5595.31, 17253.2 )
+transform/rot = -118.185
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+
+[node name="Green11" type="Sprite" parent="BG/Nebula"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -355.881, -20195.8 )
+transform/rot = -74.2537
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+flip_h = true
+modulate = Color( 1, 0.627451, 1, 1 )
+
+[node name="Green19" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 7258.85, 8763.18 )
+transform/rot = -313.416
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+flip_h = true
+
+[node name="Green20" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 9826.3, 12051 )
+transform/rot = 79.1153
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+flip_v = true
+
+[node name="Green25" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.85
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 17107.5, -10390.2 )
+transform/rot = 189.387
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 8 )
+flip_v = true
+modulate = Color( 1, 0.752941, 0.878431, 1 )
+
+[node name="Purple01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -9229.29, -9092.02 )
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+
+[node name="Purple02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 13484.2, 2235.02 )
+transform/rot = 103.229
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="Purple03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -21552.9, 4300.96 )
+transform/rot = 30.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+flip_v = true
+modulate = Color( 1, 0.752941, 0.705882, 1 )
+
+[node name="Purple04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.35
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -625.83, 12589.6 )
+transform/rot = -45.0
+transform/scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="Purple05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 12969.9, 10280.9 )
+transform/rot = -60.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+
+[node name="Purple06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -5216.4, 4727.23 )
+transform/rot = -140.114
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 9 )
+
+[node name="Purple07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.9
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 15979.8, -2225.98 )
+transform/scale = Vector2( 3, 3.00652 )
+texture = ExtResource( 9 )
+flip_v = true
+modulate = Color( 0.752941, 1, 0.501961, 1 )
+
+[node name="Purple08" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 19522, 14863.5 )
+transform/rot = -55.5115
+transform/scale = Vector2( 3, 3.00652 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="Purple09" type="Sprite" parent="BG/Nebula"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 5868.19, -12470.5 )
+transform/rot = 81.2004
+transform/scale = Vector2( 3, 3.00652 )
+texture = ExtResource( 9 )
+flip_v = true
+modulate = Color( 1, 1, 0.25098, 1 )
+
+[node name="Purple10" type="Sprite" parent="BG/Nebula"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 7893.97, -23633.8 )
+transform/rot = 183.819
+transform/scale = Vector2( 3, 3.00652 )
+texture = ExtResource( 9 )
+flip_v = true
+modulate = Color( 0.752941, 1, 0.501961, 1 )
+
+[node name="Pink01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.45
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 636.357, -6520.94 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Pink02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -11751.3, -4787.5 )
+transform/rot = 45.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+flip_v = true
+
+[node name="Pink03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.2
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 3078.2, -673.97 )
+transform/rot = -35.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Pink04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.3
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -2410.15, 6094.8 )
+transform/rot = 246.006
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Pink05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 17633.5, 9299.91 )
+transform/rot = 140.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Pink06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -13061.6, -12367.8 )
+transform/rot = 63.7265
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+flip_h = true
+
+[node name="Pink07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 5813.66, 18172.3 )
+transform/rot = -35.9933
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+modulate = Color( 0.752941, 1, 0.376471, 1 )
+
+[node name="Pink08" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -14715.2, -16117.9 )
+transform/rot = -210.82
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+
+[node name="Blue01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.55
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 10957.5, -1645.94 )
+transform/rot = -15.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_v = true
+
+[node name="Blue02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 14817.2, 13567.5 )
+transform/rot = 160.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+
+[node name="Blue03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 3722.13, -16740.3 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_h = true
+modulate = Color( 1, 1, 0.627451, 1 )
+
+[node name="Blue04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.6
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -10460.3, 12278.9 )
+transform/rot = 135.0
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+modulate = Color( 1, 1, 0.752941, 1 )
+
+[node name="Blue05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.55
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -13841.1, -7016.76 )
+transform/rot = 240.353
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_v = true
+
+[node name="Blue06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -8662.16, -11992.1 )
+transform/rot = 164.05
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_v = true
+
+[node name="Blue07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -6096.88, 13163.8 )
+transform/rot = 133.327
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_v = true
+
+[node name="Blue08" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.55
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -18159.9, -7671.13 )
+transform/rot = 333.683
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="Blue09" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.55
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 16959.3, 2261.79 )
+transform/rot = 129.392
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_h = true
+
+[node name="Blue10" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 9283.32, -16301.6 )
+transform/rot = 120.168
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_h = true
+modulate = Color( 1, 1, 0.705882, 1 )
+
+[node name="Blue11" type="Sprite" parent="BG/Nebula"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -5265.74, -16659.9 )
+transform/rot = 78.5809
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+flip_v = true
+modulate = Color( 1, 0.752941, 0.501961, 1 )
+
+[node name="Green12" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 6581.98, 3175.98 )
+transform/rot = 9.40619
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+flip_v = true
+
+[node name="Green13" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 13499.9, 16704.9 )
+transform/rot = -119.443
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 12 )
+modulate = Color( 1, 0.501961, 1, 1 )
+
+[node name="Green14" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -8677.22, 21296.4 )
+transform/rot = -34.6322
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="Green15" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -1794.8, -15052.9 )
+transform/rot = 116.677
+transform/scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 12 )
+flip_h = true
+
+[node name="Green16" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -20518.8, 107.549 )
+transform/rot = -204.719
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 12 )
+modulate = Color( 0.501961, 0.564706, 1, 1 )
+
+[node name="Green17" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -8461.21, 4095.72 )
+transform/rot = -328.702
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+flip_v = true
+modulate = Color( 1, 0.627451, 0.752941, 1 )
+
+[node name="Green18" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.45
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -3407.07, 569.578 )
+transform/rot = -376.083
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+flip_v = true
+
+[node name="Green23" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -2082.95, -24411.5 )
+transform/rot = -236.643
+transform/scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 12 )
+modulate = Color( 1, 0.627451, 0.752941, 1 )
+
+[node name="Green24" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 17714.9, -4564.37 )
+transform/rot = -331.869
+transform/scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 12 )
+modulate = Color( 1, 0.501961, 0.752941, 1 )
+
+[node name="Red06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 1405.67, 8584.84 )
+transform/rot = -485.08
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="Red07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -1009.93, -5046.64 )
+transform/rot = -482.402
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+
+[node name="Red08" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -16213.9, 12324 )
+transform/rot = 155.0
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
+modulate = Color( 0.752941, 1, 0.752941, 1 )
+
+[node name="Red09" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 21454.5, 9839.82 )
+transform/rot = 129.561
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Red10" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -14123.8, -1857.86 )
+transform/rot = -172.413
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
+flip_v = true
+
+[node name="Red18" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.4
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 4200.43, 13300.3 )
+transform/rot = -285.1
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="Red20" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -17280.7, -10104.6 )
+transform/rot = 45.2253
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
+
+[node name="Red23" type="Sprite" parent="BG/Nebula"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 19836.9, -5.62781 )
+transform/rot = -29.2734
+transform/scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
+modulate = Color( 0.627451, 1, 1, 1 )
+
+[node name="Orange01" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -2197.84, -3329.63 )
+transform/rot = -11.9583
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+
+[node name="Orange02" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 8744.38, 5254.13 )
+transform/rot = -189.221
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="Orange03" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -10702.9, 1154.89 )
+transform/rot = 36.4314
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Orange04" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.65
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 5687.86, -9896.28 )
+transform/rot = 214.235
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Orange05" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.65
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 3507.35, 19403.9 )
+transform/rot = 272.819
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_h = true
+modulate = Color( 0.752941, 1, 0.878431, 1 )
+
+[node name="Orange06" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 21797.6, 6327.71 )
+transform/rot = 178.674
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="Orange07" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 5619.46, 10558.1 )
+transform/rot = 120.161
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_h = true
+
+[node name="Orange08" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 11656.6, 6217.3 )
+transform/rot = 49.0
+transform/scale = Vector2( 2.1, 2.1 )
+texture = ExtResource( 14 )
+modulate = Color( 0.752941, 1, 1, 0.878431 )
+
+[node name="Orange09" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -12049, 13327.9 )
+transform/rot = -76.038
+transform/scale = Vector2( 2.1, 2.1 )
+texture = ExtResource( 14 )
+flip_v = true
+modulate = Color( 0.752941, 1, 1, 0.878431 )
+
+[node name="Orange10" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 14356.6, -8853.84 )
+transform/rot = -40.3325
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+modulate = Color( 0.705882, 1, 1, 1 )
+
+[node name="Orange11" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.65
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -6739.19, -20911.1 )
+transform/rot = 14.4151
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="Orange12" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.65
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -12777, 18660 )
+transform/rot = -45.8554
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_v = true
+
+[node name="Orange13" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 13237.1, -14397.2 )
+transform/rot = -91.9248
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_v = true
+modulate = Color( 0.941176, 0.752941, 1, 1 )
+
+[node name="Orange14" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.75
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 22019.9, -2311.74 )
+transform/rot = -237.522
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+flip_v = true
+modulate = Color( 0.921569, 1, 0.501961, 1 )
+
+[node name="Red11" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -3594.73, 9124.06 )
+transform/rot = 61.6267
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+
+[node name="Red12" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -5351.77, -2228.96 )
+transform/rot = -5.84631
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+flip_h = true
+
+[node name="Red13" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.5
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 17057.6, 5130.87 )
+transform/rot = 211.584
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+flip_h = true
+flip_v = true
+
+[node name="Red14" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.75
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 2370.7, -11509.4 )
+transform/rot = 421.488
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+modulate = Color( 0.627451, 1, 0.752941, 1 )
+
+[node name="Red15" type="Sprite" parent="BG/Nebula"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -21619.9, 9894.13 )
+transform/rot = 460.428
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+flip_h = true
+modulate = Color( 0.705882, 0.752941, 1, 1 )
+
+[node name="Red16" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 2146.13, 24565.2 )
+transform/rot = 375.736
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+flip_v = true
+modulate = Color( 0.705882, 1, 1, 1 )
+
+[node name="Red17" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.8
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 3611.37, 13292.8 )
+transform/rot = 279.415
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+modulate = Color( 0.501961, 1, 1, 1 )
+
+[node name="Red21" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.75
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -5640.23, -19957.5 )
+transform/rot = 573.82
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+flip_v = true
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Red22" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.75
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 8012.2, 20300.4 )
+transform/rot = 753.277
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+flip_h = true
+flip_v = true
+modulate = Color( 0.752941, 1, 1, 1 )
+
+[node name="Red25" type="Sprite" parent="BG/Nebula"]
+
+visibility/opacity = 0.7
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -10232.9, -20385.6 )
+transform/rot = 601.697
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+flip_h = true
+flip_v = true
+modulate = Color( 1, 1, 0.376471, 1 )
+
+[node name="Sun" type="Sprite" parent="."]
+
+editor/display_folded = true
+visibility/light_mask = 0
+material/material = SubResource( 2 )
+transform/scale = Vector2( 8, 8 )
+z/z = -500
+texture = ExtResource( 16 )
+
+[node name="Glow" type="Light2D" parent="Sun"]
+
+enabled = true
+texture = ExtResource( 17 )
+offset = Vector2( 0, 0 )
+scale = 50.0
+color = Color( 1, 1, 1, 1 )
+energy = 3.0
+mode = 0
+range/height = -50.0
+range/z_min = -2048
+range/z_max = 2048
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 5
+shadow/enabled = true
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 5
+
+[node name="Light" type="Light2D" parent="Sun"]
+
+enabled = true
+texture = ExtResource( 18 )
+offset = Vector2( 0, 0 )
+scale = 150.0
+color = Color( 1, 1, 1, 1 )
+energy = 4.0
+mode = 0
+range/height = 50.0
+range/z_min = -2048
+range/z_max = 2048
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 5
+shadow/enabled = true
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 5
+
+[node name="Heat" type="Area2D" parent="Sun"]
+
+visibility/light_mask = 0
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_point = true
+gravity_vec = Vector2( 0, 0 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sun/Heat"]
+
+visibility/visible = false
+visibility/light_mask = 0
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Corona" type="Sprite" parent="Sun"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+material/material = SubResource( 5 )
+transform/scale = Vector2( 4, 4 )
+texture = ExtResource( 21 )
+
+[node name="Planet1" type="Node2D" parent="."]
+
+visibility/light_mask = 4
+script/script = ExtResource( 22 )
+
+[node name="Planet" type="Sprite" parent="Planet1"]
+
+visibility/light_mask = 4
+material/material = SubResource( 6 )
+transform/pos = Vector2( 88000, 48000 )
+transform/scale = Vector2( 2, 2 )
+z/z = -600
+texture = ExtResource( 26 )
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet1/Planet"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 8 )
+transform/scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 27 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet1/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 9 )
+transform/scale = Vector2( 1.15, 1.15 )
+texture = ExtResource( 27 )
+
+[node name="Atmosphere" type="Sprite" parent="Planet1/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/light_mask = 4
+material/material = SubResource( 10 )
+transform/scale = Vector2( 1.07, 1.07 )
+texture = ExtResource( 28 )
+
+[node name="Solar01" parent="Planet1" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 88800.3, 44584.8 )
+transform/rot = -103.961
+
+[node name="Solar02" parent="Planet1" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 87781.6, 51010.2 )
+transform/rot = -127.934
+
+[node name="Solar03" parent="Planet1" instance=ExtResource( 30 )]
+
+transform/pos = Vector2( 90852.1, 48759.9 )
+transform/rot = -111.542
+
+[node name="Solar04" parent="Planet1" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( 83863.7, 47013.9 )
+transform/rot = -119.993
+
+[node name="Farm01" parent="Planet1" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( 99381.8, 46097.8 )
+transform/rot = -101.677
+
+[node name="Farm02" parent="Planet1" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( 102124, 52016.3 )
+transform/rot = -106.168
+transform/scale = Vector2( 2, 2 )
+
+[node name="Planet2" type="Node2D" parent="."]
+
+visibility/light_mask = 4
+script/script = ExtResource( 22 )
+
+[node name="Planet" type="Sprite" parent="Planet2"]
+
+visibility/light_mask = 4
+material/material = SubResource( 11 )
+transform/pos = Vector2( -199000, -20000 )
+transform/scale = Vector2( 2, 2 )
+z/z = -800
+texture = ExtResource( 34 )
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet2/Planet"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 12 )
+transform/scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 27 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet2/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 13 )
+transform/scale = Vector2( 2.3, 2.3 )
+texture = ExtResource( 27 )
+
+[node name="Atmosphere" type="Sprite" parent="Planet2/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 14 )
+transform/scale = Vector2( 2.12, 2.12 )
+z/relative = false
+texture = ExtResource( 35 )
+
+[node name="Moon1" type="Sprite" parent="Planet2"]
+
+visibility/light_mask = 4
+material/material = SubResource( 15 )
+transform/pos = Vector2( -199000, -20000 )
+transform/scale = Vector2( 2, 2 )
+z/z = -950
+texture = ExtResource( 36 )
+offset = Vector2( 2400, 500 )
+script/script = ExtResource( 37 )
+fr = 0.0025
+
+[node name="Solar01" parent="Planet2" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( -197417, -24596.6 )
+transform/rot = 87.4917
+
+[node name="Solar02" parent="Planet2" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( -190620, -12816.2 )
+transform/rot = 90.0
+
+[node name="Farm01" parent="Planet2" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( -198787, -14844.1 )
+transform/rot = 90.0
+
+[node name="Farm02" parent="Planet2" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( -193442, -19514.2 )
+transform/rot = 90.0
+
+[node name="Farm03" parent="Planet2" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( -204096, -18466.4 )
+transform/rot = 90.631
+
+[node name="Farm04" parent="Planet2" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( -204018, -22756.5 )
+transform/rot = 77.9388
+
+[node name="Planet3" type="Node2D" parent="."]
+
+visibility/light_mask = 4
+script/script = ExtResource( 22 )
+
+[node name="Planet" type="Sprite" parent="Planet3"]
+
+visibility/light_mask = 4
+material/material = SubResource( 16 )
+transform/pos = Vector2( 300000, 0 )
+transform/scale = Vector2( 2, 2 )
+z/z = -1000
+texture = ExtResource( 39 )
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet3/Planet"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 17 )
+transform/scale = Vector2( 2.4, 2.4 )
+texture = ExtResource( 27 )
+modulate = Color( 0, 0.501961, 1, 1 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet3/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 18 )
+transform/scale = Vector2( 2.25, 2.25 )
+texture = ExtResource( 27 )
+modulate = Color( 0.25098, 0.752941, 1, 1 )
+
+[node name="Atmosphere" type="Sprite" parent="Planet3/Planet"]
+
+visibility/light_mask = 4
+material/material = SubResource( 19 )
+transform/scale = Vector2( 1.38, 1.38 )
+texture = ExtResource( 40 )
+modulate = Color( 0.25098, 0.752941, 1, 1 )
+
+[node name="Moon1" type="Sprite" parent="Planet3"]
+
+visibility/light_mask = 4
+material/material = SubResource( 20 )
+transform/pos = Vector2( 300000, 0 )
+transform/scale = Vector2( 0.7, 0.7 )
+z/z = -800
+texture = ExtResource( 42 )
+offset = Vector2( 6250, -1500 )
+script/script = ExtResource( 37 )
+fr = 0.0022
+
+[node name="Station01" parent="Planet3" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( 299168, 1798 )
+
+[node name="Station02" parent="Planet3" instance=ExtResource( 44 )]
+
+transform/pos = Vector2( 302399, -3912.5 )
+transform/rot = 45.0
+
+[node name="Shipyard" parent="Planet3" instance=ExtResource( 45 )]
+
+transform/pos = Vector2( 304001, 1188.75 )
+transform/rot = 45.0
+
+[node name="Solar01" parent="Planet3" instance=ExtResource( 30 )]
+
+transform/pos = Vector2( 296563, -2897.5 )
+transform/rot = -88.8575
+
+[node name="Planet4" type="Node2D" parent="."]
+
+visibility/light_mask = 4
+script/script = ExtResource( 22 )
+
+[node name="Planet" type="Sprite" parent="Planet4"]
+
+visibility/light_mask = 4
+material/material = SubResource( 21 )
+transform/pos = Vector2( -246413, 315088 )
+transform/scale = Vector2( 2, 2 )
+z/z = -950
+texture = ExtResource( 47 )
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet4/Planet"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 22 )
+transform/scale = Vector2( 1.78, 1.78 )
+texture = ExtResource( 27 )
+modulate = Color( 0, 0.501961, 1, 1 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet4/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 23 )
+transform/scale = Vector2( 1.7, 1.7 )
+texture = ExtResource( 27 )
+modulate = Color( 0.25098, 0.752941, 1, 1 )
+
+[node name="Atmosphere" type="Sprite" parent="Planet4/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/light_mask = 4
+material/material = SubResource( 24 )
+transform/scale = Vector2( 1.588, 1.588 )
+texture = ExtResource( 35 )
+
+[node name="Moon1" type="Sprite" parent="Planet4"]
+
+visibility/light_mask = 4
+material/material = SubResource( 25 )
+transform/pos = Vector2( -246413, 315088 )
+transform/scale = Vector2( 2, 2 )
+z/z = -750
+texture = ExtResource( 48 )
+offset = Vector2( -2000, 200 )
+script/script = ExtResource( 37 )
+fr = 0.002
+
+[node name="Station01" parent="Planet4" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( -245559, 316165 )
+
+[node name="Solar01" parent="Planet4" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( -246736, 308208 )
+transform/rot = 151.443
+
+[node name="Farm01" parent="Planet4" instance=ExtResource( 32 )]
+
+transform/pos = Vector2( -254188, 314698 )
+transform/rot = 135.0
+
+[node name="Mine01" parent="Planet4" instance=ExtResource( 49 )]
+
+transform/pos = Vector2( -241556, 312320 )
+transform/rot = -115.456
+
+[node name="Mine02" parent="Planet4" instance=ExtResource( 49 )]
+
+transform/pos = Vector2( -250294, 320456 )
+transform/rot = 92.7421
+
+[node name="Planet5" type="Node2D" parent="."]
+
+visibility/light_mask = 4
+script/script = ExtResource( 22 )
+
+[node name="Planet" type="Sprite" parent="Planet5"]
+
+visibility/light_mask = 4
+material/material = SubResource( 26 )
+transform/pos = Vector2( 592913, -104920 )
+transform/scale = Vector2( 2, 2 )
+z/z = -1020
+texture = ExtResource( 50 )
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet5/Planet"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 27 )
+transform/scale = Vector2( 3.45, 3.45 )
+texture = ExtResource( 27 )
+modulate = Color( 1, 0.986949, 1, 1 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet5/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 28 )
+transform/scale = Vector2( 3.4, 3.4 )
+texture = ExtResource( 27 )
+modulate = Color( 1, 0.939555, 1, 1 )
+
+[node name="Atmosphere" type="Sprite" parent="Planet5/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/light_mask = 4
+material/material = SubResource( 29 )
+transform/scale = Vector2( 2.06, 2.06 )
+texture = ExtResource( 40 )
+modulate = Color( 1, 0.939555, 1, 1 )
+
+[node name="Refinery01" parent="Planet5" instance=ExtResource( 44 )]
+
+transform/pos = Vector2( 590140, -108051 )
+
+[node name="Refinery02" parent="Planet5" instance=ExtResource( 44 )]
+
+transform/pos = Vector2( 595645, -101988 )
+
+[node name="Mine01" parent="Planet5" instance=ExtResource( 49 )]
+
+transform/pos = Vector2( 588040, -102484 )
+transform/rot = 118.219
+transform/scale = Vector2( 1.25, 1.25 )
+
+[node name="Planet6" type="Node2D" parent="."]
+
+visibility/light_mask = 4
+script/script = ExtResource( 22 )
+
+[node name="Planet" type="Sprite" parent="Planet6"]
+
+visibility/light_mask = 4
+material/material = SubResource( 30 )
+transform/pos = Vector2( -731725, 164575 )
+transform/scale = Vector2( 2, 2 )
+z/z = -1000
+texture = ExtResource( 51 )
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet6/Planet"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 31 )
+transform/scale = Vector2( 2.375, 2.375 )
+texture = ExtResource( 27 )
+modulate = Color( 1, 0.986949, 1, 1 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet6/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 32 )
+transform/scale = Vector2( 2.2, 2.2 )
+texture = ExtResource( 27 )
+modulate = Color( 1, 0.939555, 1, 1 )
+
+[node name="Atmosphere" type="Sprite" parent="Planet6/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/light_mask = 4
+material/material = SubResource( 33 )
+transform/scale = Vector2( 1.37, 1.37 )
+texture = ExtResource( 40 )
+modulate = Color( 1, 0.939555, 1, 1 )
+
+[node name="Moon01" type="Sprite" parent="Planet6"]
+
+material/material = SubResource( 34 )
+transform/pos = Vector2( -731725, 164575 )
+texture = ExtResource( 52 )
+offset = Vector2( 2500, 0 )
+script/script = ExtResource( 37 )
+fr = 0.0025
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet6/Moon01"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 35 )
+transform/pos = Vector2( 2500, 0 )
+transform/scale = Vector2( 0.31, 0.31 )
+texture = ExtResource( 27 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet6/Moon01"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 36 )
+transform/pos = Vector2( 2500, 0 )
+transform/scale = Vector2( 0.29, 0.29 )
+texture = ExtResource( 27 )
+
+[node name="Moon02" type="Sprite" parent="Planet6"]
+
+material/material = SubResource( 37 )
+transform/pos = Vector2( -731725, 164575 )
+transform/scale = Vector2( 1.5, 1.5 )
+z/z = -400
+texture = ExtResource( 53 )
+offset = Vector2( 150, 2200 )
+script/script = ExtResource( 37 )
+fr = 0.0014
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet6/Moon02"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 38 )
+transform/pos = Vector2( 150, 2200 )
+transform/scale = Vector2( 0.48, 0.48 )
+texture = ExtResource( 27 )
+modulate = Color( 0, 0.501961, 1, 1 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet6/Moon02"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 39 )
+transform/pos = Vector2( 150, 2200 )
+transform/scale = Vector2( 0.445, 0.445 )
+texture = ExtResource( 27 )
+modulate = Color( 0.25098, 0.752941, 1, 1 )
+
+[node name="Atmosphere" type="Sprite" parent="Planet6/Moon02"]
+
+visibility/self_opacity = 0.75
+visibility/light_mask = 4
+material/material = SubResource( 40 )
+transform/pos = Vector2( 150, 2200 )
+transform/scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 35 )
+
+[node name="Moon03" type="Sprite" parent="Planet6"]
+
+material/material = SubResource( 41 )
+transform/pos = Vector2( -731725, 164575 )
+z/z = 200
+texture = ExtResource( 54 )
+offset = Vector2( -6000, 2000 )
+script/script = ExtResource( 37 )
+fr = 0.001
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet6/Moon03"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 42 )
+transform/pos = Vector2( -6000, 2000 )
+transform/scale = Vector2( 0.47, 0.47 )
+texture = ExtResource( 27 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet6/Moon03"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 43 )
+transform/pos = Vector2( -6000, 2000 )
+transform/scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 27 )
+
+[node name="Moon04" type="Sprite" parent="Planet6"]
+
+material/material = SubResource( 44 )
+transform/pos = Vector2( -731725, 164575 )
+transform/scale = Vector2( 1.6, 1.6 )
+z/z = -1000
+texture = ExtResource( 55 )
+offset = Vector2( 500, -2900 )
+script/script = ExtResource( 37 )
+fr = 0.0007
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet6/Moon04"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 45 )
+transform/pos = Vector2( 500, -2900 )
+transform/scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 27 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet6/Moon04"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 46 )
+transform/pos = Vector2( 500, -2900 )
+transform/scale = Vector2( 0.23, 0.23 )
+texture = ExtResource( 27 )
+
+[node name="Moon05" type="Sprite" parent="Planet6"]
+
+material/material = SubResource( 47 )
+transform/pos = Vector2( -731725, 164575 )
+transform/scale = Vector2( 1.5, 1.5 )
+z/z = 750
+texture = ExtResource( 56 )
+offset = Vector2( -4000, -1000 )
+script/script = ExtResource( 37 )
+fr = 0.001
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet6/Moon05"]
+
+visibility/visible = false
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 48 )
+transform/pos = Vector2( -4000, -1000 )
+transform/scale = Vector2( 0.24, 0.24 )
+texture = ExtResource( 27 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet6/Moon05"]
+
+visibility/visible = false
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 49 )
+transform/pos = Vector2( -4000, -1000 )
+transform/scale = Vector2( 0.22, 0.22 )
+texture = ExtResource( 27 )
+
+[node name="Station01" parent="Planet6" instance=ExtResource( 43 )]
+
+transform/pos = Vector2( -732510, 166040 )
+
+[node name="Refinery01" parent="Planet6" instance=ExtResource( 44 )]
+
+transform/pos = Vector2( -727315, 165115 )
+transform/rot = 45.0
+
+[node name="Refinery02" parent="Planet6" instance=ExtResource( 44 )]
+
+transform/pos = Vector2( -729979, 160795 )
+
+[node name="Farm01" parent="Planet6" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( -720574, 170249 )
+transform/rot = 89.4187
+transform/scale = Vector2( 0.75, 0.75 )
+
+[node name="Farm02" parent="Planet6" instance=ExtResource( 31 )]
+
+transform/pos = Vector2( -727413, 172900 )
+transform/rot = 94.2139
+transform/scale = Vector2( 0.75, 0.75 )
+
+[node name="Solar01" parent="Planet6" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( -720025, 162398 )
+transform/rot = 101.808
+transform/scale = Vector2( 0.75, 0.75 )
+
+[node name="Shipyard" parent="Planet6" instance=ExtResource( 45 )]
+
+transform/pos = Vector2( -729189, 166778 )
+transform/rot = 45.0
+transform/scale = Vector2( 2, 2 )
+
+[node name="Planet7" type="Node2D" parent="."]
+
+visibility/light_mask = 4
+script/script = ExtResource( 22 )
+
+[node name="Planet" type="Sprite" parent="Planet7"]
+
+visibility/light_mask = 4
+material/material = SubResource( 50 )
+transform/pos = Vector2( -178038, -882213 )
+transform/scale = Vector2( 2, 2 )
+z/z = -700
+texture = ExtResource( 57 )
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet7/Planet"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 51 )
+transform/scale = Vector2( 2.35, 2.35 )
+texture = ExtResource( 27 )
+modulate = Color( 1, 0.986949, 1, 1 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet7/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 52 )
+transform/scale = Vector2( 2.2, 2.2 )
+texture = ExtResource( 27 )
+modulate = Color( 1, 0.939555, 1, 1 )
+
+[node name="Atmosphere" type="Sprite" parent="Planet7/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/light_mask = 4
+material/material = SubResource( 53 )
+transform/scale = Vector2( 1.367, 1.367 )
+texture = ExtResource( 40 )
+modulate = Color( 1, 0.939555, 1, 1 )
+
+[node name="Refinery01" parent="Planet7" instance=ExtResource( 44 )]
+
+transform/pos = Vector2( -175871, -881306 )
+transform/rot = 45.0
+
+[node name="Solar01" parent="Planet7" instance=ExtResource( 30 )]
+
+transform/pos = Vector2( -181703, -878371 )
+transform/rot = 14.4857
+
+[node name="Solar02" parent="Planet7" instance=ExtResource( 29 )]
+
+transform/pos = Vector2( -174496, -875724 )
+transform/rot = 14.0869
+
+[node name="Mine01" parent="Planet7" instance=ExtResource( 49 )]
+
+transform/pos = Vector2( -180174, -884001 )
+transform/rot = 124.217
+
+[node name="Planet8" type="Node2D" parent="."]
+
+visibility/light_mask = 4
+script/script = ExtResource( 22 )
+
+[node name="Planet" type="Sprite" parent="Planet8"]
+
+visibility/light_mask = 4
+material/material = SubResource( 54 )
+transform/pos = Vector2( -142595, 1.03208e+06 )
+transform/scale = Vector2( 2, 2 )
+z/z = -1200
+texture = ExtResource( 59 )
+
+[node name="AtmosphereOuter" type="Sprite" parent="Planet8/Planet"]
+
+visibility/self_opacity = 0.5
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 55 )
+transform/scale = Vector2( 0.925, 0.925 )
+texture = ExtResource( 27 )
+
+[node name="AtmosphereInner" type="Sprite" parent="Planet8/Planet"]
+
+visibility/self_opacity = 0.75
+visibility/behind_parent = true
+visibility/light_mask = 4
+material/material = SubResource( 56 )
+transform/scale = Vector2( 0.875, 0.875 )
+texture = ExtResource( 27 )
+
+[node name="Mine01" parent="Planet8" instance=ExtResource( 49 )]
+
+transform/pos = Vector2( -139744, 1.03205e+06 )
+transform/rot = -71.9737
+
+[node name="Mine02" parent="Planet8" instance=ExtResource( 49 )]
+
+transform/pos = Vector2( -145136, 1.03309e+06 )
+transform/rot = 164.742
+
+[node name="Asteroids" type="Node2D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+environment = SubResource( 57 )
+
+[node name="Pos" type="Sprite" parent="."]
+
+visibility/light_mask = 0
+texture = ExtResource( 60 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+color = Color( 0.376471, 0.376471, 0.376471, 1 )
+
+[node name="Camera" type="Camera2D" parent="."]
+
+visibility/light_mask = 0
+transform/pos = Vector2( 240000, 0 )
+z/z = 100
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 2, 2 )
+limit/left = -100000000
+limit/top = -100000000
+limit/right = 100000000
+limit/bottom = 100000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 10.0
+drag_margin/left = 0.0
+drag_margin/top = 0.0
+drag_margin/right = 0.0
+drag_margin/bottom = 0.0
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Camera"]
+
+visibility/light_mask = 0
+copy_mode = 2
+rect = Rect2( 0, 0, 1024, 768 )
+
+[node name="Sprite" type="TextureFrame" parent="Camera/BackBufferCopy"]
+
+visibility/light_mask = 0
+material/material = SubResource( 59 )
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -18.0
+margin/top = 0.0
+margin/right = 18.0
+margin/bottom = 0.0
+texture = ExtResource( 63 )
+expand = true
+stretch_mode = 0
+
+[node name="TimerAsteroids" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
+
+[node name="TimerLand" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 0.9
+one_shot = true
+autostart = false
+
+[connection signal="timeout" from="TimerAsteroids" to="." method="update_objects"]
+
+[connection signal="timeout" from="TimerLand" to="." method="landed"]
+
+

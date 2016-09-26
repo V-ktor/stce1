@@ -1,0 +1,249 @@
+{
+	"tag":"ass",
+	"type":"external",
+	"size":"small",
+	"name":"SMALL_STEEL_PLATING",
+	"mass":2.0,
+	"price":150,
+	"sp":15,
+	"stress_dissipation":0.4,
+	"armor":50,
+	"resistance_impact":4.0,
+	"resistance_explosive":4.0,
+	"grade":1,
+	"icon":"res://images/outfits/plating01.png"
+}
+{
+	"tag":"asm",
+	"type":"external",
+	"size":"medium",
+	"name":"MEDIUM_STEEL_PLATING",
+	"mass":6.0,
+	"price":600,
+	"sp":30,
+	"stress_dissipation":0.8,
+	"armor":100,
+	"resistance_impact":8.0,
+	"resistance_explosive":8.0,
+	"grade":1,
+	"icon":"res://images/outfits/plating01.png"
+}
+{
+	"tag":"asl",
+	"type":"external",
+	"size":"large",
+	"name":"LARGE_STEEL_PLATING",
+	"mass":18.0,
+	"price":2400,
+	"sp":60,
+	"stress_dissipation":1.6,
+	"armor":200,
+	"resistance_impact":16.0,
+	"resistance_explosive":16.0,
+	"grade":1,
+	"icon":"res://images/outfits/plating01.png"
+}
+{
+	"tag":"ash",
+	"type":"external",
+	"size":"huge",
+	"name":"HUGE_STEEL_PLATING",
+	"mass":54.0,
+	"price":9600,
+	"sp":120,
+	"stress_dissipation":3.2,
+	"armor":400,
+	"resistance_impact":32.0,
+	"resistance_explosive":32.0,
+	"grade":1,
+	"icon":"res://images/outfits/plating01.png"
+}
+{
+	"tag":"aps",
+	"type":"external",
+	"size":"small",
+	"name":"SMALL_POLYMERE_PLATING",
+	"mass":1.2,
+	"price":200,
+	"sp":15,
+	"stress_dissipation":0.4,
+	"armor":40,
+	"resistance_impact":4.0,
+	"resistance_explosive":2.0,
+	"grade":1,
+	"icon":"res://images/outfits/plating02.png"
+}
+{
+	"tag":"apm",
+	"type":"external",
+	"size":"medium",
+	"name":"MEDIUM_POLYMERE_PLATING",
+	"mass":4.0,
+	"price":750,
+	"sp":30,
+	"stress_dissipation":0.8,
+	"armor":80,
+	"resistance_impact":8.0,
+	"resistance_explosive":4.0,
+	"grade":1,
+	"icon":"res://images/outfits/plating02.png"
+}
+{
+	"tag":"apl",
+	"type":"external",
+	"size":"large",
+	"name":"LARGE_POLYMERE_PLATING",
+	"mass":12.0,
+	"price":3000,
+	"sp":60,
+	"stress_dissipation":1.6,
+	"armor":160,
+	"resistance_impact":16.0,
+	"resistance_explosive":8.0,
+	"grade":1,
+	"icon":"res://images/outfits/plating02.png"
+}
+{
+	"tag":"aph",
+	"type":"external",
+	"size":"huge",
+	"name":"HUGE_POLYMERE_PLATING",
+	"mass":36.0,
+	"price":12000,
+	"sp":120,
+	"stress_dissipation":3.2,
+	"armor":320,
+	"resistance_impact":32.0,
+	"resistance_explosive":16.0,
+	"grade":1,
+	"icon":"res://images/outfits/plating02.png"
+}
+{
+	"tag":"sps",
+	"type":"external",
+	"size":"small",
+	"name":"SOLAR_PANELS",
+	"mass":1.0,
+	"price":100,
+	"sp":10,
+	"stress_dissipation":0.3,
+	"power_active":1.5,
+	"grade":1,
+	"icon":"res://images/outfits/solar_panels.png"
+}
+{
+	"tag":"sts",
+	"type":"external",
+	"size":"small",
+	"name":"SMALL_STEERING_THRUSTER",
+	"mass":1.0,
+	"price":150,
+	"sp":15,
+	"stress_dissipation":0.5,
+	"steering_power_active":-0.06,
+	"steering_heat_active":1,
+	"steering_active":10.0,
+	"grade":1,
+	"icon":"res://images/outfits/steering.png"
+}
+{
+	"tag":"stm",
+	"type":"external",
+	"size":"medium",
+	"name":"MEDIUM_STEERING_THRUSTER",
+	"mass":3.0,
+	"price":600,
+	"sp":30,
+	"stress_dissipation":1.0,
+	"steering_power_active":-0.18,
+	"steering_heat_active":3,
+	"steering_active":25.0,
+	"grade":1,
+	"icon":"res://images/outfits/steering.png"
+}
+{
+	"tag":"bos",
+	"type":"external",
+	"size":"small",
+	"name":"SMALL_BOOSTERS",
+	"mass":1.5,
+	"price":200,
+	"sp":15,
+	"stress_dissipation":0.5,
+	"thrust_power_active":-0.125,
+	"thrust_heat_active":3,
+	"thrust_active":500,
+	"grade":1,
+	"icon":"res://images/outfits/booster.png"
+}
+{
+	"tag":"bom",
+	"type":"external",
+	"size":"medium",
+	"name":"MEDIUM_BOOSTERS",
+	"mass":4.5,
+	"price":800,
+	"sp":30,
+	"stress_dissipation":1.0,
+	"thrust_power_active":-0.375,
+	"thrust_heat_active":9,
+	"thrust_active":1500,
+	"grade":1,
+	"icon":"res://images/outfits/booster.png"
+}
+{
+	"tag":"scs",
+	"type":"external",
+	"size":"small",
+	"name":"SMALL_SCANNER",
+	"mass":1.5,
+	"price":100,
+	"sp":15,
+	"stress_dissipation":0.5,
+	"power_active":-0.2,
+	"radar_range_active":1000,
+	"grade":1,
+	"icon":"res://images/outfits/scanner_small.png"
+}
+{
+	"tag":"scm",
+	"type":"external",
+	"size":"medium",
+	"name":"MEDIUM_SCANNER",
+	"mass":6.0,
+	"price":400,
+	"sp":30,
+	"stress_dissipation":1.0,
+	"power_active":-0.6,
+	"radar_range_active":2000,
+	"grade":1,
+	"icon":"res://images/outfits/scanner_medium.png"
+}
+{
+	"tag":"scl",
+	"type":"external",
+	"size":"large",
+	"name":"LARGE_SCANNER",
+	"mass":18.0,
+	"price":1600,
+	"sp":60,
+	"stress_dissipation":2.0,
+	"power_active":-1.8,
+	"radar_range_active":4000,
+	"grade":1,
+	"icon":"res://images/outfits/scanner_large.png"
+}
+{
+	"tag":"sch",
+	"type":"external",
+	"size":"huge",
+	"name":"HUGE_SCANNER",
+	"mass":54.0,
+	"price":6400,
+	"sp":120,
+	"stress_dissipation":4.0,
+	"power_active":-5.4,
+	"radar_range_active":8000,
+	"grade":1,
+	"icon":"res://images/outfits/scanner_huge.png"
+}

@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://scripts/cm.gd" type="Script" id=1]
+[ext_resource path="res://images/particles/orange01.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 8.0
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "fade_out"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/keys = { "cont":true, "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "values":[ 1.0, 0.0 ] }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/keys = { "times":FloatArray( 0.3 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"queue_free" } ] }
+
+[sub_resource type="Animation" id=3]
+
+length = 1.2
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/scale")
+tracks/0/interp = 1
+tracks/0/keys = { "cont":true, "times":FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2 ), "transitions":FloatArray( 1, 1, 1, 1, 1, 1, 1 ), "values":[ Vector2( 0.2, 0.2 ), Vector2( 0.6, 0.6 ), Vector2( 0.2, 0.2 ), Vector2( 0.6, 0.6 ), Vector2( 0.2, 0.2 ), Vector2( 0.6, 0.6 ), Vector2( 0.2, 0.2 ) ] }
+
+[node name="CM" type="Area2D"]
+
+visibility/light_mask = 0
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="Sprite" type="Sprite" parent="."]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+
+visibility/visible = false
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.25
+one_shot = true
+autostart = true
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/fade_out = SubResource( 2 )
+anims/glow = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "glow"
+
+[connection signal="area_enter" from="." to="." method="_on_area_enter"]
+
+[connection signal="timeout" from="Timer" to="." method="disable"]
+
+

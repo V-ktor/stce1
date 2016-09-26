@@ -1,0 +1,114 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://scripts/items/grey.tres" type="StyleBox" id=1]
+[ext_resource path="res://scripts/hud/item.gd" type="Script" id=2]
+[ext_resource path="res://scripts/items/huge.tres" type="StyleBox" id=3]
+[ext_resource path="res://images/ui/item_selected.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 4 )
+margin/left = 16.0
+margin/right = 16.0
+margin/top = 16.0
+margin/bottom = 16.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = false
+
+[node name="Item" type="Panel"]
+
+visibility/light_mask = 0
+rect/min_size = Vector2( 64, 64 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 64.0
+margin/bottom = 64.0
+custom_styles/panel = ExtResource( 1 )
+script/script = ExtResource( 2 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Icon" type="TextureFrame" parent="."]
+
+visibility/light_mask = 0
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 3.0
+margin/top = 3.0
+margin/right = 3.0
+margin/bottom = 3.0
+expand = true
+stretch_mode = 6
+
+[node name="Size" type="Panel" parent="."]
+
+visibility/visible = false
+visibility/self_opacity = 0.75
+visibility/light_mask = 0
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+custom_styles/panel = ExtResource( 3 )
+
+[node name="Number" type="Label" parent="."]
+
+visibility/light_mask = 0
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 4.0
+margin/top = 4.0
+margin/right = 0.0
+margin/bottom = 0.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Selected" type="Panel" parent="."]
+
+visibility/visible = false
+visibility/self_opacity = 0.75
+visibility/light_mask = 0
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -4.0
+margin/top = -4.0
+margin/right = -4.0
+margin/bottom = -4.0
+custom_styles/panel = SubResource( 1 )
+
+[connection signal="input_event" from="." to="." method="_input_event"]
+
+[connection signal="mouse_enter" from="." to="." method="show_tooltip"]
+
+[connection signal="mouse_exit" from="." to="." method="hide_tooltip"]
+
+

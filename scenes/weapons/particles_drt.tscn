@@ -1,0 +1,172 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://scripts/shader/dbl_brightness.tres" type="CanvasItemMaterial" id=1]
+[ext_resource path="res://images/particles/explosion03.png" type="Texture" id=2]
+[ext_resource path="res://images/particles/smoke.png" type="Texture" id=3]
+[ext_resource path="res://images/lights/light_small.png" type="Texture" id=4]
+[ext_resource path="res://sounds/explosions/explosions.tres" type="SampleLibrary" id=5]
+[ext_resource path="res://scripts/particles/sound_explosion.gd" type="Script" id=6]
+
+
+
+[sub_resource type="ColorRamp" id=1]
+
+offsets = FloatArray( 0, 0.333578, 0.53637, 1 )
+colors = ColorArray( 1, 1, 1, 0, 1, 1, 0.501961, 1, 1, 1, 0.752941, 1, 1, 1, 1, 0 )
+
+[sub_resource type="ColorRamp" id=2]
+
+offsets = FloatArray( 0, 0.324761, 1 )
+colors = ColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 0.501961, 0.501961, 0.501961, 0 )
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "life"
+length = 2.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:config/emitting")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ true, false ] }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 2.5 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"queue_free" } ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Smoke:config/emitting")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.2, 0.6 ), "transitions":FloatArray( 1, 1, 1 ), "update":1, "values":[ false, true, false ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Light:energy")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0, 0.2, 0.4, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 2.5, 3.0, 0.0 ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Light:scale")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0, 0.4, 0.9 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 1.0, 4.0, 2.0 ] }
+tracks/5/type = "method"
+tracks/5/path = NodePath("SamplePlayer")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 0.1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"_play" } ] }
+
+[node name="Particles" type="Particles2D"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+material/material = ExtResource( 1 )
+config/amount = 8
+config/lifetime = 1.2
+config/time_scale = 2.0
+config/preprocess = 1.0
+config/half_extents = Vector2( 8, 8 )
+config/explosiveness = 0.75
+config/texture = ExtResource( 2 )
+params/direction = 360.0
+params/spread = 180.0
+params/linear_velocity = 24.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 32.0
+params/initial_angle = 360.0
+params/initial_size = 0.1
+params/final_size = 0.4
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/direction = 1.0
+randomness/spread = 1.0
+randomness/linear_velocity = 0.5
+randomness/initial_angle = 1.0
+randomness/initial_size = 0.25
+randomness/final_size = 0.25
+color/color_ramp = SubResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Smoke" type="Particles2D" parent="."]
+
+visibility/self_opacity = 0.25
+visibility/behind_parent = true
+visibility/light_mask = 0
+config/amount = 32
+config/lifetime = 2.0
+config/emitting = false
+config/explosiveness = 0.75
+config/texture = ExtResource( 3 )
+params/direction = 360.0
+params/spread = 180.0
+params/linear_velocity = 14.0
+params/spin_velocity = 1.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.0
+params/final_size = 0.2
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/linear_velocity = 0.25
+randomness/spin_velocity = 1.0
+randomness/initial_size = 0.25
+randomness/final_size = 0.25
+color/color_ramp = SubResource( 2 )
+
+[node name="Light" type="Light2D" parent="."]
+
+enabled = true
+texture = ExtResource( 4 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 0.501961, 0.12549, 1 )
+energy = 0.0
+mode = 0
+range/height = 25.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="SamplePlayer" type="SamplePlayer2D" parent="."]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 4096.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = ExtResource( 5 )
+config/pitch_random = 0.0
+script/script = ExtResource( 6 )
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/life = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "life"
+
+

@@ -1,0 +1,150 @@
+{
+	"tag":"rbs",
+	"type":"reactor",
+	"size":"small",
+	"name":"REACTOR_SMALL",
+	"mass":3.0,
+	"price":300,
+	"sp":20,
+	"stress_dissipation":0.5,
+	"energy_active":80,
+	"power_active":10.0,
+	"heat_active":60,
+	"grade":1,
+	"icon":"res://images/outfits/reactor01.png"
+}
+{
+	"tag":"rgs",
+	"type":"reactor",
+	"size":"small",
+	"name":"r small good",
+	"mass":3.75,
+	"price":600,
+	"sp":25,
+	"stress_dissipation":0.5,
+	"energy_active":100,
+	"power_active":12.5,
+	"heat_active":75,
+	"grade":2,
+	"icon":"res://images/outfits/reactor03.png"
+}
+{
+	"tag":"rrs",
+	"type":"reactor",
+	"size":"small",
+	"name":"r small rs",
+	"mass":3.38,
+	"price":750,
+	"sp":20,
+	"stress_dissipation":0.5,
+	"energy_active":80,
+	"power_active":15.0,
+	"heat_active":75,
+	"grade":2,
+	"icon":"res://images/outfits/reactor02.png"
+}
+{
+	"tag":"rcs",
+	"type":"reactor",
+	"size":"small",
+	"name":"r small cs",
+	"mass":3.37,
+	"price":700,
+	"sp":25,
+	"stress_dissipation":0.5,
+	"energy_active":160,
+	"power_active":10.0,
+	"heat_active":75,
+	"grade":2,
+	"icon":"res://images/outfits/reactor13.png"
+}
+{
+	"tag":"rbm",
+	"type":"reactor",
+	"size":"medium",
+	"name":"REACTOR_MEDIUM",
+	"mass":9.0,
+	"price":1200,
+	"sp":40,
+	"stress_dissipation":1.0,
+	"energy_active":160,
+	"power_active":20.0,
+	"heat_active":180,
+	"grade":1,
+	"icon":"res://images/outfits/reactor09.png"
+}
+{
+	"tag":"rgm",
+	"type":"reactor",
+	"size":"medium",
+	"name":"r medium good",
+	"mass":10.75,
+	"price":2400,
+	"sp":50,
+	"stress_dissipation":1.0,
+	"energy_active":200,
+	"power_active":25.0,
+	"heat_active":225,
+	"grade":2,
+	"icon":"res://images/outfits/reactor10.png"
+}
+{
+	"tag":"rbl",
+	"type":"reactor",
+	"size":"large",
+	"name":"REACTOR_LARGE",
+	"mass":27.0,
+	"price":4800,
+	"sp":80,
+	"stress_dissipation":2.0,
+	"energy_active":320,
+	"power_active":40.0,
+	"heat_active":540,
+	"grade":1,
+	"icon":"res://images/outfits/reactor07.png"
+}
+{
+	"tag":"rgl",
+	"type":"reactor",
+	"size":"large",
+	"name":"r large good",
+	"mass":33.0,
+	"price":9600,
+	"sp":100,
+	"stress_dissipation":2.0,
+	"energy_active":400,
+	"power_active":50.0,
+	"heat_active":670,
+	"grade":2,
+	"icon":"res://images/outfits/reactor08.png"
+}
+{
+	"tag":"rbh",
+	"type":"reactor",
+	"size":"huge",
+	"name":"REACTOR_HUGE",
+	"mass":81.0,
+	"price":19200,
+	"sp":160,
+	"stress_dissipation":4.0,
+	"energy_active":640,
+	"power_active":80.0,
+	"heat_active":1620,
+	"grade":1,
+	"icon":"res://images/outfits/reactor11.png"
+}
+{
+	"tag":"rgh",
+	"type":"reactor",
+	"size":"huge",
+	"name":"r huge good",
+	"mass":101.0,
+	"price":38400,
+	"sp":200,
+	"stress_dissipation":4.0,
+	"energy_active":800,
+	"power_active":100.0,
+	"heat_active":2025,
+	"grade":2,
+	"icon":"res://images/outfits/reactor12.png"
+}

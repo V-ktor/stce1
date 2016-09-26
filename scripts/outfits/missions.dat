@@ -1,0 +1,9 @@
+{
+	"tag":"test",
+	"type":"commodity",
+	"name":"TEST",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}

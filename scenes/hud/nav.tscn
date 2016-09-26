@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://images/icons/icon_nav.png" type="Texture" id=1]
+[ext_resource path="res://scripts/hud/nav_point.gd" type="Script" id=2]
+
+
+[node name="Nav" type="Sprite"]
+
+transform/rot = 45.0
+texture = ExtResource( 1 )
+script/script = ExtResource( 2 )
+__meta__ = { "__editor_plugin_screen__":"Script" }
+
+

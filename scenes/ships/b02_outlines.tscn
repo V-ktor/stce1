@@ -1,0 +1,729 @@
+[gd_scene load_steps=22 format=1]
+
+[ext_resource path="res://images/ships/b02_outlines.png" type="Texture" id=1]
+[ext_resource path="res://images/ships/b02_outlines_base.png" type="Texture" id=2]
+[ext_resource path="res://scripts/shader/material_warning1.tres" type="CanvasItemMaterial" id=3]
+[ext_resource path="res://images/icons/warning_temp.png" type="Texture" id=4]
+[ext_resource path="res://scripts/shader/material_warning2.tres" type="CanvasItemMaterial" id=5]
+[ext_resource path="res://images/icons/warning_en.png" type="Texture" id=6]
+[ext_resource path="res://scripts/shader/material_warning3.tres" type="CanvasItemMaterial" id=7]
+[ext_resource path="res://images/icons/warning_disabled.png" type="Texture" id=8]
+[ext_resource path="res://images/ships/b02_outlines_reactor.png" type="Texture" id=9]
+[ext_resource path="res://images/ships/b02_outlines_external1.png" type="Texture" id=10]
+[ext_resource path="res://images/ships/b02_outlines_external2.png" type="Texture" id=11]
+[ext_resource path="res://images/ships/b02_outlines_external3.png" type="Texture" id=12]
+[ext_resource path="res://images/ships/b02_outlines_external4.png" type="Texture" id=13]
+[ext_resource path="res://images/ships/b02_outlines_internal1.png" type="Texture" id=14]
+[ext_resource path="res://images/ships/b02_outlines_internal2.png" type="Texture" id=15]
+[ext_resource path="res://images/ships/b02_outlines_engine1.png" type="Texture" id=16]
+[ext_resource path="res://images/ships/b02_outlines_engine2.png" type="Texture" id=17]
+[ext_resource path="res://images/ships/b02_outlines_weapon1.png" type="Texture" id=18]
+[ext_resource path="res://images/ships/b02_outlines_weapon2.png" type="Texture" id=19]
+[ext_resource path="res://images/weapons/missile_jav_outlines.png" type="Texture" id=20]
+[ext_resource path="res://images/icons/warning_target.png" type="Texture" id=21]
+
+[node name="Outlines" type="Sprite"]
+
+transform/pos = Vector2( 19.5, 30 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Base" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="Base"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 71.5, 47 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="Base"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 71.5, 65 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="Base"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 71.5, 56 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Reactor1" type="Sprite" parent="."]
+
+texture = ExtResource( 9 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="Reactor1"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 71.5, 80 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Disabled" type="Sprite" parent="Reactor1"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 71.5, 88 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="External1" type="Sprite" parent="."]
+
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="External1"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 28.5, 61 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="External1"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 29.5, 42 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="External1"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 22.5, 52 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="External2" type="Sprite" parent="."]
+
+texture = ExtResource( 11 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="External2"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 113.5, 61 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="External2"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 113.5, 42 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="External2"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 119.5, 52 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="External3" type="Sprite" parent="."]
+
+texture = ExtResource( 12 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="External3"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 29.5, 102 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="External3"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 15.5, 89 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="External3"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 29.5, 87 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="External4" type="Sprite" parent="."]
+
+texture = ExtResource( 13 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="External4"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 113.5, 102 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="External4"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 128.5, 89 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="External4"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 113.5, 87 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Internal1" type="Sprite" parent="."]
+
+texture = ExtResource( 14 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="Internal1"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 54.5, 64 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="Internal1"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 54.5, 92 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="Internal1"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 54.5, 78 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Internal2" type="Sprite" parent="."]
+
+texture = ExtResource( 15 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="Internal2"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 88.5, 66 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="Internal2"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 88.5, 91 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="Internal2"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 88.5, 78 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Engine1" type="Sprite" parent="."]
+
+texture = ExtResource( 16 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="Engine1"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 52.5, 109 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="Engine1"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 52.5, 131 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="Engine1"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 52.5, 120 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Engine2" type="Sprite" parent="."]
+
+texture = ExtResource( 17 )
+centered = false
+
+[node name="Temp" type="Sprite" parent="Engine2"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 90.5, 109 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Energy" type="Sprite" parent="Engine2"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 90.5, 131 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Disabled" type="Sprite" parent="Engine2"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 90.5, 120 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Weapon1" type="Sprite" parent="."]
+
+texture = ExtResource( 18 )
+centered = false
+
+[node name="Energy" type="Sprite" parent="Weapon1"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 52.5, 29 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Temp" type="Sprite" parent="Weapon1"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 52.5, 12 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Disabled" type="Sprite" parent="Weapon1"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 52.5, 20 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Weapon2" type="Sprite" parent="."]
+
+texture = ExtResource( 19 )
+centered = false
+
+[node name="Energy" type="Sprite" parent="Weapon2"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 90.5, 29 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Temp" type="Sprite" parent="Weapon2"]
+
+visibility/visible = false
+material/material = ExtResource( 3 )
+transform/pos = Vector2( 90.5, 12 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="Disabled" type="Sprite" parent="Weapon2"]
+
+visibility/visible = false
+material/material = ExtResource( 7 )
+transform/pos = Vector2( 90.5, 20 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Missile1" type="Position2D" parent="."]
+
+transform/pos = Vector2( 45, -13 )
+transform/scale = Vector2( -1, 1 )
+
+[node name="Missile1" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+texture = ExtResource( 20 )
+
+[node name="Missile2" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+transform/pos = Vector2( 5, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile3" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile4" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+transform/pos = Vector2( 15, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile5" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+transform/pos = Vector2( 20, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile6" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+transform/pos = Vector2( 25, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile7" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+transform/pos = Vector2( 30, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile8" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+transform/pos = Vector2( 35, 0 )
+texture = ExtResource( 20 )
+
+[node name="Target" type="Sprite" parent="Missile1"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 0, 5 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+[node name="Missile2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 96, -13 )
+
+[node name="Missile1" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+texture = ExtResource( 20 )
+
+[node name="Missile2" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+transform/pos = Vector2( 5, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile3" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile4" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+transform/pos = Vector2( 15, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile5" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+transform/pos = Vector2( 20, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile6" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+transform/pos = Vector2( 25, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile7" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+transform/pos = Vector2( 30, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile8" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+transform/pos = Vector2( 35, 0 )
+texture = ExtResource( 20 )
+
+[node name="Target" type="Sprite" parent="Missile2"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 0, 5 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+[node name="Missile3" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, 74 )
+transform/scale = Vector2( -1, 1 )
+
+[node name="Missile1" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+texture = ExtResource( 20 )
+
+[node name="Missile2" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+transform/pos = Vector2( 5, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile3" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile4" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+transform/pos = Vector2( 15, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile5" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+transform/pos = Vector2( 0, -28 )
+texture = ExtResource( 20 )
+
+[node name="Missile6" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+transform/pos = Vector2( 5, -28 )
+texture = ExtResource( 20 )
+
+[node name="Missile7" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, -28 )
+texture = ExtResource( 20 )
+
+[node name="Missile8" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+transform/pos = Vector2( 15, -28 )
+texture = ExtResource( 20 )
+
+[node name="Target" type="Sprite" parent="Missile3"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 0, 5 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+[node name="Missile4" type="Position2D" parent="."]
+
+transform/pos = Vector2( 20, 16 )
+transform/scale = Vector2( -1, 1 )
+
+[node name="Missile1" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+texture = ExtResource( 20 )
+
+[node name="Missile2" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+transform/pos = Vector2( 5, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile3" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile4" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+transform/pos = Vector2( 15, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile5" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+transform/pos = Vector2( 20, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile6" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+transform/pos = Vector2( 25, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile7" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+transform/pos = Vector2( 30, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile8" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+transform/pos = Vector2( 35, 0 )
+texture = ExtResource( 20 )
+
+[node name="Target" type="Sprite" parent="Missile4"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 0, 5 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+[node name="Missile5" type="Position2D" parent="."]
+
+transform/pos = Vector2( 143, 70 )
+
+[node name="Missile1" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+texture = ExtResource( 20 )
+
+[node name="Missile2" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+transform/pos = Vector2( 5, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile3" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile4" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+transform/pos = Vector2( 15, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile5" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+transform/pos = Vector2( 0, -28 )
+texture = ExtResource( 20 )
+
+[node name="Missile6" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+transform/pos = Vector2( 5, -28 )
+texture = ExtResource( 20 )
+
+[node name="Missile7" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, -28 )
+texture = ExtResource( 20 )
+
+[node name="Missile8" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+transform/pos = Vector2( 15, -28 )
+texture = ExtResource( 20 )
+
+[node name="Target" type="Sprite" parent="Missile5"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 0, 5 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+[node name="Missile6" type="Position2D" parent="."]
+
+transform/pos = Vector2( 123, 16 )
+
+[node name="Missile1" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+texture = ExtResource( 20 )
+
+[node name="Missile2" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+transform/pos = Vector2( 5, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile3" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile4" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+transform/pos = Vector2( 15, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile5" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+transform/pos = Vector2( 20, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile6" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+transform/pos = Vector2( 25, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile7" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+transform/pos = Vector2( 30, 0 )
+texture = ExtResource( 20 )
+
+[node name="Missile8" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+transform/pos = Vector2( 35, 0 )
+texture = ExtResource( 20 )
+
+[node name="Target" type="Sprite" parent="Missile6"]
+
+visibility/visible = false
+material/material = ExtResource( 5 )
+transform/pos = Vector2( 0, 5 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+

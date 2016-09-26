@@ -1,0 +1,192 @@
+[gd_scene load_steps=14 format=1]
+
+[ext_resource path="res://scripts/weapons/shot_seeker.gd" type="Script" id=1]
+[ext_resource path="res://scripts/shader/dbl_brightness.tres" type="Shader" id=2]
+[ext_resource path="res://images/particles/line_grey.png" type="Texture" id=3]
+[ext_resource path="res://scripts/shader/ship.tres" type="Shader" id=4]
+[ext_resource path="res://images/weapons/shot08_n.png" type="Texture" id=5]
+[ext_resource path="res://images/weapons/shot08_c.png" type="Texture" id=6]
+[ext_resource path="res://images/lights/light_small.png" type="Texture" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 10.0
+
+[sub_resource type="CanvasItemMaterial" id=6]
+
+shader/shader = ExtResource( 2 )
+shader/shading_mode = 0
+
+[sub_resource type="ColorRamp" id=2]
+
+offsets = FloatArray( 0, 0.00734754, 0.274063, 0.554739, 1 )
+colors = ColorArray( 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0.188235, 0.188235, 0.188235, 0.752941, 0, 0, 0, 0 )
+
+[sub_resource type="CanvasItemMaterial" id=3]
+
+shader/shader = ExtResource( 4 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 5 )
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "create"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light:energy")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Light:scale")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.5, 1.25 ] }
+
+[sub_resource type="Animation" id=5]
+
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 2 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"queue_free" } ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light:energy")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:visibility/opacity")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles:config/emitting")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":1, "values":[ false ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite:visibility/visible")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0, 0.2 ), "transitions":FloatArray( 1, 1 ), "update":1, "values":[ true, false ] }
+
+[node name="Shot" type="Area2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Particles" type="Particles2D" parent="."]
+
+visibility/opacity = 0.25
+visibility/self_opacity = 0.25
+visibility/light_mask = 0
+material/material = SubResource( 6 )
+transform/pos = Vector2( 0, 8 )
+config/amount = 256
+config/lifetime = 2.0
+config/offset = Vector2( 0, 2 )
+config/local_space = false
+config/texture = ExtResource( 3 )
+params/direction = 0.0
+params/spread = 0.5
+params/linear_velocity = 32.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 0.2
+params/final_size = 0.75
+params/hue_variation = 0.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 1.0
+randomness/initial_size = 0.1
+randomness/final_size = 0.2
+color/color_ramp = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+visibility/opacity = 0.0
+material/material = SubResource( 3 )
+transform/pos = Vector2( 0, 2 )
+transform/scale = Vector2( 0.75, 1 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+
+visibility/visible = false
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Light" type="Light2D" parent="."]
+
+enabled = true
+texture = ExtResource( 7 )
+offset = Vector2( 0, 0 )
+scale = 0.5
+color = Color( 1, 0.501961, 0, 1 )
+energy = 0.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/create = SubResource( 4 )
+anims/fade_out = SubResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "create"
+
+[connection signal="area_enter" from="." to="." method="_on_body_enter"]
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+[connection signal="timeout" from="Timer" to="." method="disable"]
+
+

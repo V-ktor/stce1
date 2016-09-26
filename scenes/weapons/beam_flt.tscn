@@ -1,0 +1,152 @@
+[gd_scene load_steps=9 format=1]
+
+[ext_resource path="res://scripts/weapons/flamer.gd" type="Script" id=1]
+[ext_resource path="res://scripts/shader/dbl_brightness.tres" type="Shader" id=2]
+[ext_resource path="res://images/weapons/flamer.png" type="Texture" id=3]
+[ext_resource path="res://images/lights/light_flamer.png" type="Texture" id=4]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 12, -132, 0, 0, -12, -132 )
+
+[sub_resource type="CanvasItemMaterial" id=4]
+
+shader/shader = ExtResource( 2 )
+shader/shading_mode = 0
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "fade_out"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.3 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 1.0, 0.0 ] }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0.3 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"queue_free" } ] }
+
+[sub_resource type="Animation" id=3]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:visibility/self_opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.3, 0.8, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 1.0, 1.0, 0.0 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0, 17 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:transform/scale")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0.6, 1 ), Vector2( 0.85, 2 ) ] }
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"queue_free" } ] }
+tracks/4/type = "value"
+tracks/4/path = NodePath("Light:energy")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = { "times":FloatArray( 0, 0.4, 0.7, 1 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ 0.0, 1.0, 1.0, 0.0 ] }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Light:scale")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.75, 1.5 ] }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = { "times":FloatArray( 0, 1 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0, -56 ), Vector2( 0, -106 ) ] }
+
+[node name="Flame" type="Area2D"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Sprite" type="Sprite" parent="."]
+
+visibility/self_opacity = 0.0
+visibility/light_mask = 0
+material/material = SubResource( 4 )
+transform/pos = Vector2( 0, -56 )
+transform/scale = Vector2( 0.6, 1 )
+texture = ExtResource( 3 )
+hframes = 18
+
+[node name="Light" type="Light2D" parent="."]
+
+transform/pos = Vector2( 0, -42 )
+enabled = true
+texture = ExtResource( 4 )
+offset = Vector2( 0, 0 )
+scale = 0.75
+color = Color( 1, 1, 1, 1 )
+energy = 0.0
+mode = 0
+range/height = 20.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = true
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/fade_out = SubResource( 2 )
+anims/life = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "life"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+visibility/visible = false
+build_mode = 0
+polygon = Vector2Array( 0, 0, 12, -132, -12, -132 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[connection signal="body_enter" from="." to="." method="_on_body_enter"]
+
+[connection signal="timeout" from="Timer" to="." method="disable"]
+
+

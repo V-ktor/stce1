@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://scripts/station_base.gd" type="Script" id=1]
+[ext_resource path="res://scripts/shader/station.tres" type="Shader" id=2]
+[ext_resource path="res://images/stations/station02_n.png" type="Texture" id=3]
+[ext_resource path="res://images/stations/station02_c.png" type="Texture" id=4]
+[ext_resource path="res://images/lights/light02.png" type="Texture" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+shader/shader = ExtResource( 2 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 3 )
+shader_param/height = -75.001
+
+[node name="Station02" type="Node2D"]
+
+visibility/light_mask = 4
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+docks = 4
+
+[node name="Base" type="Sprite" parent="."]
+
+visibility/light_mask = 4
+material/material = SubResource( 1 )
+z/z = -75
+texture = ExtResource( 4 )
+
+[node name="Light1" type="Light2D" parent="."]
+
+transform/pos = Vector2( -150, -150 )
+transform/rot = -45.0
+transform/scale = Vector2( 1, 2 )
+enabled = true
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = -25.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Light2" type="Light2D" parent="."]
+
+transform/pos = Vector2( -150, 150 )
+transform/rot = 45.0
+transform/scale = Vector2( 1, 2 )
+enabled = true
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = -25.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Light3" type="Light2D" parent="."]
+
+transform/pos = Vector2( 150, 150 )
+transform/rot = 135.0
+transform/scale = Vector2( 1, 2 )
+enabled = true
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = -25.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Light4" type="Light2D" parent="."]
+
+transform/pos = Vector2( 150, -150 )
+transform/rot = -135.0
+transform/scale = Vector2( 1, 2 )
+enabled = true
+texture = ExtResource( 5 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = -25.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Position0" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, -204 )
+
+[node name="Position" type="Position2D" parent="Position0"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -204, -4.29138e-07 )
+transform/rot = 90.0
+
+[node name="Position" type="Position2D" parent="Position1"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 1.04907e-06, 204 )
+transform/rot = -180.0
+
+[node name="Position" type="Position2D" parent="Position2"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position3" type="Position2D" parent="."]
+
+transform/pos = Vector2( 204, -1.43099e-07 )
+transform/rot = -90.0
+
+[node name="Position" type="Position2D" parent="Position3"]
+
+transform/pos = Vector2( 0, -200 )
+
+

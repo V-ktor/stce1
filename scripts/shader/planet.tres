@@ -1,0 +1,6 @@
+[gd_resource type="CanvasItemShader" format=1]
+
+[resource]
+
+_code = { "fragment":"uniform texture normal;\nuniform texture clouds;\nuniform float cloud_scroll_speed;\n\nvec3 norm = tex(normal,UV).rgb;\nNORMAL = vec3(norm.rg*vec2(-2.0,2.0)-vec2(-1.0,1.0),norm.b);\nvec2 normal2 = tex(normal,UV).ag*2.0-vec2(1.0,1.0);\nvec4 cloud = tex(clouds,vec2(UV.x*(UV.y+0.25)*(UV.y-1.25)+cloud_scroll_speed*TIME-0.1*NORMAL.y*sin(cloud_scroll_speed*1.2*TIME),UV.y+0.1*NORMAL.x*cos(cloud_scroll_speed*1.0*TIME)));\n//vec2 UV_c = vec2(0.5*NORMAL.x+cloud_scroll_speed*TIME-0.5*NORMAL.y*sin(cloud_scroll_speed*1.2*TIME),NORMAL.y+0.1*NORMAL.x*cos(cloud_scroll_speed*0.9*TIME));\n//vec4 cloud = tex(clouds,UV_c);\ncloud.rgb *= 0.9;\ncloud.a *= 0.5;\nCOLOR = tex(TEXTURE,UV)*vec4(0.25,0.25,0.25,1.0);\nCOLOR.rgb = COLOR.rgb*(1.0-cloud.a)+cloud.rgb*cloud.a;\n", "fragment_ofs":0, "light":"uniform float height;\nvec3 light_vec = -normalize(vec3(-LIGHT_VEC.x,-LIGHT_VEC.y,-(LIGHT_HEIGHT-height)));\nvec3 n = normalize(NORMAL);\n\nLIGHT = 1.2*vec4(vec3(dot(n,light_vec)),1.0)*COLOR*LIGHT_COLOR;\n", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+

@@ -1,0 +1,580 @@
+[gd_scene load_steps=40 format=1]
+
+[ext_resource path="res://images/particles/thrust01.png" type="Texture" id=1]
+[ext_resource path="res://images/particles/steering01.png" type="Texture" id=2]
+[ext_resource path="res://scripts/shader/ship.tres" type="Shader" id=3]
+[ext_resource path="res://images/ships/b02_n.png" type="Texture" id=4]
+[ext_resource path="res://images/ships/b02_c.png" type="Texture" id=5]
+[ext_resource path="res://images/lights/light02.png" type="Texture" id=6]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -5, -3, -5, -8, -3, -15, 0, -21, 3, -15, 5, -8, 5, -3, 4, 9, -4, 9 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 8, -16, 8, -24, 9, -24, 13, -23, 13, -15 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 23, 21, 23, 27, 18, 27, 18, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 6, 17, 5, 17, 5, 14, 6, 14, 15, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 15, 33, 6, 33, 6, 17, 15, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 9, -24, 9, -40, 12, -40, 12, -29 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 9, -24, 12, -29, 13, -23 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 19, -21, 19, -42, 21, -42, 24, -39, 24, -28 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 19, -21, 24, -28, 38, -18, 38, -11, 28, -4 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 4, 9, 4, 15, -4, 15, -4, 9 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -6, 14, -5, 14, -5, 17, -6, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -6, 17, -6, 33, -15, 33, -15, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -6, 14, -6, 17, -15, 17 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -18, 17, -18, 27, -23, 27, -23, 21 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -12, -30, -12, -40, -9, -40, -9, -24 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -13, -15, -13, -24, -12, -30, -9, -24, -8, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -9, -24, -8, -24, -8, -16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -24, -39, -21, -42, -19, -42, -19, -21, -24, -29 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -38, -11, -38, -18, -24, -29, -19, -21, -28, -4 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -13, -15, -8, -16, -6, -7, -6, -3 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 6, -8, 8, -16, 13, -15, 6, -3 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -28, -4, -19, -21, -16, -19, -15, -15 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -19, 19, -21, 28, -4, 15, -15 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 37, 3, 37, 10, 23, 21, 18, 17, 28, -2 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -18, 17, -23, 21, -37, 10, -37, 3, -28, -2 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -6, 9, -6, 14, -15, 17, -18, 17, -28, -2, -28, -4, -15, -15, -13, -15 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 15, -15, 28, -4, 28, -2, 18, 17, 15, 17, 6, 14, 6, 9, 13, -15 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 13, -15, 6, 9, 4, 9, 6, -3 )
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -4, 9, -6, 9, -13, -15, -6, -3 )
+
+[sub_resource type="ConvexPolygonShape2D" id=30]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 5, -3, 6, -3, 4, 9 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -6, -3, -5, -3, -4, 9 )
+
+[sub_resource type="CanvasItemMaterial" id=32]
+
+shader/shader = ExtResource( 3 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 4 )
+
+[sub_resource type="OccluderPolygon2D" id=33]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( 4, -13, 4, -3, 6, -3, 6, -9, 8, -15, 7.90118, -24.0704, 8.90117, -24.0721, 8.87295, -40.0721, 11.8729, -40.0774, 11.8888, -31.0774, 12.9012, -24.0792, 12.9735, -15.0229, 14.9735, -15.0264, 14.9682, -18.0264, 15.9665, -19.0282, 15.9629, -21.0282, 16.9612, -22.0299, 16.9471, -30.0299, 18.887, -32.0898, 18.8694, -42.0897, 21.8694, -42.095, 23.8747, -39.0986, 23.8923, -29.0986, 37.9099, -19.1233, 37.9241, -11.1233, 28.9364, -4.10743, 28.9399, -2.10744, 36.9487, 2.87845, 36.9629, 10.8784, 22.9805, 20.9031, 22.9911, 26.9031, 18.9911, 26.9102, 17.9735, 16.9119, 14.9735, 16.9172, 15.0017, 32.9172, 6.0017, 32.9331, 5.96114, 9.93311, 3.96114, 9.93664, 4.02469, 13.9929, 0.968202, 13.9419, 0.939421, 13.9423, 0.987603, 24.9419, -1.01239, 24.9454, -1.03179, 13.9455, -3.9753, 14.007, -4.03885, 9.95075, -6.03884, 9.95428, -5.99828, 32.9542, -14.9983, 32.9701, -15.0265, 16.9701, -18.0265, 16.9754, -19.0088, 26.9772, -23.0088, 26.9842, -23.0194, 20.9842, -37.037, 11.009, -37.0511, 3.00896, -29.06, -2.00514, -29.0635, -4.00514, -38.0758, -10.9893, -38.0899, -18.9892, -24.1076, -29.0139, -24.1252, -39.0139, -21.1305, -42.0192, -19.1305, -42.0227, -19.1129, -32.0227, -17.0529, -29.97, -17.037, -20.97, -16.0352, -19.9718, -16.0317, -17.9718, -15.03, -16.9735, -15.0829, -15.0298, -13.0829, -15.0333, -13.0988, -24.0333, -12.1111, -31.0351, -12.127, -40.0351, -9.12702, -40.0404, -9.0988, -24.0404, -8.0988, -24.0421, -8.08293, -15.0422, -6.07059, -8.0457, -6.06177, -3.0457, -4.06177, -3.04923, -4.07941, -13.0492, -0.093526, -21.0563 )
+
+[node name="B02" type="RigidBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 6 )
+shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/5/trigger = false
+shapes/6/shape = SubResource( 7 )
+shapes/6/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/6/trigger = false
+shapes/7/shape = SubResource( 8 )
+shapes/7/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/7/trigger = false
+shapes/8/shape = SubResource( 9 )
+shapes/8/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/8/trigger = false
+shapes/9/shape = SubResource( 10 )
+shapes/9/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/9/trigger = false
+shapes/10/shape = SubResource( 11 )
+shapes/10/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/10/trigger = false
+shapes/11/shape = SubResource( 12 )
+shapes/11/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/11/trigger = false
+shapes/12/shape = SubResource( 13 )
+shapes/12/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/12/trigger = false
+shapes/13/shape = SubResource( 14 )
+shapes/13/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/13/trigger = false
+shapes/14/shape = SubResource( 15 )
+shapes/14/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/14/trigger = false
+shapes/15/shape = SubResource( 16 )
+shapes/15/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/15/trigger = false
+shapes/16/shape = SubResource( 17 )
+shapes/16/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/16/trigger = false
+shapes/17/shape = SubResource( 18 )
+shapes/17/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/17/trigger = false
+shapes/18/shape = SubResource( 19 )
+shapes/18/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/18/trigger = false
+shapes/19/shape = SubResource( 20 )
+shapes/19/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/19/trigger = false
+shapes/20/shape = SubResource( 21 )
+shapes/20/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/20/trigger = false
+shapes/21/shape = SubResource( 22 )
+shapes/21/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/21/trigger = false
+shapes/22/shape = SubResource( 23 )
+shapes/22/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/22/trigger = false
+shapes/23/shape = SubResource( 24 )
+shapes/23/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/23/trigger = false
+shapes/24/shape = SubResource( 25 )
+shapes/24/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/24/trigger = false
+shapes/25/shape = SubResource( 26 )
+shapes/25/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/25/trigger = false
+shapes/26/shape = SubResource( 27 )
+shapes/26/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/26/trigger = false
+shapes/27/shape = SubResource( 28 )
+shapes/27/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/27/trigger = false
+shapes/28/shape = SubResource( 29 )
+shapes/28/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/28/trigger = false
+shapes/29/shape = SubResource( 30 )
+shapes/29/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/29/trigger = false
+shapes/30/shape = SubResource( 31 )
+shapes/30/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/30/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 2
+mass = 4.0
+friction = 1.0
+bounce = 1.0
+gravity_scale = 1.0
+custom_integrator = true
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Engine" type="Node2D" parent="."]
+
+[node name="Thrust1" type="Sprite" parent="Engine"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 10.5, 50 )
+transform/scale = Vector2( 0.95, 0.6 )
+texture = ExtResource( 1 )
+
+[node name="Thrust2" type="Sprite" parent="Engine"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -10.5, 50 )
+transform/scale = Vector2( 0.95, 0.6 )
+texture = ExtResource( 1 )
+
+[node name="SteeringLeft" type="Node2D" parent="."]
+
+[node name="Steering1" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 43, -15 )
+transform/rot = 90.0
+transform/scale = Vector2( 0.75, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Steering2" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -34, -26 )
+transform/rot = 180.0
+transform/scale = Vector2( 0.6, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="Steering3" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 33, 18 )
+transform/scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Steering4" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -32.5, -5 )
+transform/rot = 180.0
+transform/scale = Vector2( 0.6, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="SteeringRight" type="Node2D" parent="."]
+
+[node name="Steering1" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -43, -15 )
+transform/rot = -90.0
+transform/scale = Vector2( 0.75, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Steering2" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 34, -26 )
+transform/rot = -180.0
+transform/scale = Vector2( 0.6, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="Steering3" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -33, 18 )
+transform/scale = Vector2( 0.6, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Steering4" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 32.5, -5 )
+transform/rot = 180.0
+transform/scale = Vector2( 0.6, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+material/material = SubResource( 32 )
+transform/pos = Vector2( 0, -4 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="LightFrontRight" type="Light2D" parent="."]
+
+transform/pos = Vector2( 55, -510 )
+transform/rot = -95.0
+transform/scale = Vector2( 4, 2 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightFrontLeft" type="Light2D" parent="."]
+
+transform/pos = Vector2( -55, -510 )
+transform/rot = -85.0
+transform/scale = Vector2( 4, 2 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightRight" type="Light2D" parent="."]
+
+transform/pos = Vector2( 114, -210 )
+transform/rot = -110.0
+transform/scale = Vector2( 2, 2 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightLeft" type="Light2D" parent="."]
+
+transform/pos = Vector2( -114, -210 )
+transform/rot = -70.0
+transform/scale = Vector2( 2, 2 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+visibility/visible = false
+build_mode = 0
+polygon = Vector2Array( 0, -21, 3, -15, 5, -8, 5, -3, 6, -3, 6, -8, 8, -16, 8, -24, 9, -24, 9, -40, 12, -40, 12, -29, 13, -23, 13, -15, 15, -15, 16, -19, 19, -21, 19, -42, 21, -42, 24, -39, 24, -28, 38, -18, 38, -11, 28, -4, 28, -2, 37, 3, 37, 10, 23, 21, 23, 27, 18, 27, 18, 17, 15, 17, 15, 33, 6, 33, 6, 17, 5, 17, 5, 14, 6, 14, 6, 9, 4, 9, 4, 15, -4, 15, -4, 9, -6, 9, -6, 14, -5, 14, -5, 17, -6, 17, -6, 33, -15, 33, -15, 17, -18, 17, -18, 27, -23, 27, -23, 21, -37, 10, -37, 3, -28, -2, -28, -4, -38, -11, -38, -18, -24, -29, -24, -39, -21, -42, -19, -42, -19, -21, -16, -19, -15, -15, -13, -15, -13, -24, -12, -30, -12, -40, -9, -40, -9, -24, -8, -24, -8, -16, -6, -7, -6, -3, -5, -3, -5, -8, -3, -15 )
+shape_range = Vector2( 0, 30 )
+trigger = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+
+visibility/visible = false
+visibility/light_mask = 2
+transform/pos = Vector2( 0.0563887, 0.0563892 )
+transform/rot = -0.101053
+occluder = SubResource( 33 )
+light_mask = 2
+
+[node name="Weapon1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -10.5, -38 )
+
+[node name="Weapon2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 10.5, -38 )
+
+[node name="Reactor1" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, 7 )
+
+[node name="Engine1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -10.5, 22 )
+
+[node name="Engine2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 10.5, 22 )
+
+[node name="External1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -27, -14.5 )
+
+[node name="External2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 27, -14.5 )
+
+[node name="External3" type="Position2D" parent="."]
+
+transform/pos = Vector2( -28, 6.5 )
+
+[node name="External4" type="Position2D" parent="."]
+
+transform/pos = Vector2( 28, 6.5 )
+
+[node name="Internal1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -10, 1 )
+
+[node name="Internal2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 10, 1 )
+
+[node name="Missile1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -21, -40 )
+
+[node name="Missile2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 21, -40 )
+
+[node name="Missile3" type="Position2D" parent="."]
+
+transform/pos = Vector2( -30, -25 )
+
+[node name="Missile4" type="Position2D" parent="."]
+
+transform/pos = Vector2( -26, -28 )
+
+[node name="Missile5" type="Position2D" parent="."]
+
+transform/pos = Vector2( 25, -28 )
+
+[node name="Missile6" type="Position2D" parent="."]
+
+transform/pos = Vector2( 30, -25 )
+
+[node name="GrapplingHook1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -11, -13 )
+
+[node name="GrapplingHook2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 11, -13 )
+
+

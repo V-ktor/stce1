@@ -1,0 +1,151 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://images/ui/bar_missile_selected.png" type="Texture" id=1]
+[ext_resource path="res://images/ui/bar_missile_bg.png" type="Texture" id=2]
+[ext_resource path="res://images/ui/bar_missile_tt.png" type="Texture" id=3]
+[ext_resource path="res://images/ui/bar_missile_cd.png" type="Texture" id=4]
+[ext_resource path="res://images/ui/bar_missile_ammo.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[node name="Weapon" type="Panel"]
+
+rect/min_size = Vector2( 256, 47 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 256.0
+margin/bottom = 47.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+
+[node name="Selected" type="TextureFrame" parent="."]
+
+anchor/bottom = 1
+rect/min_size = Vector2( 47, 47 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 48.0
+margin/bottom = 0.0
+texture = ExtResource( 1 )
+stretch_mode = 0
+
+[node name="Icon" type="TextureFrame" parent="."]
+
+anchor/bottom = 1
+rect/min_size = Vector2( 48, 48 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 48.0
+margin/bottom = 0.0
+expand = true
+stretch_mode = 0
+
+[node name="TextureFrame" type="TextureFrame" parent="."]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+texture = ExtResource( 2 )
+stretch_mode = 0
+
+[node name="Targetting" type="TextureProgress" parent="."]
+
+anchor/right = 1
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 60.0
+margin/top = 2.0
+margin/right = 2.0
+margin/bottom = 11.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 100.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 3 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="Time" type="TextureProgress" parent="."]
+
+anchor/top = 3
+anchor/right = 1
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 60.0
+margin/top = 5.5
+margin/right = 19.0
+margin/bottom = -5.5
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 100.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 4 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="Ammo" type="TextureProgress" parent="."]
+
+anchor/top = 3
+anchor/right = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 60.0
+margin/top = -10.5
+margin/right = 35.0
+margin/bottom = 46.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 100.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 5 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+

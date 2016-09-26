@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://scripts/station_base.gd" type="Script" id=1]
+[ext_resource path="res://scripts/shader/station.tres" type="Shader" id=2]
+[ext_resource path="res://images/stations/farm01_n.png" type="Texture" id=3]
+[ext_resource path="res://images/stations/farm01_c.png" type="Texture" id=4]
+
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+shader/shader = ExtResource( 2 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 3 )
+shader_param/height = -75.0
+
+[node name="Farm01" type="Node2D"]
+
+visibility/light_mask = 4
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"2D" }
+docks = 2
+
+[node name="Base" type="Sprite" parent="."]
+
+visibility/light_mask = 4
+material/material = SubResource( 1 )
+z/z = -75
+texture = ExtResource( 4 )
+
+[node name="Position0" type="Position2D" parent="."]
+
+transform/pos = Vector2( 229.66, 21.6602 )
+transform/rot = -120.0
+
+[node name="Position" type="Position2D" parent="Position0"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position1" type="Position2D" parent="."]
+
+transform/pos = Vector2( 189.66, 89.6603 )
+transform/rot = -120.0
+
+[node name="Position" type="Position2D" parent="Position1"]
+
+transform/pos = Vector2( 0, -200 )
+
+

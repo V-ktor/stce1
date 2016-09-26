@@ -1,0 +1,196 @@
+[gd_scene load_steps=11 format=1]
+
+[ext_resource path="res://scripts/station_base.gd" type="Script" id=1]
+[ext_resource path="res://images/stations/station01_light.png" type="Texture" id=2]
+[ext_resource path="res://scripts/shader/station.tres" type="Shader" id=3]
+[ext_resource path="res://images/stations/shipyard_base_n.png" type="Texture" id=4]
+[ext_resource path="res://images/stations/shipyard_base_c.png" type="Texture" id=5]
+[ext_resource path="res://images/stations/shipyard_ring_n.png" type="Texture" id=6]
+[ext_resource path="res://images/stations/shipyard_ring_c.png" type="Texture" id=7]
+
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+shader/shader = ExtResource( 3 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 4 )
+shader_param/height = -75.0
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+shader/shader = ExtResource( 3 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 6 )
+shader_param/height = -75.0
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "rotate"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Ring1:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 31, 0 ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Ring2:frame")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0, 31 ] }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Ring3:frame")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 0, 2 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0, 31 ] }
+
+[node name="Shipyard" type="Node2D"]
+
+visibility/light_mask = 4
+script/script = ExtResource( 1 )
+__meta__ = { "__editor_plugin_screen__":"Script" }
+docks = 8
+
+[node name="Light" type="Light2D" parent="."]
+
+enabled = true
+texture = ExtResource( 2 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 0.235294, 0.533333, 0.807843, 1 )
+energy = 0.5
+mode = 0
+range/height = 40.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Base" type="Sprite" parent="."]
+
+visibility/light_mask = 4
+material/material = SubResource( 1 )
+z/z = -100
+texture = ExtResource( 5 )
+
+[node name="Ring1" type="Sprite" parent="."]
+
+visibility/light_mask = 4
+material/material = SubResource( 2 )
+z/z = -96
+texture = ExtResource( 7 )
+vframes = 4
+hframes = 8
+frame = 31
+
+[node name="Ring2" type="Sprite" parent="."]
+
+visibility/light_mask = 4
+material/material = SubResource( 2 )
+transform/pos = Vector2( 0, 332 )
+z/z = -96
+texture = ExtResource( 7 )
+vframes = 4
+hframes = 8
+
+[node name="Ring3" type="Sprite" parent="."]
+
+visibility/light_mask = 4
+material/material = SubResource( 2 )
+transform/pos = Vector2( 0, -332 )
+z/z = -96
+texture = ExtResource( 7 )
+vframes = 4
+hframes = 8
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/rotate = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "rotate"
+
+[node name="Position0" type="Position2D" parent="."]
+
+transform/pos = Vector2( -360, -540 )
+transform/rot = 90.0
+
+[node name="Position" type="Position2D" parent="Position0"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -360, -180 )
+transform/rot = 90.0
+
+[node name="Position" type="Position2D" parent="Position1"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position2" type="Position2D" parent="."]
+
+transform/pos = Vector2( -360, 180 )
+transform/rot = 90.0
+
+[node name="Position" type="Position2D" parent="Position2"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position3" type="Position2D" parent="."]
+
+transform/pos = Vector2( -360, 540 )
+transform/rot = 90.0
+
+[node name="Position" type="Position2D" parent="Position3"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position4" type="Position2D" parent="."]
+
+transform/pos = Vector2( 360, 540 )
+transform/rot = -90.0
+
+[node name="Position" type="Position2D" parent="Position4"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position5" type="Position2D" parent="."]
+
+transform/pos = Vector2( 360, 180 )
+transform/rot = -90.0
+
+[node name="Position" type="Position2D" parent="Position5"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position6" type="Position2D" parent="."]
+
+transform/pos = Vector2( 360, -180 )
+transform/rot = -90.0
+
+[node name="Position" type="Position2D" parent="Position6"]
+
+transform/pos = Vector2( 0, -200 )
+
+[node name="Position7" type="Position2D" parent="."]
+
+transform/pos = Vector2( 360, -540 )
+transform/rot = -90.0
+
+[node name="Position" type="Position2D" parent="Position7"]
+
+transform/pos = Vector2( 0, -200 )
+
+

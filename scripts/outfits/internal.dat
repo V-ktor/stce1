@@ -1,0 +1,281 @@
+{
+	"tag":"bas",
+	"type":"internal",
+	"size":"small",
+	"name":"SMALL_BATTERY",
+	"mass":0.8,
+	"price":100,
+	"sp":15,
+	"stress_dissipation":0.4,
+	"energy_active":80,
+	"grade":1,
+	"icon":"res://images/outfits/battery_small.png"
+}
+{
+	"tag":"bam",
+	"type":"internal",
+	"size":"medium",
+	"name":"MEDIUM_BATTERY",
+	"mass":2.5,
+	"price":400,
+	"sp":30,
+	"stress_dissipation":0.8,
+	"energy_active":200,
+	"grade":1,
+	"icon":"res://images/outfits/battery_medium.png"
+}
+{
+	"tag":"bal",
+	"type":"internal",
+	"size":"large",
+	"name":"LARGE_BATTERY",
+	"mass":7.5,
+	"price":1600,
+	"sp":70,
+	"stress_dissipation":1.6,
+	"energy_active":500,
+	"grade":1,
+	"icon":"res://images/outfits/battery_large.png"
+}
+{
+	"tag":"bah",
+	"type":"internal",
+	"size":"huge",
+	"name":"HUGE_BATTERY",
+	"mass":47.0,
+	"price":12500,
+	"sp":140,
+	"stress_dissipation":3.2,
+	"energy_active":2000,
+	"grade":1,
+	"icon":"res://images/outfits/battery_huge.png"
+}
+{
+	"tag":"shs",
+	"type":"internal",
+	"size":"small",
+	"name":"SMALL_SHIELD",
+	"mass":2.0,
+	"price":250,
+	"sp":20,
+	"stress_dissipation":0.5,
+	"armor_active":25,
+	"power_active":-2.0,
+	"heat_active":5,
+	"resistance_plasma_active":7.5,
+	"resistance_explosive_active":2.5,
+	"grade":1,
+	"icon":"res://images/outfits/shield01.png"
+}
+{
+	"tag":"shm",
+	"type":"internal",
+	"size":"medium",
+	"name":"MEDIUM_SHIELD",
+	"mass":6.0,
+	"price":1000,
+	"sp":40,
+	"stress_dissipation":1.0,
+	"armor_active":50,
+	"power_active":-6.0,
+	"heat_active":15,
+	"resistance_plasma_active":15.0,
+	"resistance_explosive_active":5.0,
+	"grade":1,
+	"icon":"res://images/outfits/shield02.png"
+}
+{
+	"tag":"shl",
+	"type":"internal",
+	"size":"large",
+	"name":"LARGE_SHIELD",
+	"mass":15.0,
+	"price":4000,
+	"sp":80,
+	"stress_dissipation":2.0,
+	"armor_active":100,
+	"power_active":-17.0,
+	"heat_active":45,
+	"resistance_plasma_active":30.0,
+	"resistance_explosive_active":10.0,
+	"grade":1,
+	"icon":"res://images/outfits/shield03.png"
+}
+{
+	"tag":"shh",
+	"type":"internal",
+	"size":"huge",
+	"name":"HUGE_SHIELD",
+	"mass":40.0,
+	"price":32000,
+	"sp":160,
+	"stress_dissipation":4.0,
+	"armor_active":250,
+	"power_active":-50.0,
+	"heat_active":135,
+	"resistance_plasma_active":60.0,
+	"resistance_explosive_active":20.0,
+	"grade":1,
+	"icon":"res://images/outfits/shield04.png"
+}
+{
+	"tag":"ces",
+	"type":"internal",
+	"size":"small",
+	"name":"SMALL_CARGO_EXPANSION",
+	"mass":1.0,
+	"price":100,
+	"sp":15,
+	"stress_dissipation":0.4,
+	"cargo_space":10,
+	"grade":1,
+	"icon":"res://images/outfits/cargo_small.png"
+}
+{
+	"tag":"cem",
+	"type":"internal",
+	"size":"medium",
+	"name":"MEDIUM_CARGO_EXPANSION",
+	"mass":3.0,
+	"price":400,
+	"sp":30,
+	"stress_dissipation":0.8,
+	"cargo_space":30,
+	"grade":1,
+	"icon":"res://images/outfits/cargo_medium.png"
+}
+{
+	"tag":"cel",
+	"type":"internal",
+	"size":"large",
+	"name":"LARGE_CARGO_EXPANSION",
+	"mass":9.0,
+	"price":1600,
+	"sp":70,
+	"stress_dissipation":1.6,
+	"cargo_space":90,
+	"grade":1,
+	"icon":"res://images/outfits/cargo_large.png"
+}
+{
+	"tag":"ceh",
+	"type":"internal",
+	"size":"huge",
+	"name":"HUGE_CARGO_EXPANSION",
+	"mass":27.0,
+	"price":4800,
+	"sp":140,
+	"stress_dissipation":3.2,
+	"cargo_space":270,
+	"grade":1,
+	"icon":"res://images/outfits/cargo_huge.png"
+}
+{
+	"tag":"bus",
+	"type":"internal",
+	"size":"small",
+	"name":"SMALL_BUNKS",
+	"mass":1.0,
+	"price":100,
+	"sp":15,
+	"stress_dissipation":0.4,
+	"bunks":2,
+	"grade":1,
+	"icon":"res://images/outfits/cargo_small.png"
+}
+{
+	"tag":"bum",
+	"type":"internal",
+	"size":"medium",
+	"name":"MEDIUM_BUNKS",
+	"mass":3.0,
+	"price":400,
+	"sp":30,
+	"stress_dissipation":0.8,
+	"bunks":4,
+	"grade":1,
+	"icon":"res://images/outfits/cargo_medium.png"
+}
+{
+	"tag":"bul",
+	"type":"internal",
+	"size":"large",
+	"name":"LARGE_BUNKS",
+	"mass":9.0,
+	"price":1600,
+	"sp":70,
+	"stress_dissipation":1.6,
+	"bunks":8,
+	"grade":1,
+	"icon":"res://images/outfits/cargo_large.png"
+}
+{
+	"tag":"buh",
+	"type":"internal",
+	"size":"large",
+	"name":"HUGE_BUNKS",
+	"mass":27.0,
+	"price":4800,
+	"sp":140,
+	"stress_dissipation":3.2,
+	"bunks":16,
+	"grade":1,
+	"icon":"res://images/outfits/cargo_huge.png"
+}
+{
+	"tag":"fcs",
+	"type":"internal",
+	"size":"small",
+	"name":"SMALL_FUEL_CELL",
+	"mass":1.5,
+	"price":125,
+	"sp":15,
+	"stress_dissipation":0.5,
+	"power_active":2.0,
+	"heat_active":4,
+	"grade":1,
+	"icon":"res://images/outfits/fuel_cell_small.png"
+}
+{
+	"tag":"fcm",
+	"type":"internal",
+	"size":"medium",
+	"name":"LARGE_FUEL_CELL",
+	"mass":4.5,
+	"price":500,
+	"sp":30,
+	"stress_dissipation":1.0,
+	"power_active":4.0,
+	"heat_active":12,
+	"grade":1,
+	"icon":"res://images/outfits/fuel_cell_medium.png"
+}
+{
+	"tag":"cld",
+	"type":"internal",
+	"size":"small",
+	"name":"COOLING_DUCTS",
+	"mass":3.0,
+	"price":100,
+	"sp":15,
+	"stress_dissipation":0.5,
+	"max_temperature":50,
+	"heat":-2.5,
+	"grade":1,
+	"icon":"res://images/outfits/cooling_ducts.png"
+}
+{
+	"tag":"res",
+	"type":"internal",
+	"size":"medium",
+	"name":"REPAIR_BOT",
+	"mass":3.0,
+	"price":500,
+	"sp":35,
+	"stress_dissipation":1.0,
+	"repair_active":1.0,
+	"power_active":-3.0,
+	"heat_active":5,
+	"grade":2,
+	"icon":"res://images/outfits/repair_bot01.png"
+}
