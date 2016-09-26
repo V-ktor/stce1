@@ -673,9 +673,3 @@ func _ready():
 	show_menu()
 	
 	load_settings()
-	
-	
-#	var list1 = ["infinite","frozen","eternal","dark","stellar"]
-#	var list2 = ["star","sky","space"]
-#	for i in range(10):
-#		print(list1[randi()%(list1.size())]+" "+list2[randi()%(list2.size())])

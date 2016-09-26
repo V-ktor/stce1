@@ -1571,7 +1571,7 @@ custom_styles/focus = SubResource( 37 )
 custom_styles/normal = SubResource( 38 )
 placeholder/alpha = 0.6
 focus_mode = 2
-caret/caret_blink = false
+caret/caret_blink = true
 caret/caret_blink_speed = 0.65
 __meta__ = { "_edit_lock_":true }
 
@@ -2977,7 +2977,7 @@ custom_styles/normal = SubResource( 59 )
 placeholder/text = "FIRST"
 placeholder/alpha = 0.6
 focus_mode = 2
-caret/caret_blink = false
+caret/caret_blink = true
 caret/caret_blink_speed = 0.65
 
 [node name="Space" type="Control" parent="New/ScrollContainer/VBoxContainer/Name/HBoxContainer"]
@@ -3024,7 +3024,7 @@ custom_styles/normal = SubResource( 59 )
 placeholder/text = "LAST"
 placeholder/alpha = 0.6
 focus_mode = 2
-caret/caret_blink = false
+caret/caret_blink = true
 caret/caret_blink_speed = 0.65
 
 [node name="Ship" type="Panel" parent="New/ScrollContainer/VBoxContainer"]
