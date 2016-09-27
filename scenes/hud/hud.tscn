@@ -1425,7 +1425,6 @@ radial_fill/center_offset = Vector2( 0, 0 )
 
 [node name="Station" type="Panel" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 visibility/light_mask = 0
 anchor/right = 1
@@ -1497,7 +1496,7 @@ size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 150.0
-margin/bottom = 65.0
+margin/bottom = 57.0
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 16 )
 custom_styles/focus = SubResource( 17 )
@@ -1516,29 +1515,13 @@ focus/stop_mouse = true
 size_flags/horizontal = -2147483645
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 71.0
+margin/top = 63.0
 margin/right = 150.0
-margin/bottom = 136.0
+margin/bottom = 120.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "BAR"
-flat = false
-
-[node name="Button_map" type="Button" parent="Station/VBoxContainer"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = -2147483645
-size_flags/vertical = 3
-margin/left = 0.0
-margin/top = 142.0
-margin/right = 150.0
-margin/bottom = 207.0
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-text = "MAP"
 flat = false
 
 [node name="Button_trader" type="Button" parent="Station/VBoxContainer"]
@@ -1548,13 +1531,45 @@ focus/stop_mouse = true
 size_flags/horizontal = -2147483645
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 213.0
+margin/top = 126.0
 margin/right = 150.0
-margin/bottom = 278.0
+margin/bottom = 183.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "TRADE"
+flat = false
+
+[node name="Button_map" type="Button" parent="Station/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = -2147483645
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 189.0
+margin/right = 150.0
+margin/bottom = 246.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "MAP"
+flat = false
+
+[node name="Button_missions" type="Button" parent="Station/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = -2147483645
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 252.0
+margin/right = 150.0
+margin/bottom = 309.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "MISSIONS"
 flat = false
 
 [node name="Button_outfitter" type="Button" parent="Station/VBoxContainer"]
@@ -1564,9 +1579,9 @@ focus/stop_mouse = true
 size_flags/horizontal = -2147483645
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 284.0
+margin/top = 315.0
 margin/right = 150.0
-margin/bottom = 349.0
+margin/bottom = 372.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1580,9 +1595,9 @@ focus/stop_mouse = true
 size_flags/horizontal = -2147483645
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 355.0
+margin/top = 378.0
 margin/right = 150.0
-margin/bottom = 420.0
+margin/bottom = 435.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1596,9 +1611,9 @@ focus/stop_mouse = true
 size_flags/horizontal = -2147483645
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 426.0
+margin/top = 441.0
 margin/right = 150.0
-margin/bottom = 491.0
+margin/bottom = 498.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1612,7 +1627,7 @@ focus/stop_mouse = true
 size_flags/horizontal = -2147483645
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 497.0
+margin/top = 504.0
 margin/right = 150.0
 margin/bottom = 568.0
 custom_styles/hover = SubResource( 20 )
@@ -1715,7 +1730,7 @@ margin/left = -8.0
 margin/top = 5.0
 margin/right = -1.0
 margin/bottom = 32.0
-text = "Overview"
+text = "OVERVIEW"
 align = 1
 valign = 1
 clip_text = true
@@ -1811,7 +1826,7 @@ margin/left = -8.0
 margin/top = 5.0
 margin/right = -1.0
 margin/bottom = 32.0
-text = "Bar"
+text = "BAR"
 align = 1
 valign = 1
 clip_text = true
@@ -2060,7 +2075,7 @@ margin/left = -8.0
 margin/top = 5.0
 margin/right = -1.0
 margin/bottom = 32.0
-text = "Trade"
+text = "TRADE"
 align = 1
 valign = 1
 clip_text = true
@@ -2361,7 +2376,7 @@ margin/left = -8.0
 margin/top = 5.0
 margin/right = -1.0
 margin/bottom = 32.0
-text = "Equipment"
+text = "EQUIPMENT"
 align = 1
 valign = 1
 clip_text = true
@@ -2478,7 +2493,7 @@ margin/left = -8.0
 margin/top = 5.0
 margin/right = -1.0
 margin/bottom = 32.0
-text = "Shipyard"
+text = "SHIPYARD"
 align = 1
 valign = 1
 clip_text = true
@@ -2685,7 +2700,231 @@ margin/left = -8.0
 margin/top = 5.0
 margin/right = -1.0
 margin/bottom = 32.0
-text = "Crew"
+text = "CREW"
+align = 1
+valign = 1
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Missions" type="Panel" parent="Station"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 8.0
+margin/top = 8.0
+margin/right = 8.0
+margin/bottom = 8.0
+custom_styles/panel = SubResource( 25 )
+
+[node name="ViewportSprite" type="ViewportSprite" parent="Station/Missions"]
+
+visibility/light_mask = 0
+transform/pos = Vector2( -8, -8 )
+viewport = NodePath("../../../Map/Map")
+centered = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Station/Missions"]
+
+anchor/left = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 200.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+scroll/horizontal = false
+scroll/vertical = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Station/Missions/ScrollContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 11.0
+alignment = 0
+
+[node name="Accepted" type="VBoxContainer" parent="Station/Missions/ScrollContainer/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 0.0
+alignment = 0
+
+[node name="HSeparator" type="HSeparator" parent="Station/Missions/ScrollContainer/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 4.0
+margin/bottom = 3.0
+
+[node name="Available" type="VBoxContainer" parent="Station/Missions/ScrollContainer/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 0.0
+alignment = 0
+
+[node name="Mission0" type="Panel" parent="Station/Missions/ScrollContainer/VBoxContainer/Available"]
+
+visibility/visible = false
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 48.0
+
+[node name="Text" type="Label" parent="Station/Missions/ScrollContainer/VBoxContainer/Available/Mission0"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 2.0
+margin/top = 2.0
+margin/right = 2.0
+margin/bottom = 2.0
+text = "mission name\nline 2"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Button" type="Button" parent="Station/Missions/ScrollContainer/VBoxContainer/Available/Mission0"]
+
+visibility/self_opacity = 0.0
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[node name="Text" type="RichTextLabel" parent="Station/Missions"]
+
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 0.0
+bbcode/enabled = false
+bbcode/bbcode = ""
+visible_characters = -1
+
+[node name="ButtonAccept" type="Button" parent="Station/Missions"]
+
+anchor/top = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 32.0
+margin/right = 128.0
+margin/bottom = 0.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "ACCEPT_MISSION"
+flat = false
+
+[node name="ButtonAbord" type="Button" parent="Station/Missions"]
+
+anchor/top = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 128.0
+margin/top = 32.0
+margin/right = 256.0
+margin/bottom = 0.0
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "ABORD_MISSION"
+flat = false
+
+[node name="Title" type="Panel" parent="Station/Missions"]
+
+visibility/behind_parent = true
+anchor/left = 1
+anchor/right = 1
+focus/ignore_mouse = true
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 111.0
+margin/top = -40.0
+margin/right = -3.0
+margin/bottom = 26.0
+custom_styles/panel = SubResource( 26 )
+
+[node name="Label" type="Label" parent="Station/Missions/Title"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -8.0
+margin/top = 5.0
+margin/right = -1.0
+margin/bottom = 32.0
+text = "MISSIONS"
 align = 1
 valign = 1
 clip_text = true
@@ -3628,9 +3867,11 @@ visibility/visible = false
 
 [connection signal="pressed" from="Station/VBoxContainer/Button_bar" to="Station" method="show_bar"]
 
+[connection signal="pressed" from="Station/VBoxContainer/Button_trader" to="Station" method="show_trade"]
+
 [connection signal="pressed" from="Station/VBoxContainer/Button_map" to="Station" method="show_map"]
 
-[connection signal="pressed" from="Station/VBoxContainer/Button_trader" to="Station" method="show_trade"]
+[connection signal="pressed" from="Station/VBoxContainer/Button_missions" to="Station" method="show_missions"]
 
 [connection signal="pressed" from="Station/VBoxContainer/Button_outfitter" to="Station" method="show_equipment"]
 
@@ -3679,6 +3920,10 @@ visibility/visible = false
 [connection signal="pressed" from="Station/Crew/ButtonHire" to="Station" method="hire_crew"]
 
 [connection signal="pressed" from="Station/Crew/ButtonFire" to="Station" method="fire_crew"]
+
+[connection signal="pressed" from="Station/Missions/ButtonAccept" to="Station" method="accept_mission"]
+
+[connection signal="pressed" from="Station/Missions/ButtonAbord" to="Station" method="abord_mission"]
 
 [connection signal="pressed" from="Station/Map/Commodities/VBoxContainer/Button1" to="Station" method="select_commodity" binds= [ "food" ]]
 

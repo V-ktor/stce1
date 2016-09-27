@@ -125,7 +125,7 @@ func _process(delta):
 			HUD.get_node("Map/Map/Nav").hide()
 	for i in range(get_node("/root/Main").num_planets):
 		get_node("Map/Map/Planet"+str(i+1)).set_pos((get_node("/root/Main/Planet"+str(i+1)+"/Planet").get_global_pos())*map_scale*map_zoom+center)
-		get_node("Map/Map/Planet"+str(i+1)).set_scale(map_scale*75*Vector2(1,1))
+		get_node("Map/Map/Planet"+str(i+1)).set_scale(map_scale*100*Vector2(1,1))
 		get_node("Map/Map/Planet"+str(i+1)).set_rot(get_node("/root/Main/Planet"+str(i+1)).get_rot())
 	var c = get_node("Station").commodity
 	for s in Stations.stations:

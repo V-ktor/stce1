@@ -1,0 +1,210 @@
+,en
+RESUME,resume
+NEW_GAME,new game
+LOAD,load
+SAVE,save
+OPTIONS,options,
+QUIT,quit
+QUIT?,Quit?
+OK,OK
+Cancel,Cancel
+VIDEO,video
+RESOLUTION,resolution
+FULLSCREEN,fullscreen
+AUDIO,audio
+SOUNDS,sounds
+MUSIC,music
+ENABLED,enabled
+VOLUME,volume
+GAME,game
+DIFFICULTY,difficulty
+KEY_BINDINGS,key bindings
+ADD,add
+REMOVE,remove
+ADD_KEY_BIND,add key bind
+PRESS_KEY,press key
+BOARDING,boarding
+shoot,shoot (primary)
+shoot_secondary,shoot (secondary)
+launch_missile,launch missile
+missile_cycle_up,cycle missile up
+missile_cycle_down,cycle missile down
+thrust,thrust
+reverse_thrust,reverse thrust
+land,land
+board,board
+time_speedup,time speedup
+show_map,show map
+zoom_in,zoom in
+zoom_out,zoom out
+weapon_group_1,weapon group 1
+weapon_group_2,weapon group 2
+weapon_group_3,weapon group 3
+weapon_group_4,weapon group 4
+ERROR,Error!
+AUTOSAVE,autosave
+WARNING,Warning!
+NAME,name
+FIRST,first
+LAST,last
+SHIP,ship
+FIGHTER,Figter
+FREIGHTER,Freighter
+TRANSPORTER,Transporter
+food,food
+metal,metal
+energy_cells,energy cells
+electronics,electronics
+luxury_goods,luxury goods
+chemicals,chemicals
+radioactives,radioactives
+oxygen,oxygen
+textiles,textiles
+medicine,medicine
+industrial,industrial
+WEAPONS,weapons
+TURRETS,turrets
+MISSILES,missiles
+REACTORS,reactors
+ENGINES,engines
+HULL,hull
+COMMODITIES,commodities
+OVERVIEW,overview
+BAR,spaceport bar
+MISSIONS,mission board
+MAP,map
+TRADE,trade
+EQUIPMENT,equipment
+SHIPYARD,shipyard
+CREW,crew
+PASSENGERS,passengers
+TAKE_OFF,take off
+STRUCTURE,structure
+ENERGY,energy
+TEMPERATURE,temperature
+DISABLE,disable
+SLOTS,slots
+SHIP_CLASS,ship class
+mass,mass
+price,price
+dmg_type,damage type
+armor,armor
+repair,repair
+stress_dissipation,stress dissipation
+energy,energy
+power,power
+firing_energy,firing energy
+enps,firing energy
+min_power,min. power
+min_temperature,min. temperature
+max_temperature,max. temperature
+heat,produced heat
+heat_dissipation,heat dissipation
+min_heat,min. heat
+max_heat,max. heat
+firing_heat,firing heat
+htps,firing heat
+thrust,thrust
+acceleration,acceleration
+max_velocity,max. velocity
+steering,steering
+turning_speed,turning speed
+rotation_speed,rotation speed
+damping,damping
+damage,damage
+disable,disable
+impact_heat,heat on impact
+dmgps,damage
+disps,disable
+ihtps,heat on impact
+fire_rate,fire rate
+spread,spread
+speed,projectile speed
+rays,rays
+life_time,life time
+cargo_space,cargo space
+resistance_impact,impact resistance
+resistance_plasma,plasma resistance
+resistance_explosive,explosive resistance
+impact,impact
+plasma,plasma
+exlposive,explosive
+ammo,ammo
+radar_range,radar range
+stealth,stealth
+min_crew,min. crew
+bunks,bunks
+FREE_BUNKS,free bunks
+BEAM_WEAPON,beam weapon
+ATTACK_STRENGTH,attack strength
+DEFENSE_STRENGTH,defense strength
+NUM_WEAPONS,weapons
+NUM_TURRETS,turrets
+NUM_MISSILES,missiles
+AMMOUNT,ammount
+REQUIRES,requires
+weapon_small,small weapon slot
+weapon_medium,medium weapon slot
+weapon_large,large weapon slot
+weapon_huge,huge weapon slot
+reactor_small,small reactor slot
+reactor_medium,medium reactor slot
+reactor_large,large reactor slot
+reactor_huge,huge reactor slot
+engine_small,small engine slot
+engine_medium,medium engine slot
+engine_large,large engine slot
+engine_huge,huge engine slot
+internal_small,small internal slot
+internal_medium,medium internal slot
+internal_large,large internal slot
+internal_huge,huge internal slot
+external_small,small external slot
+external_medium,medium external slot
+external_large,large external slot
+external_huge,huge external slot
+turret_small,small turret slot
+turret_medium,medium turret slot
+turret_large,large turret slot
+turret_huge,huge turret slot
+missile_small,small missile slot
+missile_medium,medium missile slot
+missile_large,large missile slot
+missile_huge,huge missile slot
+CLASS_SCOUT,scout
+CLASS_LIGHT_FIGHTER,light fighter
+CLASS_FIGHTER,fighter
+CLASS_HEAVY_FIGHTER,heavy fighter
+CLASS_BOMBER,bomber
+CLASS_CORVETTE,corvette
+CLASS_DESTROYER,destroyer
+NOT_ENOUGH_CARGO_SPACE,Not enough cargo space!
+NOT_ENOUGH_POWER,Not enough power!
+NOT_ENOUGH_CAPACITY,Not enough capacity!
+NOT_ENOUGH_ACCELERATION,Not enough acceleration!
+OVERHEATING,Overheating!
+NO_SHIP,You can't start without a ship!
+ATTACK,attack
+DEFEND,defend
+UNDOCK,undock
+THE_AIRLOCK_BLASTS_OPEN,The airlock blasts open.
+YOU_ARE_READY_TO_ATTACK,You are ready to attack.
+YOU_ARE_BEEING_ATTACKED,You are attacked by
+LOOTABLE_OUTFITS,lootable outfits
+ENEMY_STARTS_ATTACKING,The enemy starts attacking.
+ENEMY_STOPS_ATTACK,The enemy stops the attack.
+GAINED,gained
+ACQUIRED,acquired
+LOST,lost
+HAS_BEEN_STOLEN,has been stolen
+FREE,free
+YOU_ARE_DEFEATED,You are defeated.
+ENEMY_HAS_BEEN_DEFEATED,The enemy has been defeated.
+LOST_CREW,You lost a crewman.
+DEFEATED_ENEMY_CREW,You defeated an enemy crewman.
+ENEMY_PREVENTS_YOU_FROM_DETACHING_DOCKING_CLAMPS,The enemy prevents you from detaching the docking clamps!
+ACCEPT_MISSION,accept mission
+ABORD_MISSION,abord mission
+TRANSPORT,transport
+OF,of
+TO,to

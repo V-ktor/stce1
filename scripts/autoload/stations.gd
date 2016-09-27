@@ -8,7 +8,7 @@ const BAR = 3
 const SHIPYARD = 4
 const MAP = 5
 const CREW = 6
-const services = ["bar","trader","outfitter","shipyard","crew"]
+const services = ["bar","trader","missions","outfitter","shipyard","crew"]
 
 
 var stations = []
@@ -129,9 +129,10 @@ func player_landed(autosave=true):
 	if (autosave):
 		get_node("/root/Menu")._autosave()
 	
+	Missions.create_random_missions()
+	HUD.get_node("Station").update_missions()
 	if (get_node("/root/Main").has_method("landed")):
 		get_node("/root/Main").landed()
-	
 	emit_signal("player_landed",Player.station)
 	Missions.landed(Player.station)
 

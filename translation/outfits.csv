@@ -1,0 +1,93 @@
+,en
+DISCOVERER,Discoverer
+EXPLORER,Explorer
+SCOUT,Scout
+MILITARY_SCOUT,Republic Scout
+DELTA,Delta
+RAPTOR,Raptor
+MILITARY_RAPTOR,Republic Raptor
+SHARK,Shark
+Military Shark,Republic Shark
+HAWK,Hawk
+MILITARY_HAWK,Republic Hawk
+RAZOR,Razor
+DAGGER,Dagger
+MACE,Mace
+PARTICLE_ACCELERATOR,Particle Accelerator
+CHAIN_GUN,Chain Gun
+PLASMA_GUN,Plasma Gun
+PLASMA_CANNON,Plasma Cannon
+PLASMA_BEAM,Plasma Beam
+LASER,Laser
+ELECTRON_BEAM,Electron Beam
+SCATTER_GUN,Scatter Gun
+FLAME_THROWER,Flame Thrower
+PARTICLE_BEAM_GUN,Particle Beam Gun
+PARTICLE_BEAM_CANNON,Particle Beam Cannon
+GRENADE_LAUNCHER,Grenade Launcher
+VULCAN_GUN,Vulcan Gun
+SHREDDER,Shredder
+SEEKER_GUN,Seeker Gun
+ION_GUN,Ion Gun
+ION_CANNON,Ion Cannon
+MASS_DRIVER,Mass Driver
+RAIL_GUN,Rail Gun
+CHAIN_GUN_TURRET,Turreted Chain Gun
+PLASMA_TURRET,Plasma Turret
+ANTI_MISSILE_LASER,Anti-Missile Laser Turret
+FLAK,Flak
+ELECTRON_BEAM_TURRET,Electron Beam Turret
+DART,Dart
+MISSILE,Missile
+JAVELIN,Javelin
+METEOR,Meteor
+SIDEWINDER,Sidewinder
+REACTOR_SMALL,Small Reactor
+REACTOR_MEDIUM,Medium Reactor
+REACTOR_LARGE,Large Reactor
+REACTOR_HUGE,Huge Reactor
+SMALL_ENGINE,Small Engine
+MEDIUM_ENGINE,Medium Engine
+LARGE_ENGINE,Large Engine
+HUGE_ENGINE,Huge Engine
+SMALL_BATTERY,Small Battery
+MEDIUM_BATTERY,Medium Battery
+LARGE_BATTERY,Large Battery
+HUGE_BATTERY,Huge Battery
+SMALL_SHIELD,Small Shield
+MEDIUM_SHIELD,Medium Shield
+LARGE_SHIELD,Large Shield
+HUGE_SHIELD,Huge Shield
+SMALL_CARGO_EXPANSION,Small Cargo Expansion
+MEDIUM_CARGO_EXPANSION,Medium Cargo Expansion
+LARGE_CARGO_EXPANSION,Large Cargo Expansion
+HUGE_CARGO_EXPANSION,Huge Cargo Expansion
+SMALL_BUNKS,Small Bunk Room
+MEDIUM_BUNKS,Medium Bunk Room
+LARGE_BUNKS,Large Bunk Room
+HUGE_BUNKS,Huge Bunk Room
+SMALL_FUEL_CELL,Fuel Cell
+LARGE_FUEL_CELL,Large Fuel Cell
+COOLING_DUCTS,Cooling Ducts
+REPAIR_BOT,Repair Bot
+SMALL_STEEL_PLATING,Steel Armour Plating
+MEDIUM_STEEL_PLATING,Steel Armour Plating
+LARGE_STEEL_PLATING,Steel Armour Plating
+HUGE_STEEL_PLATING,Steel Armour Plating
+SMALL_POLYMERE_PLATING,Polymere Armour Plating
+MEDIUM_POLYMERE_PLATING,Polymere Armour Plating
+LARGE_POLYMERE_PLATING,Polymere Armour Plating
+HUGE_POLYMERE_PLATING,Polymere Armour Plating
+SOLAR_PANELS,Solar Panels
+SMALL_STEERING_THRUSTER,Steering Thruster
+MEDIUM_STEERING_THRUSTER,Steering Thruster
+LARGE_STEERING_THRUSTER,Steering Thruster
+HUGE_STEERING_THRUSTER,Steering Thruster
+SMALL_BOOSTERS,Booster
+MEDIUM_BOOSTERS,Booster
+LARGE_BOOSTERS,Booster
+HUGE_BOOSTERS,Booster
+SMALL_SCANNER,Scanner
+MEDIUM_SCANNER,Scanner
+LARGE_SCANNER,Scanner
+HUGE_SCANNER,Scanner
