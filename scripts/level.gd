@@ -881,7 +881,7 @@ func _ready():
 			Stations.stations_fr[s] = 0.0
 			Stations.stations_visible[s] = false
 			var station_planet = s.split("/")[0]
-			if (has_node(station_planet) && get_node(station_planet).has_meta("fr")):
+			if (has_node(station_planet)):
 				Stations.stations_fr[s] = get_node(station_planet).fr
 		
 		Stations.stations_price[s] = {}
@@ -895,9 +895,6 @@ func _ready():
 		HUD.get_node("Map/Map").add_child(icon)
 		icon.show()
 		Stations.stations_icons[s] = icon
-	
-	Economy.update_station_prices()
-	HUD._resize()
 	
 	for c in Economy.commodities:
 		var prod = 0

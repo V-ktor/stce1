@@ -15,7 +15,7 @@ func disable_pause():
 	Economy.get_node("TimerEconomyUpdate").set_active(true)
 
 func _process(delta):
-	time += delta*(!pause)
+	time += delta
 
 func _ready():
 	set_process(true)

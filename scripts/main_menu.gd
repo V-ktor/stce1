@@ -88,7 +88,8 @@ func load_done():
 		return
 	
 	get_node("/root").add_child(li)
-	
+	Economy.update_station_prices()
+	HUD._resize()
 	Stations.player_land(Player.station,Player.dock)
 	Stations.player_landed(false)
 	Stations.get_node("TimerLand").stop()
@@ -174,14 +175,13 @@ func _load():
 				Stations.stations_visible = currentline["station_visible"]
 				for s in Stations.stations:
 					var pos = Stations.stations_pos[s].split(", ")
-					Stations.stations_pos[s] = Vector2(pos[0].substr(1,pos[0].length()),pos[0].substr(0,pos[0].length()-1))
+					Stations.stations_pos[s] = Vector2(pos[0].substr(1,pos[0].length()),pos[1].substr(0,pos[1].length()-1))
 				Stations.stations_fr = currentline["stations_fr"]
 			if (currentline.has("missions")):
 				Missions.missions = currentline["missions"]
 				Missions.missions_finished = currentline["missions_finished"]
 #			if (currentline.has("")):
 #				Player. = currentline[""]
-			
 			
 	else:
 		get_node("Files/Error").popup()

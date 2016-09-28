@@ -245,7 +245,7 @@ func select_mission_available(ID):
 	get_node("Missions/Text").clear()
 	get_node("Missions/Text").add_text(Missions.missions_available[ID]["description"])
 	HUD.map_zoom = 20.0
-	HUD.map_center = -HUD.map_scale*HUD.map_zoom*Stations.stations_pos[Missions.missions_available[ID]["destination"]]
+	HUD.map_center = -HUD.map_scale*HUD.map_zoom*Stations.stations_current_pos[Missions.missions_available[ID]["destination"]]
 	HUD.get_node("Map/Map/Draw").update()
 
 func select_mission(ID):
@@ -255,10 +255,11 @@ func select_mission(ID):
 	get_node("Missions/Text").clear()
 	get_node("Missions/Text").add_text(Missions.missions[ID]["description"])
 	HUD.map_zoom = 20.0
-	HUD.map_center = -HUD.map_scale*HUD.map_zoom*Stations.stations_pos[Missions.missions[ID]["destination"]]
+	HUD.map_center = -HUD.map_scale*HUD.map_zoom*Stations.stations_current_pos[Missions.missions[ID]["destination"]]
 	HUD.get_node("Map/Map/Draw").update()
 
 func update_missions():
+	deselect_mission()
 	for i in range(Missions.missions_available.size()):
 		if (!has_node("Missions/ScrollContainer/VBoxContainer/Available/Mission"+str(i+1))):
 			var bi = get_node("Missions/ScrollContainer/VBoxContainer/Available/Mission0").duplicate()
@@ -281,7 +282,6 @@ func update_missions():
 			bi.set_name("Mission"+str(i+1))
 			get_node("Missions/ScrollContainer/VBoxContainer/Accepted").add_child(bi)
 			bi.show()
-			print(bi)
 		else:
 			var bi = get_node("Missions/ScrollContainer/VBoxContainer/Accepted/Mission"+str(i+1))
 			bi.get_node("Text").set_text(Missions.missions[i]["name"])

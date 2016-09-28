@@ -32,19 +32,17 @@ var stations_icons = {}
 var stations_pos = {}
 var stations_fr = {}
 var stations_visible = {}
+var stations_current_pos = {}
 
 
-var cursor_cross = load("res://images/UI/cursor_cross.png")
-var cursor_normal = load("res://images/UI/cursor.png")
+var cursor_cross = preload("res://images/UI/cursor_cross.png")
+var cursor_normal = preload("res://images/UI/cursor.png")
 
 
 
-func get_station_positions():
-	var positions = {}
+func update_station_positions():
 	for s in stations:
-		positions[s] = stations_pos[s].rotated(stations_fr[s]*Time.time)
-	return positions
-
+		stations_current_pos[s] = stations_pos[s].rotated(stations_fr[s]*Time.time)
 
 # dock to station
 func land(station,dock,ship):
@@ -129,12 +127,13 @@ func player_landed(autosave=true):
 	if (autosave):
 		get_node("/root/Menu")._autosave()
 	
+	update_station_positions()
 	Missions.create_random_missions()
-	HUD.get_node("Station").update_missions()
 	if (get_node("/root/Main").has_method("landed")):
 		get_node("/root/Main").landed()
 	emit_signal("player_landed",Player.station)
 	Missions.landed(Player.station)
+	HUD.get_node("Station").update_missions()
 
 # start from a station
 func take_off(station,dock,ship,equipment,inventory,script,faction,name,crew):

@@ -29,8 +29,8 @@ var update_cycles = 0
 
 func update():
 	# calculate positions of planets and stations
-	var stations_pos = Stations.get_station_positions()
 	print("economy update")
+	Stations.update_station_positions()
 	
 	# trade
 	for s in Stations.stations:
@@ -40,7 +40,7 @@ func update():
 			trade[k] = {}
 		for to in Stations.stations:
 			if (s!=to):
-				var dist = stations_pos[s].distance_squared_to(stations_pos[to])/50000000.0
+				var dist = Stations.stations_current_pos[s].distance_squared_to(Stations.stations_current_pos[to])/50000000.0
 				for k in commodities:
 					if (Stations.stations_cargo[s].has(k) && Stations.stations_cargo[to].has(k)):
 						trade[k][to] = 1.0*max(Stations.stations_price[to][k]-Stations.stations_price[s][k],0)/price_range[k]*Stations.stations_cargo[to][k]*1000.0/dist/dist
