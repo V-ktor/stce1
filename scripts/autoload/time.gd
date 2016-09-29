@@ -16,6 +16,3 @@ func disable_pause():
 
 func _process(delta):
 	time += delta
-
-func _ready():
-	set_process(true)

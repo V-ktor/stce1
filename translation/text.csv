@@ -71,7 +71,7 @@ HULL,hull
 COMMODITIES,commodities
 OVERVIEW,overview
 BAR,spaceport bar
-MISSIONS,mission board
+MISSIONS,job board
 MAP,map
 TRADE,trade
 EQUIPMENT,equipment
@@ -205,6 +205,6 @@ DEFEATED_ENEMY_CREW,You defeated an enemy crewman.
 ENEMY_PREVENTS_YOU_FROM_DETACHING_DOCKING_CLAMPS,The enemy prevents you from detaching the docking clamps!
 ACCEPT_MISSION,accept mission
 ABORD_MISSION,abord mission
-TRANSPORT,transport
-OF,of
-TO,to
+MISSION_ACCEPTED,Mission Accepted!
+MISSION_SUCCESSFUL,Mission Successful!
+MISSION_FAILED,Mission Failed!

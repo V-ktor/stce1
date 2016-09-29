@@ -223,6 +223,7 @@ func accept_mission():
 	Missions.call(Missions.missions_available[mission_selected]["on_accept"],mission_selected)
 	update_missions()
 	deselect_mission()
+	Equipment.update_icons()
 
 func abord_mission():
 	Missions.call(Missions.missions_available[mission_selected]["on_abord"],mission_selected)
@@ -239,8 +240,19 @@ func deselect_mission():
 	HUD.get_node("Map/Map/Draw").update()
 
 func select_mission_available(ID):
+	var disabled = false
+	var req = Missions.missions_available[ID]["requirements"]
+	for k in req.keys():
+		if (k=="free_cargo"):
+			if (Player.free_cargo_space<req[k]):
+				disabled = true
+				break
+		elif (k=="free_bunks"):
+			if (Player.free_bunks<req[k]):
+				disabled = true
+				break
 	mission_selected = ID
-	get_node("Missions/ButtonAccept").set_disabled(false)
+	get_node("Missions/ButtonAccept").set_disabled(disabled)
 	get_node("Missions/ButtonAbord").set_disabled(true)
 	get_node("Missions/Text").clear()
 	get_node("Missions/Text").add_text(Missions.missions_available[ID]["description"])
@@ -263,28 +275,28 @@ func update_missions():
 	for i in range(Missions.missions_available.size()):
 		if (!has_node("Missions/ScrollContainer/VBoxContainer/Available/Mission"+str(i+1))):
 			var bi = get_node("Missions/ScrollContainer/VBoxContainer/Available/Mission0").duplicate()
-			bi.get_node("Text").set_text(Missions.missions_available[i]["name"])
+			bi.get_node("Text").set_text(Missions.missions_available[i]["title"])
 			bi.get_node("Button").connect("pressed",self,"select_mission_available",[i])
 			bi.set_name("Mission"+str(i+1))
 			get_node("Missions/ScrollContainer/VBoxContainer/Available").add_child(bi)
 			bi.show()
 		else:
 			var bi = get_node("Missions/ScrollContainer/VBoxContainer/Available/Mission"+str(i+1))
-			bi.get_node("Text").set_text(Missions.missions_available[i]["name"])
+			bi.get_node("Text").set_text(Missions.missions_available[i]["title"])
 	for i in range(Missions.missions_available.size(),get_node("Missions/ScrollContainer/VBoxContainer/Available").get_child_count()-1):
 		get_node("Missions/ScrollContainer/VBoxContainer/Available/Mission"+str(i+1)).queue_free()
 	
 	for i in range(Missions.missions.size()):
 		if (!has_node("Missions/ScrollContainer/VBoxContainer/Accepted/Mission"+str(i+1))):
 			var bi = get_node("Missions/ScrollContainer/VBoxContainer/Available/Mission0").duplicate()
-			bi.get_node("Text").set_text(Missions.missions[i]["name"])
+			bi.get_node("Text").set_text(Missions.missions[i]["title"])
 			bi.get_node("Button").connect("pressed",self,"select_mission",[i])
 			bi.set_name("Mission"+str(i+1))
 			get_node("Missions/ScrollContainer/VBoxContainer/Accepted").add_child(bi)
 			bi.show()
 		else:
 			var bi = get_node("Missions/ScrollContainer/VBoxContainer/Accepted/Mission"+str(i+1))
-			bi.get_node("Text").set_text(Missions.missions[i]["name"])
+			bi.get_node("Text").set_text(Missions.missions[i]["title"])
 	for i in range(Missions.missions.size(),get_node("Missions/ScrollContainer/VBoxContainer/Accepted").get_child_count()):
 		get_node("Missions/ScrollContainer/VBoxContainer/Accepted/Mission"+str(i+1)).queue_free()
 

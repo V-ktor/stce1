@@ -1404,10 +1404,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 48.0
-margin/top = 48.0
-margin/right = 0.0
-margin/bottom = 0.0
+margin/left = 50.0
+margin/top = 50.0
+margin/right = 2.0
+margin/bottom = 2.0
 range/min = 1.0
 range/max = 10.0
 range/step = 1.0
@@ -1425,6 +1425,7 @@ radial_fill/center_offset = Vector2( 0, 0 )
 
 [node name="Station" type="Panel" parent="."]
 
+editor/display_folded = true
 visibility/visible = false
 visibility/light_mask = 0
 anchor/right = 1
@@ -2710,6 +2711,8 @@ max_lines_visible = -1
 
 [node name="Missions" type="Panel" parent="Station"]
 
+editor/display_folded = true
+visibility/visible = false
 anchor/right = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -2776,9 +2779,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
-margin/right = 4.0
-margin/bottom = 3.0
+margin/top = 4.0
+margin/right = 200.0
+margin/bottom = 7.0
 
 [node name="Available" type="VBoxContainer" parent="Station/Missions/ScrollContainer/VBoxContainer"]
 
@@ -2787,9 +2790,9 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 11.0
 margin/right = 200.0
-margin/bottom = 0.0
+margin/bottom = 11.0
 alignment = 0
 
 [node name="Mission0" type="Panel" parent="Station/Missions/ScrollContainer/VBoxContainer/Available"]
@@ -3425,6 +3428,46 @@ shortcut = null
 text = "4"
 flat = false
 
+[node name="MissionWindow" type="AcceptDialog" parent="Station"]
+
+editor/display_folded = true
+visibility/visible = false
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = SubResource( 43 )
+margin/left = 150.0
+margin/top = 75.0
+margin/right = -150.0
+margin/bottom = -75.0
+popup/exclusive = false
+window/title = ""
+dialog/hide_on_ok = true
+
+[node name="Text" type="Label" parent="Station/MissionWindow"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -10.0
+margin/top = 0.0
+margin/right = 2.0
+margin/bottom = 34.0
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="Warning" type="AcceptDialog" parent="Station"]
 
 editor/display_folded = true
@@ -3438,9 +3481,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 theme/theme = SubResource( 43 )
-margin/left = 125.5
+margin/left = 125.0
 margin/top = 75.0
-margin/right = -124.5
+margin/right = -125.0
 margin/bottom = -75.0
 popup/exclusive = false
 window/title = "WARNING"
@@ -3454,7 +3497,7 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 2.0
+margin/left = -12.0
 margin/top = 0.0
 margin/right = 2.0
 margin/bottom = 34.0
@@ -3948,6 +3991,8 @@ visibility/visible = false
 [connection signal="pressed" from="Station/Map/Commodities/VBoxContainer/Button5" to="Station" method="select_commodity" binds= [ "luxury_goods" ]]
 
 [connection signal="pressed" from="Station/Weapons/Button" to="Station/Weapons" method="hide"]
+
+[connection signal="popup_hide" from="Station/MissionWindow" to="Station/MissionWindow" method="queue_free"]
 
 [connection signal="pressed" from="Boarding/Buttons/ButtonAttack" to="Boarding" method="_player_attack"]
 

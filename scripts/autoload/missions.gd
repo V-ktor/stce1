@@ -9,43 +9,39 @@ var missions_finished = []
 func create_random_missions():
 	missions_available.clear()
 	create_random_transport_missions()
+	create_random_passenger_missions()
 
 func create_random_transport_missions():
-	var num_missions = randi()%6+8
-	missions_available.resize(num_missions)
-	for i in range(num_missions):
-		var data = test_cargo_mission_init()
+	var num_basic_transport_missions = randi()%4+3
+	var num_large_transport_missions = randi()%3+2
+	var index = missions_available.size()
+	var num_missions = num_basic_transport_missions+num_large_transport_missions
+	missions_available.resize(missions_available.size()+num_missions)
+	for i in range(index,index+num_basic_transport_missions):
+		var data = basic_transport_mission_init()
 		missions_available[i] = data
+	index += num_basic_transport_missions
+	for i in range(index,index+num_large_transport_missions):
+		var data = large_transport_mission_init()
+		missions_available[i] = data
+	index += num_large_transport_missions
+	
 
-func test_cargo_mission_init():
-	var cargo_type = "test"
-	var cargo_space = randi()%21+2
-	var to = Stations.stations[randi()%(Stations.stations.size())]
-	var reward = floor((cargo_space+10)*(100+Stations.stations_pos[Player.station].distance_squared_to(Stations.stations_pos[to])/1e8)*rand_range(0.009,0.011))
-	var name = tr("TRANSPORT").capitalize()+" "+str(cargo_space)+Equipment.units["cargo_space"]+" "+tr("OF")+" "+tr(Equipment.outfits[cargo_type]["name"])+" "+tr("TO")+" "+tr(Stations.stations_name[to])+"."
-	var desc = tr("TRANSPORT").capitalize()+" "+str(cargo_space)+Equipment.units["cargo_space"]+" "+tr("OF")+" "+tr(Equipment.outfits[cargo_type]["name"])+" "+tr("TO")+" "+tr(Stations.stations_name[to])+"("+to+").\n"+tr("YOU_WILL_BE_PAID")+" "+str(reward)+Equipment.units["price"]+"."
-	var requirements = {"free_cargo":cargo_space}
-	var data = {"requirements":requirements,"cargo_type":cargo_type,"cargo_space":cargo_space,"destination":to,"reward":reward,"on_accept":"test_cargo_mission_accept","on_land":"test_cargo_mission_on_land","on_abord":"test_cargo_mission_done","name":name,"description":desc}
-	return data
-
-func test_cargo_mission_accept(ID):
-	var data = missions_available[ID]
-	Equipment.add_item([data["cargo_type"],data["cargo_space"]])
-	missions.push_back(data)
-	missions_available.remove(ID)
-
-func test_cargo_mission_done(ID):
-	var data = missions[ID]
-	Equipment.remove_item([data["cargo_type"],data["cargo_space"]])
-	missions.erase(data)
-
-func test_cargo_mission_on_land(station,ID):
-	var data = missions[ID]
-	if (station==data["destination"]):
-		Player.credits += data["reward"]
-		test_cargo_mission_done(ID)
-
-
+func create_random_passenger_missions():
+	var num_basic_passenger_missions = randi()%4+1
+	var num_cargo_passenger_missions = randi()%3
+	var num_missions = num_basic_passenger_missions+num_cargo_passenger_missions
+	var index = missions_available.size()
+	missions_available.resize(missions_available.size()+num_missions)
+	for i in range(index,index+num_basic_passenger_missions):
+		var data = basic_passenger_mission_init()
+		missions_available[i] = data
+	index += num_basic_passenger_missions
+	for i in range(index,index+num_cargo_passenger_missions):
+		var data = cargo_passenger_mission_init()
+		missions_available[i] = data
+	index += num_cargo_passenger_missions
+	
 
 func landed(station):
 	for i in range(missions.size()-1,-1,-1):
@@ -53,3 +49,26 @@ func landed(station):
 		if (data.has("on_land")):
 			call(data["on_land"],station,i)
 
+
+func _ready():
+	var script = GDScript.new()
+	var code = get_script().get_source_code()
+	
+	var dir = Directory.new()
+	var error = dir.open("res://scripts/missions")
+	if (error==OK):
+		var file_name
+		dir.list_dir_begin()
+		file_name = dir.get_next()
+		while (file_name!=""):
+			if (!dir.current_is_dir()):
+				var file = File.new()
+				var error = file.open("res://scripts/missions/"+file_name,File.READ)
+				if (error==OK):
+					code += file.get_as_text()
+			file_name = dir.get_next()
+		dir.list_dir_end()
+	
+	script.set_source_code(code)
+	script.reload()
+	set_script(script)

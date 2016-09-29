@@ -678,7 +678,7 @@ func add_pirates():
 	var pos = get_node("Player").get_global_pos()
 	var dist = pos.length()
 	if (dist<dist_pirate_inner || (dist>asteroids_inner_dist_min-10000 && dist<asteroids_inner_dist_max+10000) || (dist>asteroids_outer_dist_min-10000 && dist<asteroids_outer_dist_max+10000)):
-		var num = min(round(rand_range(-6.0,4.5*(1+Player.difficulty))-num_pirates),2)
+		var num = min(round(rand_range(-6.0,4.0*(1+Player.difficulty))-num_pirates),2)
 		if (num<=0):
 			return
 		

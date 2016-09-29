@@ -563,6 +563,12 @@ func update_stats():
 	player_thrust = player_stats["thrust"]<=0 && engines.size()<=0
 	player_cargo = cargo_inventory>player_stats["cargo_space"]
 #	player_heat = min_heat>=player_stats["max_temperature"]
+	Player.free_cargo_space = player_stats["cargo_space"]-cargo_inventory
+	Player.passengers = 0
+	for m in Missions.missions:
+		if (m.has("passengers")):
+			Player.passengers += m["passengers"]
+	Player.free_bunks = player_bunks-Player.ship_crew[Player.ship_selected]-Player.passengers
 	
 	for s in ["power","heat"]:
 		player_stats[s] += player_stats["thrust_"+s]

@@ -1,7 +1,133 @@
 {
-	"tag":"test",
+	"tag":"water",
 	"type":"commodity",
-	"name":"TEST",
+	"name":"WATER",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"apples",
+	"type":"commodity",
+	"name":"APPLES",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"aluminium",
+	"type":"commodity",
+	"name":"ALUMINIUM",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"copper",
+	"type":"commodity",
+	"name":"COPPER",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"titanium",
+	"type":"commodity",
+	"name":"TITANIUM",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"petroleum",
+	"type":"commodity",
+	"name":"PETROLEUM",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"antibiotics",
+	"type":"commodity",
+	"name":"ANTIBIOTICS",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"medical_supplies",
+	"type":"commodity",
+	"name":"MEDICAL_SUPPLIES",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"semiconductors",
+	"type":"commodity",
+	"name":"SEMICONDUCTORS",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"microchips",
+	"type":"commodity",
+	"name":"MICROCHIPS",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"plutonium",
+	"type":"commodity",
+	"name":"PLUTONIUM",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"thorium",
+	"type":"commodity",
+	"name":"THORIUM",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"waste",
+	"type":"commodity",
+	"name":"WASTE",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"bags",
+	"type":"commodity",
+	"name":"BAGS",
+	"mass":1.0,
+	"unsellable":true,
+	"price":0,
+	"icon":"res://images/outfits/unknown.png"
+}
+{
+	"tag":"crates",
+	"type":"commodity",
+	"name":"CRATES",
 	"mass":1.0,
 	"unsellable":true,
 	"price":0,

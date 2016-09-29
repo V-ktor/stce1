@@ -2,6 +2,8 @@
 extends Node
 # player variables
 
+const max_time_scale = 10.0
+
 var first = ""
 var last = ""
 var inventory = []
@@ -13,13 +15,14 @@ var ship_location = []
 var ship_crew = []
 var ship_name = []
 var ship_selected = -1
+var free_cargo_space = 0
+var free_bunks = 0
 var station
 var dock
 var docked = false
 var parent
 var time_speedup = false
 var time_scale = 1.0
-const max_time_scale = 10.0
 var difficulty = 1.0
 var weapon_group = [[],[],[],[]]
 

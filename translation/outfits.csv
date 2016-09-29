@@ -91,3 +91,18 @@ SMALL_SCANNER,Scanner
 MEDIUM_SCANNER,Scanner
 LARGE_SCANNER,Scanner
 HUGE_SCANNER,Scanner
+WATER,water
+APPLES,apples
+ALUMINIUM,aluminium
+COPPER,copper
+TITANIUM,titanium
+PETROLEUM,petroleum
+ANTIBIOTICS,antibiotics
+MEDICAL_SUPPLIES,medical supplies
+SEMICONDUCTORS,semiconductors
+MICROCHIPS,microchips
+PLUTONIUM,plutonium
+THORIUM,thorium
+WASTE,waste
+BAGS,bags
+CRATES,crates

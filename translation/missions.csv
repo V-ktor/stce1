@@ -1,0 +1,20 @@
+,en
+PAYMENT_IS,Payment is
+TRANSPORT_<ammount>_OF_<type>_TO_<destination>,Transport <ammount> of <type> to <destination>.
+DELIVER_<ammount>_OF_<type>_TO_<destination>,Deliver <ammount> of <type> to <destination>.
+<destination>_NEEDS_A_DELIVERY_OF_<ammount>_OF_<type>,<destination> needs a delivery of <ammount> of <type>.
+THE_CONTAINERS_OF_<type>_ARE_LOADED_ON_YOUR_SHIP,The containers of <type> are loaded on your ship.
+THE_CRATES_OF_<type>_ARE_CARRIED_OVER_TO_YOUR_SHIP,The crates of <type> are carried over to your ship.
+TRANSPORT_THEM_TO_<destination>,Transport them to <destination>.
+FLY_TO_<destination>,Fly to <destination>.
+YOU_DROP_OFF_YOUR_CARGO_OF_<type>_AND_COLLECT_YOUR_PAYMENT_OF_<payment>,You drop off your cargo of <type> and collect your payment of <payment>.
+THE_CONTAINERS_OF_<type>_ARE_UNLOADED_BY_ROBOTIC_DRONES_AND_THE_OVERSEER_HANDS_YOU_OVER_A_CREDIT_CHIP_WORTH_<payment>,The containers of <type> are unloaded by robotic drones and the overseer hands you over a credit chip worth <payment>.
+BRING_<ammount>_PASSENGERS_TO_<destination>,Bring <ammount> passengers to <destination>.
+<ammount>_PASSENGERS_NEED_A_LIFT_TO_<destination>,<ammount> passengers need a lift to <destination>.
+YOU_OPEN_THE_AIRLOCK_AND_LET_A_GROUP_OF_<ammount>_PASSENGERS_ENTER_YOUR SHIP,You open the airlock and let a group of <ammount> passengers enter your ship.
+FLY_THEM_TO_<destination>,Fly them to <destination>.
+DROP_THEM_OFF_AT_<destination>,Drop them off at <destination>.
+YOU_WISH_YOUR_PASSENGERS_BEST_OF_LUCK_ON_<destination>_AND_COLLECT_YOUR_PAYMENT_OF_<payment>,You wish your passengers best of luck on <destination> and collect your payment of <payment>.
+AFTER_YOU_LANDED_ON_<destination>_THE_PASSENGERS_LEAVE_YOUR_SHIP_AND_YOU_RECEIVE_<payment>,After you landed on <destination> the passengers leave your ship and you receive <payment>.
+BRING_<passengers>_PASSENGERS_AND_<ammount>_OF_<type>_TO_<destination>,Bring <passengers> passengers and <ammount> of <type> to <destination>.
+<passengers>_PASSENGERS_WITH_<ammount>_OF_<type>_WANT_TO_MOVE_TO_<destination>,<passengers> passengers with <ammount> of <type> want to move to <destination>.
