@@ -407,7 +407,6 @@ func update():
 	crew_min = values["min_crew"]
 	
 	set_mass(mass)
-	print("update_stats of "+name)
 
 func update_mass(new_mass):
 	var factor = mass/new_mass

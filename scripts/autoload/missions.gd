@@ -14,8 +14,9 @@ func create_random_missions():
 func create_random_transport_missions():
 	var num_basic_transport_missions = randi()%4+3
 	var num_large_transport_missions = randi()%3+2
+	var num_basic_rush_missions = randi()%3+2
 	var index = missions_available.size()
-	var num_missions = num_basic_transport_missions+num_large_transport_missions
+	var num_missions = num_basic_transport_missions+num_large_transport_missions+num_basic_rush_missions
 	missions_available.resize(missions_available.size()+num_missions)
 	for i in range(index,index+num_basic_transport_missions):
 		var data = basic_transport_mission_init()
@@ -25,12 +26,17 @@ func create_random_transport_missions():
 		var data = large_transport_mission_init()
 		missions_available[i] = data
 	index += num_large_transport_missions
+	for i in range(index,index+num_basic_rush_missions):
+		var data = basic_rush_mission_init()
+		missions_available[i] = data
+	index += num_basic_rush_missions
 	
 
 func create_random_passenger_missions():
 	var num_basic_passenger_missions = randi()%4+1
 	var num_cargo_passenger_missions = randi()%3
-	var num_missions = num_basic_passenger_missions+num_cargo_passenger_missions
+	var num_rush_passenger_missions = randi()%3
+	var num_missions = num_basic_passenger_missions+num_cargo_passenger_missions+num_rush_passenger_missions
 	var index = missions_available.size()
 	missions_available.resize(missions_available.size()+num_missions)
 	for i in range(index,index+num_basic_passenger_missions):
@@ -41,6 +47,10 @@ func create_random_passenger_missions():
 		var data = cargo_passenger_mission_init()
 		missions_available[i] = data
 	index += num_cargo_passenger_missions
+	for i in range(index,index+num_rush_passenger_missions):
+		var data = rush_passenger_mission_init()
+		missions_available[i] = data
+	index += num_rush_passenger_missions
 	
 
 func landed(station):

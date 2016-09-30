@@ -18,3 +18,12 @@ YOU_WISH_YOUR_PASSENGERS_BEST_OF_LUCK_ON_<destination>_AND_COLLECT_YOUR_PAYMENT_
 AFTER_YOU_LANDED_ON_<destination>_THE_PASSENGERS_LEAVE_YOUR_SHIP_AND_YOU_RECEIVE_<payment>,After you landed on <destination> the passengers leave your ship and you receive <payment>.
 BRING_<passengers>_PASSENGERS_AND_<ammount>_OF_<type>_TO_<destination>,Bring <passengers> passengers and <ammount> of <type> to <destination>.
 <passengers>_PASSENGERS_WITH_<ammount>_OF_<type>_WANT_TO_MOVE_TO_<destination>,<passengers> passengers with <ammount> of <type> want to move to <destination>.
+TRANSPORT_<ammount>_OF_<type>_TO_<destination>_DURING_<time>,Transport <ammount> of <type> to <destination> during <time>.
+DELIVER_<ammount>_OF_<type>_TO_<destination>_DURING_<time>,Deliver <ammount> of <type> to <destination> during <time>.
+<destination>_NEEDS_A_DELIVERY_OF_<ammount>_OF_<type>_WITHIN_<time>,<destination> needs a delivery of <ammount> of <type> within <time>.
+YOU_MISSED_THE_DEADLINE_OF_THE_DELIVERY_OF_<type>_TO_<destination>,You missed the deadline of the delivery of <type> to <destination>.
+YOU_ARE_TOO_LATE_TO_DELIVER_THE_FREIGHT_OF_<type>_TO_<destination>,You are too late to deliver the freight of <type> to <destination>.
+BRING_<ammount>_PASSENGERS_TO_<destination>_WITHIN_<time>,Bring <ammount> passengers to <destination> within <time>.
+<ammount>_PASSENGERS_NEED_A_LIFT_TO_<destination>_DURING_<time>,<ammount> passengers need a lift to <destination> during <time>.
+YOU_ARE_TOO_LATE_TO_BRING_THE_PASSENEGRS_TO_<destination>_IN_TIME,You are too late to bring the passenegrs to <destination> in time.
+YOU_MISSED_THE_GIVEN_DEADLINE_FOR_THE_TRANSPORT_OF_YOUR_PASSENGERS_TO_<destination>,You missed the given deadline for the transport of your passengers to <destination>.

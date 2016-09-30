@@ -180,8 +180,6 @@ func _load():
 			if (currentline.has("missions")):
 				Missions.missions = currentline["missions"]
 				Missions.missions_finished = currentline["missions_finished"]
-#			if (currentline.has("")):
-#				Player. = currentline[""]
 			
 	else:
 		get_node("Files/Error").popup()

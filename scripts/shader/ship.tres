@@ -2,5 +2,5 @@
 
 [resource]
 
-_code = { "fragment":"uniform texture normal;\n\n//vec2 normal2 = tex(normal,UV).ag*vec2(2.0,2.0)-vec2(1.0,1.0);\n//NORMAL = vec3(normal2,(sqrt(1.0-normal2.x*normal2.x-normal2.y*normal2.y)));\nvec3 norm = tex(normal,UV).rgb;\nNORMAL = vec3(norm.rg*vec2(-2.0,2.0)-vec2(-1.0,1.0),norm.b);\nCOLOR = tex(TEXTURE,UV);\n", "fragment_ofs":0, "light":"vec3 light_vec = -normalize(vec3(-LIGHT_VEC.x,-LIGHT_VEC.y,-LIGHT_HEIGHT));\n\nvec3 n = normalize(NORMAL);\n\nfloat dp = dot(normalize(NORMAL),light_vec);\nLIGHT = vec4(vec3(dp),1.0)*COLOR*LIGHT_COLOR;\n", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
+_code = { "fragment":"uniform texture normal;\n\nvec3 norm = tex(normal,UV).rgb;\nNORMAL = vec3(norm.rg*vec2(-2.0,2.0)-vec2(-1.0,1.0),norm.b);\nCOLOR = tex(TEXTURE,UV);\n", "fragment_ofs":0, "light":"vec3 light_vec = -normalize(vec3(-LIGHT_VEC.x,-LIGHT_VEC.y,-LIGHT_HEIGHT));\n\nvec3 n = normalize(NORMAL);\n\nfloat dp = dot(normalize(NORMAL),light_vec);\nLIGHT = vec4(vec3(dp),1.0)*COLOR*LIGHT_COLOR;\n", "light_ofs":0, "vertex":"", "vertex_ofs":0 }
 
