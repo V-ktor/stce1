@@ -1174,7 +1174,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 script/script = ExtResource( 1 )
 
-[node name="BG" type="Panel" parent="."]
+[node name="Black" type="Panel" parent="."]
 
 visibility/self_opacity = 0.5
 visibility/light_mask = 0

@@ -147,6 +147,7 @@ func take_off(station,dock,ship,equipment,inventory,script,faction,name,crew):
 	return si
 
 func player_take_off():
+	var station = Player.station
 	Time.disable_pause()
 	
 	if (Player.ship_selected<0):
@@ -201,8 +202,8 @@ func player_take_off():
 	get_node("/root/Menu/Menu/Buttons/Button4").set_disabled(true)
 	get_node("/root/Main").update_objects()
 	
-	emit_signal("player_take_off",Player.station)
-	
+	emit_signal("player_take_off",station)
+	Missions.take_off(station)
 #	Ships.create_rnd_pirate(Vector2(288000,-1000),Vector2(0,0))
 #	Ships.create_rnd_pirate(Vector2(287000,-500),Vector2(0,0))
 #	Ships.create_rnd_pirate(Vector2(286000,0),Vector2(0,0))

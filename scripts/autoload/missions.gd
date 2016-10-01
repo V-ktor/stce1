@@ -8,8 +8,25 @@ var missions_finished = []
 
 func create_random_missions():
 	missions_available.clear()
+	create_random_escort_missions()
 	create_random_transport_missions()
 	create_random_passenger_missions()
+
+func create_random_escort_missions():
+	var num_basic_escort_missions = randi()%3
+	var num_medium_escort_missions = randi()%3
+	var index = missions_available.size()
+	var num_missions = num_basic_escort_missions+num_medium_escort_missions
+	missions_available.resize(missions_available.size()+num_missions)
+	for i in range(index,index+num_basic_escort_missions):
+		var data = basic_escort_mission_init()
+		missions_available[i] = data
+	index += num_basic_escort_missions
+	for i in range(index,index+num_medium_escort_missions):
+		var data = medium_escort_mission_init()
+		missions_available[i] = data
+	index += num_medium_escort_missions
+	
 
 func create_random_transport_missions():
 	var num_basic_transport_missions = randi()%4+3
@@ -59,6 +76,11 @@ func landed(station):
 		if (data.has("on_land")):
 			call(data["on_land"],station,i)
 
+func take_off(station):
+	for i in range(missions.size()-1,-1,-1):
+		var data = missions[i]
+		if (data.has("on_take_off")):
+			call(data["on_take_off"],station,i)
 
 func _ready():
 	var script = GDScript.new()

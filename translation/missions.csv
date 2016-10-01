@@ -27,3 +27,11 @@ BRING_<ammount>_PASSENGERS_TO_<destination>_WITHIN_<time>,Bring <ammount> passen
 <ammount>_PASSENGERS_NEED_A_LIFT_TO_<destination>_DURING_<time>,<ammount> passengers need a lift to <destination> during <time>.
 YOU_ARE_TOO_LATE_TO_BRING_THE_PASSENEGRS_TO_<destination>_IN_TIME,You are too late to bring the passenegrs to <destination> in time.
 YOU_MISSED_THE_GIVEN_DEADLINE_FOR_THE_TRANSPORT_OF_YOUR_PASSENGERS_TO_<destination>,You missed the given deadline for the transport of your passengers to <destination>.
+ESCORT_A_SMALL_FREIGHTER_SAFELY_TO_<destination>,Escort a small freighter safely to <destination>.
+A_SMALL_FREIGHTER_IS_LOOKING_FOR_AN_ESCORT_TO_GET_SAFELY_TO_<destination>,A small freighter is looking for an escort to get safely to <destination>.
+THE_CAPTAIN_OF_THE_FREIGHTER_IS_READY_TO_TAKE_OFF_ESCORT_HIM_TO_<destination>,The captain of the freighter is ready to take off. Escort him to <destination>.
+ESCORT_THE_FREIGHTER_SAFELY_TO_<destination>,Escort the freighter safely to <destination>.
+AFTER_YOU_LANDED_ON_<destination>_THE_CAPTAIN_OF_THE_FREIGHTER_PAYS_YOU_<payment>_AND_THANKS_YOU_FOR_YOUR_ESCORT_SERVICE,After you landed on <destination> the captain of the freighter pays you <payment> and thanks you for your escort service.
+THE_CAPTAIN_OF_THE_FREIGHTER_THANKS_YOU_FOR_ESCORTING_HIM_SAFELY_TO_<destination>_AND_HANDS_YOU_<payment>,The captain of the freighter thanks you for escorting him safely to <destination> and hands you <payment>.
+ESCORT_A_FREIGHTER_SAFELY_TO_<destination>,Escort a freighter safely to <destination>.
+A_FREIGHTER_IS_LOOKING_FOR_AN_ESCORT_TO_GET_SAFELY_TO_<destination>,A freighter is looking for an escort to get safely to <destination>.

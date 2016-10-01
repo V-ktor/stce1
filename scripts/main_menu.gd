@@ -552,11 +552,11 @@ func _quit():
 
 func show_menu():
 	get_node("Menu/Anim").play("show")
-	get_node("BG").show()
+	get_node("Black").show()
 
 func hide_menu():
 	get_node("Menu/Anim").play("hide")
-	get_node("BG").hide()
+	get_node("Black").hide()
 
 func show_load():
 	update_files()

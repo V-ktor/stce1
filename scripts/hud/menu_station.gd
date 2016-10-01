@@ -251,6 +251,10 @@ func select_mission_available(ID):
 			if (Player.free_bunks<req[k]):
 				disabled = true
 				break
+		elif (k=="num_weapons"):
+			if (Player.weapon_group[0].size()<req[k]):
+				disabled = true
+				break
 	mission_selected = ID
 	get_node("Missions/ButtonAccept").set_disabled(disabled)
 	get_node("Missions/ButtonAbord").set_disabled(true)
