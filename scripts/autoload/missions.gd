@@ -15,8 +15,9 @@ func create_random_missions():
 func create_random_escort_missions():
 	var num_basic_escort_missions = randi()%3
 	var num_medium_escort_missions = randi()%3
+	var num_small_fleet_escort_missions = randi()%2
 	var index = missions_available.size()
-	var num_missions = num_basic_escort_missions+num_medium_escort_missions
+	var num_missions = num_basic_escort_missions+num_medium_escort_missions+num_small_fleet_escort_missions
 	missions_available.resize(missions_available.size()+num_missions)
 	for i in range(index,index+num_basic_escort_missions):
 		var data = basic_escort_mission_init()
@@ -26,6 +27,10 @@ func create_random_escort_missions():
 		var data = medium_escort_mission_init()
 		missions_available[i] = data
 	index += num_medium_escort_missions
+	for i in range(index,index+num_small_fleet_escort_missions):
+		var data = small_fleet_escort_mission_init()
+		missions_available[i] = data
+	index += num_small_fleet_escort_missions
 	
 
 func create_random_transport_missions():

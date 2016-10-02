@@ -14,8 +14,8 @@ var map_scale = 1.0
 var map_zoom = 1.0
 var map_center = Vector2(0,0)
 
-var cursor_cross = load("res://images/UI/cursor_cross.png")
-var cursor_normal = load("res://images/UI/cursor.png")
+var cursor_cross = load("res://images/ui/cursor_cross.png")
+var cursor_normal = load("res://images/ui/cursor.png")
 
 func show_map():
 	map = true

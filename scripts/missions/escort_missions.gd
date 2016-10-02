@@ -52,12 +52,12 @@ func basic_escort_mission_accept(ID):
 
 func basic_escort_mission_on_take_off(station,ID):
 	var data = missions[ID]
-	var dock = get_node("/root/Main/"+station).request_landing_position()
-	if (dock==-1):
-		dock = Player.dock
 	
 	data["ships"].clear()
 	for ship in data["equipment"]:
+		var dock = get_node("/root/Main/"+station).request_landing_position()
+		if (dock==-1):
+			dock = Player.dock
 		var name = "Civil Trade Ship "+str(randi()%1000)
 		var crew = Equipment.outfits[ship[0][Equipment.TYPE]]["bunks"]
 		var inventory = [[Economy.commodities[randi()%(Economy.commodities.size())],Equipment.outfits[ship[0][Equipment.TYPE]]["cargo_space"]]]
@@ -95,7 +95,7 @@ func medium_escort_mission_init():
 	var ship = medium_trader_ships[randi()%(medium_trader_ships.size())]
 	var dist = Stations.stations_pos[Player.station].distance_to(Stations.stations_pos[to])
 	var time = dist/3000.0*rand_range(0.8,1.2)
-	var reward = floor((200000+dist*dist/1e8)*rand_range(0.009,0.011))
+	var reward = floor((100000+dist*dist/1e8)*rand_range(0.009,0.011))
 	var title = tr(str_medium_escort_title[randi()%(str_medium_escort_title.size())]).replace("<destination>",tr(Stations.stations_name[to]))
 	var desc = title+"\n"+tr("PAYMENT_IS")+" "+str(reward)+Equipment.units["price"]+"."
 	var text_accepted = tr(str_basic_escort_accepted[randi()%(str_basic_escort_accepted.size())]).replace("<destination>",tr(Stations.stations_name[to]))
@@ -113,9 +113,6 @@ func medium_escort_mission_init():
 func medium_escort_mission_on_take_off(station,ID):
 	var data = missions[ID]
 	var timer = Timer.new()
-	var dock = get_node("/root/Main/"+station).request_landing_position()
-	if (dock==-1):
-		dock = Player.dock
 	
 	timer.set_wait_time(data["time"])
 	timer.connect("timeout",self,"medium_escort_spawn_pirates",[ID,timer])
@@ -125,6 +122,9 @@ func medium_escort_mission_on_take_off(station,ID):
 	
 	data["ships"].clear()
 	for ship in data["equipment"]:
+		var dock = get_node("/root/Main/"+station).request_landing_position()
+		if (dock==-1):
+			dock = Player.dock
 		var name = "Civil Trade Ship "+str(randi()%1000)
 		var crew = Equipment.outfits[ship[0][Equipment.TYPE]]["bunks"]
 		var inventory = [[Economy.commodities[randi()%(Economy.commodities.size())],Equipment.outfits[ship[0][Equipment.TYPE]]["cargo_space"]]]
@@ -147,3 +147,41 @@ func medium_escort_spawn_pirates(ID,timer):
 		p.connect("destroyed",get_node("/root/Main"),"pirate_destroyed")
 	
 	timer.queue_free()
+
+
+# escort small fleet
+const str_small_fleet_escort_title = [
+"ESCORT_A_SMALL_GROUP_OF_<ammount>_FREIGHTERS_SAFELY_TO_<destination>",
+"A_SMALL_GROUP_OF_<ammount>_FREIGHTERS_IS_LOOKING_FOR_AN_ESCORT_TO_GET_SAFELY_TO_<destination>"]
+const str_small_fleet_escort_accepted = [
+"THE_FREIGHTERS_ARE_READY_TO_TAKE_OFF_ESCORT_THEM_TO_<destination>",
+"ESCORT_THE_FREIGHTERS_SAFELY_TO_<destination>"]
+const  str_small_fleet_escort_finished = [
+"AFTER_YOU_LANDED_ON_<destination>_THE_CAPTAIN_OF_ONE_OF_THE_FREIGHTERS_PAYS_YOU_<payment>_AND_THANKS_YOU_FOR_YOUR_ESCORT_SERVICE",
+"THE_CAPTAIN_OF_ONE_OF_THE_FREIGHTERS_THANKS_YOU_FOR_ESCORTING_THEM_SAFELY_TO_<destination>_AND_HANDS_YOU_<payment>"]
+
+func small_fleet_escort_mission_init():
+	var to = Player.station
+	while(Stations.stations_current_pos[to].distance_squared_to(Stations.stations_current_pos[Player.station])<100000000):
+		to = Stations.stations[randi()%(Stations.stations.size())]
+	var num_ships = randi()%2+2
+	var ships = []
+	ships.resize(num_ships)
+	for i in range(num_ships):
+		ships[i] = small_trader_ships[randi()%(small_trader_ships.size())]
+	var dist = Stations.stations_pos[Player.station].distance_to(Stations.stations_pos[to])
+	var time = dist/3000.0*rand_range(0.8,1.2)
+	var reward = floor((num_ships+2)*(100000+dist*dist/1e8)/3.0*rand_range(0.009,0.011))
+	var title = tr(str_small_fleet_escort_title[randi()%(str_small_fleet_escort_title.size())]).replace("<destination>",tr(Stations.stations_name[to])).replace("<ammount>",str(num_ships))
+	var desc = title+"\n"+tr("PAYMENT_IS")+" "+str(reward)+Equipment.units["price"]+"."
+	var text_accepted = tr(str_small_fleet_escort_accepted[randi()%(str_small_fleet_escort_accepted.size())]).replace("<destination>",tr(Stations.stations_name[to]))
+	var text_finished = tr(str_small_fleet_escort_finished[randi()%(str_small_fleet_escort_finished.size())]).replace("<destination>",tr(Stations.stations_name[to])).replace("<payment>",str(reward)+Equipment.units["price"])
+	var requirements = {"num_weapons":2}
+	var data = {
+	"requirements":requirements,"equipment":ships,"ships":[],"time":time,
+	"destination":to,"reward":reward,"on_accept":"basic_escort_mission_accept",
+	"on_take_off":"medium_escort_mission_on_take_off",
+	"on_land":"basic_escort_mission_on_land","on_abord":"basic_escort_mission_done",
+	"title":title,"description":desc,"text_finished":text_finished,"text_accepted":text_accepted
+	}
+	return data

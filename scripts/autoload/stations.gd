@@ -35,8 +35,8 @@ var stations_visible = {}
 var stations_current_pos = {}
 
 
-var cursor_cross = preload("res://images/UI/cursor_cross.png")
-var cursor_normal = preload("res://images/UI/cursor.png")
+var cursor_cross = preload("res://images/ui/cursor_cross.png")
+var cursor_normal = preload("res://images/ui/cursor.png")
 
 
 
