@@ -1,7 +1,7 @@
-[gd_scene load_steps=99 format=1]
+[gd_scene load_steps=110 format=1]
 
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
-[ext_resource path="res://images/ui/panel_station.png" type="Texture" id=2]
+[ext_resource path="res://images/ui/panel_main_menu.png" type="Texture" id=2]
 [ext_resource path="res://images/ui/button01_hover.png" type="Texture" id=3]
 [ext_resource path="res://images/ui/button01_pressed.png" type="Texture" id=4]
 [ext_resource path="res://images/ui/button01_focus.png" type="Texture" id=5]
@@ -37,8 +37,13 @@
 [ext_resource path="res://images/ui/button03_hover.png" type="Texture" id=35]
 [ext_resource path="res://images/ui/button03_pressed.png" type="Texture" id=36]
 [ext_resource path="res://images/ui/button03_disabled.png" type="Texture" id=37]
-[ext_resource path="res://images/ui/panel_window_glow.png" type="Texture" id=38]
-[ext_resource path="res://images/ui/button01_blue.png" type="Texture" id=39]
+[ext_resource path="res://images/ui/button05_hover.png" type="Texture" id=38]
+[ext_resource path="res://images/ui/button05_pressed.png" type="Texture" id=39]
+[ext_resource path="res://images/ui/button05_focus.png" type="Texture" id=40]
+[ext_resource path="res://images/ui/button05_disabled.png" type="Texture" id=41]
+[ext_resource path="res://images/ui/button05_normal.png" type="Texture" id=42]
+[ext_resource path="res://images/ui/panel_window_glow.png" type="Texture" id=43]
+[ext_resource path="res://images/ui/button01_blue.png" type="Texture" id=44]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -53,21 +58,21 @@ border_size = 0
 border_blend = false
 draw_bg = true
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=66]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
 texture = ExtResource( 2 )
-margin/left = 5.0
-margin/right = 5.0
-margin/top = 5.0
-margin/bottom = 5.0
-expand_margin/left = 8.0
-expand_margin/right = 8.0
-expand_margin/top = 8.0
-expand_margin/bottom = 8.0
+margin/left = 3.0
+margin/right = 3.0
+margin/top = 17.0
+margin/bottom = 17.0
+expand_margin/left = 2.0
+expand_margin/right = 2.0
+expand_margin/top = 4.0
+expand_margin/bottom = 4.0
 draw_center = true
 
 [sub_resource type="StyleBoxTexture" id=3]
@@ -768,6 +773,23 @@ WindowDialog/icons/close = ExtResource( 30 )
 WindowDialog/icons/close_hilite = ExtResource( 31 )
 WindowDialog/styles/panel = SubResource( 35 )
 
+[sub_resource type="StyleBoxTexture" id=53]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 32 )
+margin/left = 48.0
+margin/right = 22.0
+margin/top = 22.0
+margin/bottom = 32.0
+expand_margin/left = 12.0
+expand_margin/right = 18.0
+expand_margin/top = 20.0
+expand_margin/bottom = 14.0
+draw_center = true
+
 [sub_resource type="StyleBoxTexture" id=37]
 
 content_margin/left = -1.0
@@ -879,6 +901,91 @@ content_margin/bottom = -1.0
 texture = ExtResource( 34 )
 margin/left = 23.0
 margin/right = 23.0
+margin/top = 3.0
+margin/bottom = 3.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=61]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 38 )
+margin/left = 23.0
+margin/right = 3.0
+margin/top = 3.0
+margin/bottom = 3.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=62]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 39 )
+margin/left = 23.0
+margin/right = 3.0
+margin/top = 3.0
+margin/bottom = 3.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=63]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 40 )
+margin/left = 25.0
+margin/right = 5.0
+margin/top = 5.0
+margin/bottom = 5.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=64]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 41 )
+margin/left = 24.0
+margin/right = 3.0
+margin/top = 3.0
+margin/bottom = 3.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=65]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 42 )
+margin/left = 24.0
+margin/right = 3.0
 margin/top = 3.0
 margin/bottom = 3.0
 expand_margin/left = 0.0
@@ -1047,7 +1154,7 @@ length = 0.4
 loop = true
 step = 0.1
 
-[sub_resource type="StyleBoxTexture" id=53]
+[sub_resource type="StyleBoxTexture" id=54]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1064,30 +1171,13 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=54]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 39 )
-margin/left = 25.0
-margin/right = 25.0
-margin/top = 5.0
-margin/bottom = 5.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
 [sub_resource type="StyleBoxTexture" id=55]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 5 )
+texture = ExtResource( 44 )
 margin/left = 25.0
 margin/right = 25.0
 margin/top = 5.0
@@ -1104,11 +1194,11 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 6 )
-margin/left = 23.0
-margin/right = 23.0
-margin/top = 3.0
-margin/bottom = 3.0
+texture = ExtResource( 5 )
+margin/left = 25.0
+margin/right = 25.0
+margin/top = 5.0
+margin/bottom = 5.0
 expand_margin/left = 0.0
 expand_margin/right = 0.0
 expand_margin/top = 0.0
@@ -1121,7 +1211,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 7 )
+texture = ExtResource( 6 )
 margin/left = 23.0
 margin/right = 23.0
 margin/top = 3.0
@@ -1138,6 +1228,23 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
+texture = ExtResource( 7 )
+margin/left = 23.0
+margin/right = 23.0
+margin/top = 3.0
+margin/bottom = 3.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=59]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
 texture = ExtResource( 5 )
 margin/left = 25.0
 margin/right = 25.0
@@ -1149,7 +1256,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=59]
+[sub_resource type="StyleBoxTexture" id=60]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1206,7 +1313,7 @@ margin/left = 300.0
 margin/top = 150.0
 margin/right = 100.0
 margin/bottom = -150.0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 66 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Buttons" type="VBoxContainer" parent="Menu"]
@@ -1533,7 +1640,7 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[node name="Files" type="WindowDialog" parent="."]
+[node name="Files" type="Panel" parent="."]
 
 editor/display_folded = true
 visibility/visible = false
@@ -1549,9 +1656,26 @@ margin/left = 112.0
 margin/top = 184.0
 margin/right = 312.0
 margin/bottom = 184.0
-popup/exclusive = true
-window/title = "LOAD"
+custom_styles/panel = SubResource( 53 )
 __meta__ = { "_edit_lock_":true }
+
+[node name="Title" type="Label" parent="Files"]
+
+anchor/right = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 32.0
+margin/top = -18.0
+margin/right = 0.0
+margin/bottom = -2.0
+text = "LOAD"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="LineEdit" type="LineEdit" parent="Files"]
 
@@ -1565,7 +1689,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = -5.0
 margin/top = 12.0
-margin/right = 71.0
+margin/right = 126.0
 margin/bottom = -12.0
 custom_styles/focus = SubResource( 37 )
 custom_styles/normal = SubResource( 38 )
@@ -1575,7 +1699,7 @@ caret/caret_blink = true
 caret/caret_blink_speed = 0.65
 __meta__ = { "_edit_lock_":true }
 
-[node name="Button" type="Button" parent="Files"]
+[node name="ButtonConfirm" type="Button" parent="Files"]
 
 visibility/light_mask = 0
 anchor/left = 1
@@ -1586,9 +1710,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 90.0
+margin/left = 148.0
 margin/top = 12.0
-margin/right = 0.0
+margin/right = 58.0
 margin/bottom = -12.0
 custom_styles/hover = SubResource( 39 )
 custom_styles/pressed = SubResource( 40 )
@@ -1599,6 +1723,33 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 text = "LOAD"
+flat = false
+__meta__ = { "_edit_lock_":true }
+
+[node name="ButtonClose" type="Button" parent="Files"]
+
+visibility/light_mask = 0
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 80.0
+margin/top = 12.0
+margin/right = 0.0
+margin/bottom = -12.0
+custom_styles/hover = SubResource( 61 )
+custom_styles/pressed = SubResource( 62 )
+custom_styles/focus = SubResource( 63 )
+custom_styles/disabled = SubResource( 64 )
+custom_styles/normal = SubResource( 65 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "BACK"
 flat = false
 __meta__ = { "_edit_lock_":true }
 
@@ -1838,7 +1989,7 @@ margin/left = 14.0
 margin/top = -21.0
 margin/right = 2.0
 margin/bottom = -4.0
-texture = ExtResource( 38 )
+texture = ExtResource( 43 )
 expand = true
 stretch_mode = 0
 
@@ -1853,7 +2004,7 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "glow"
 
-[node name="Options" type="WindowDialog" parent="."]
+[node name="Options" type="Panel" parent="."]
 
 editor/display_folded = true
 visibility/visible = false
@@ -1869,9 +2020,26 @@ margin/left = 112.0
 margin/top = 184.0
 margin/right = 312.0
 margin/bottom = 184.0
-popup/exclusive = true
-window/title = "OPTIONS"
+custom_styles/panel = SubResource( 53 )
 __meta__ = { "_edit_lock_":true }
+
+[node name="Title" type="Label" parent="Options"]
+
+anchor/right = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 32.0
+margin/top = -18.0
+margin/right = 0.0
+margin/bottom = -2.0
+text = "OPTIONS"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Button1" type="Button" parent="Options"]
 
@@ -2003,11 +2171,11 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 609.0
 margin/bottom = 24.0
-custom_styles/hover = SubResource( 53 )
-custom_styles/pressed = SubResource( 54 )
-custom_styles/focus = SubResource( 55 )
-custom_styles/disabled = SubResource( 56 )
-custom_styles/normal = SubResource( 57 )
+custom_styles/hover = SubResource( 54 )
+custom_styles/pressed = SubResource( 55 )
+custom_styles/focus = SubResource( 56 )
+custom_styles/disabled = SubResource( 57 )
+custom_styles/normal = SubResource( 58 )
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -2243,11 +2411,11 @@ margin/left = 0.0
 margin/top = 93.0
 margin/right = 609.0
 margin/bottom = 117.0
-custom_styles/hover = SubResource( 53 )
-custom_styles/pressed = SubResource( 54 )
-custom_styles/focus = SubResource( 55 )
-custom_styles/disabled = SubResource( 56 )
-custom_styles/normal = SubResource( 57 )
+custom_styles/hover = SubResource( 54 )
+custom_styles/pressed = SubResource( 55 )
+custom_styles/focus = SubResource( 56 )
+custom_styles/disabled = SubResource( 57 )
+custom_styles/normal = SubResource( 58 )
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -2530,11 +2698,11 @@ margin/left = 0.0
 margin/top = 186.0
 margin/right = 609.0
 margin/bottom = 210.0
-custom_styles/hover = SubResource( 53 )
-custom_styles/pressed = SubResource( 54 )
-custom_styles/focus = SubResource( 55 )
-custom_styles/disabled = SubResource( 56 )
-custom_styles/normal = SubResource( 57 )
+custom_styles/hover = SubResource( 54 )
+custom_styles/pressed = SubResource( 55 )
+custom_styles/focus = SubResource( 56 )
+custom_styles/disabled = SubResource( 57 )
+custom_styles/normal = SubResource( 58 )
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -2645,11 +2813,11 @@ margin/left = 0.0
 margin/top = 251.0
 margin/right = 609.0
 margin/bottom = 275.0
-custom_styles/hover = SubResource( 53 )
-custom_styles/pressed = SubResource( 54 )
-custom_styles/focus = SubResource( 55 )
-custom_styles/disabled = SubResource( 56 )
-custom_styles/normal = SubResource( 57 )
+custom_styles/hover = SubResource( 54 )
+custom_styles/pressed = SubResource( 55 )
+custom_styles/focus = SubResource( 56 )
+custom_styles/disabled = SubResource( 57 )
+custom_styles/normal = SubResource( 58 )
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -2803,7 +2971,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="New" type="WindowDialog" parent="."]
+[node name="New" type="Panel" parent="."]
 
 editor/display_folded = true
 visibility/visible = false
@@ -2819,8 +2987,7 @@ margin/left = 112.0
 margin/top = 184.0
 margin/right = 312.0
 margin/bottom = 184.0
-popup/exclusive = true
-window/title = "NEW_GAME"
+custom_styles/panel = SubResource( 53 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Button1" type="Button" parent="New"]
@@ -2972,8 +3139,8 @@ margin/left = 189.0
 margin/top = 0.0
 margin/right = 349.0
 margin/bottom = 24.0
-custom_styles/focus = SubResource( 58 )
-custom_styles/normal = SubResource( 59 )
+custom_styles/focus = SubResource( 59 )
+custom_styles/normal = SubResource( 60 )
 placeholder/text = "FIRST"
 placeholder/alpha = 0.6
 focus_mode = 2
@@ -3019,8 +3186,8 @@ margin/left = 399.0
 margin/top = 0.0
 margin/right = 559.0
 margin/bottom = 24.0
-custom_styles/focus = SubResource( 58 )
-custom_styles/normal = SubResource( 59 )
+custom_styles/focus = SubResource( 59 )
+custom_styles/normal = SubResource( 60 )
 placeholder/text = "LAST"
 placeholder/alpha = 0.6
 focus_mode = 2
@@ -3061,7 +3228,7 @@ size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 344.0
+margin/right = 389.0
 margin/bottom = 24.0
 text = "SHIP"
 valign = 1
@@ -3075,9 +3242,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
-margin/left = 348.0
+margin/left = 393.0
 margin/top = 0.0
-margin/right = 377.0
+margin/right = 422.0
 margin/bottom = 24.0
 text = "TYPE"
 valign = 1
@@ -3092,7 +3259,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
-margin/left = 381.0
+margin/left = 426.0
 margin/top = 0.0
 margin/right = 559.0
 margin/bottom = 24.0
@@ -3161,7 +3328,7 @@ margin/left = 14.0
 margin/top = -21.0
 margin/right = 2.0
 margin/bottom = -4.0
-texture = ExtResource( 38 )
+texture = ExtResource( 43 )
 expand = true
 stretch_mode = 0
 __meta__ = { "_edit_lock_":true }
@@ -3193,7 +3360,9 @@ autoplay = "glow"
 
 [connection signal="text_entered" from="Files/LineEdit" to="." method="set_file_and_confirm"]
 
-[connection signal="pressed" from="Files/Button" to="." method="load_or_save"]
+[connection signal="pressed" from="Files/ButtonConfirm" to="." method="load_or_save"]
+
+[connection signal="pressed" from="Files/ButtonClose" to="Files" method="hide"]
 
 [connection signal="pressed" from="Options/Button1" to="." method="options_confirm"]
 
@@ -3227,7 +3396,7 @@ autoplay = "glow"
 
 [connection signal="pressed" from="New/Button1" to="." method="new_game"]
 
-[connection signal="pressed" from="New/Button2" to="." method="hide_new"]
+[connection signal="pressed" from="New/Button2" to="New" method="hide"]
 
 [connection signal="text_changed" from="New/ScrollContainer/VBoxContainer/Name/HBoxContainer/LineEditF" to="." method="set_first"]
 

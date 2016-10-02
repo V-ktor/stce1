@@ -145,17 +145,6 @@ var external = []
 var store = []
 var shipyard = []
 
-var inventory_rows
-var inventory_cols
-var store_rows
-var store_cols
-var equipment_rows
-var equipment_cols
-var inventory_offset = 0
-var equipment_offset = 0
-var store_offset = 0
-var store_filter = {"ship":true,"weapon":true,"turret":true,"missile":true,
-"reactor":true,"engine":true,"internal":true,"external":true,"commodity":true}
 var buy_ammount = 1
 var player_power = false
 var player_thrust = false
@@ -239,7 +228,7 @@ func equip(sID,iID):
 			add_item(Player.equipment[Player.ship_selected][sID])
 		Player.equipment[Player.ship_selected][sID] = [Player.inventory[iID][TYPE],ammount]
 		remove_item([Player.inventory[iID][TYPE],ammount])
-		update_icons()
+		HUD.get_node("Station").update_icons()
 
 func find_smallest_slot(type,size):
 	var sizes = {"small":["small","medium","large","huge"],"medium":["medium","large","huge"],"large":["large","huge"],"huge":["huge"]}[size]
@@ -267,7 +256,7 @@ func equip_i(ID):
 			 ammount = min(Player.inventory[ID][AMMOUNT],outfits[Player.inventory[ID][TYPE]]["ammo"])
 		Player.equipment[Player.ship_selected][sID] = [Player.inventory[ID][TYPE],ammount]
 		remove_item([Player.inventory[ID][TYPE],ammount])
-		update_icons()
+		HUD.get_node("Station").update_icons()
 
 func unequip(ID):
 	# move equiped item to inventory
@@ -277,7 +266,7 @@ func unequip(ID):
 	add_item([Player.equipment[Player.ship_selected][ID][TYPE],Player.equipment[Player.ship_selected][ID][AMMOUNT]])
 	Player.equipment[Player.ship_selected][ID][TYPE] = ""
 	Player.equipment[Player.ship_selected][ID][AMMOUNT] = 0
-	update_icons()
+	HUD.get_node("Station").update_icons()
 	return true
 
 func add_item(item):
@@ -379,7 +368,7 @@ func buy(ID):
 	Player.credits -= price
 	add_item([store[ID][TYPE],ammount])
 	remove_store([store[ID][TYPE],ammount])
-	update_icons()
+	HUD.get_node("Station").update_icons()
 	return true
 
 func sell(ID):
@@ -398,7 +387,7 @@ func sell(ID):
 	Player.credits += price*ammount
 	add_store([Player.inventory[ID][TYPE],ammount])
 	remove_item([Player.inventory[ID][TYPE],ammount])
-	update_icons()
+	HUD.get_node("Station").update_icons()
 	return true
 
 func add_shipyard(item):
@@ -435,7 +424,7 @@ func buy_ship(ID):
 		shipyard.remove(ID)
 	if (Player.ship_selected==-1):
 		Player.ship_selected = Player.equipment.size()-1
-	update_icons()
+	HUD.get_node("Station").update_icons()
 
 func sell_ship(ID):
 	# sell ship
@@ -453,7 +442,7 @@ func sell_ship(ID):
 	Player.ship_name.remove(ID)
 	if (Player.ship_selected>=Player.equipment.size()):
 		Player.ship_selected = Player.equipment.size()-1
-	update_icons()
+	HUD.get_node("Station").update_icons()
 
 func swap_ship(ID):
 	# change ship
@@ -464,7 +453,7 @@ func swap_ship(ID):
 		HUD.get_node("Station/Hangar/Hangar/Item"+str(Player.ship_selected)+"/Selected").hide()
 	Player.ship_selected = ID
 	HUD.get_node("Station/Hangar/Hangar/Item"+str(Player.ship_selected)+"/Selected").show()
-	update_icons()
+	HUD.get_node("Station").update_icons()
 
 func hire_crew():
 	var ammount = min(buy_ammount,player_bunks-Player.passengers-Player.ship_crew[Player.ship_selected])
@@ -472,7 +461,7 @@ func hire_crew():
 		return false
 	
 	Player.ship_crew[Player.ship_selected] += ammount
-	update_icons()
+	HUD.get_node("Station").update_icons()
 	
 	return true
 
@@ -482,7 +471,7 @@ func fire_crew():
 		return false
 	
 	Player.ship_crew[Player.ship_selected] -= ammount
-	update_icons()
+	HUD.get_node("Station").update_icons()
 	
 	return true
 
@@ -629,146 +618,6 @@ func get_cargo_mass(inventory):
 
 func get_player_cargo():
 	return get_cargo_mass(Player.inventory)
-
-func update_icons():
-	# update inventory/equipment/store icons
-	var ofs
-	inventory_rows = HUD.get_node("Station").inventory_rows
-	inventory_cols = HUD.get_node("Station").inventory_cols
-	ofs = inventory_offset*inventory_cols
-	for i in range(inventory_rows*inventory_cols):
-		var item = HUD.get_node("Station/Inventory/GridContainer/Item"+str(i))
-		if (Player.inventory.size()>i+ofs):
-			var type = Player.inventory[i+ofs][TYPE]
-			item.get_node("Number").set_text(str(Player.inventory[i+ofs][AMMOUNT]))
-			item.icon = type
-			if (type!=""):
-				var b = outfits[type]["type"]
-				item.get_node("Icon").set_texture(outfits[type]["icon"])
-				item.add_style_override("panel",bg[b])
-				if (b!="commodity"):
-					item.get_node("Size").add_style_override("panel",icon_size[outfits[type]["size"]])
-					item.get_node("Size").show()
-				item.show()
-			else:
-				item.hide()
-		else:
-			item.hide()
-	
-	equipment_rows = HUD.get_node("Station").equipment_rows
-	equipment_cols = HUD.get_node("Station").equipment_cols
-	ofs = equipment_offset*equipment_cols
-	for i in range(1,equipment_rows*equipment_cols+1):
-		var item = HUD.get_node("Station/Equipment/GridContainer/Item"+str(i))
-		if (Player.ship_selected>=0 && Player.equipment[Player.ship_selected].size()>i+ofs):
-			var type = Player.equipment[Player.ship_selected][i+ofs][TYPE]
-			if (Player.equipment[Player.ship_selected][i+ofs][AMMOUNT]>1):
-				item.get_node("Number").set_text(str(Player.equipment[Player.ship_selected][i+ofs][AMMOUNT]))
-			else:
-				item.get_node("Number").set_text("")
-			item.icon = type
-			if (type!=""):
-				item.get_node("Icon").set_texture(outfits[type]["icon"])
-			else:
-				item.get_node("Icon").set_texture(null)
-			var size = outfits[Player.equipment[Player.ship_selected][0][TYPE]]["slots"][i-1].split("_")[1]
-			item.get_node("Size").add_style_override("panel",icon_size[size])
-			item.get_node("Size").show()
-			if (outfits[Player.equipment[Player.ship_selected][0][0]]["slots"].size()+1>i):
-				var b = outfits[Player.equipment[Player.ship_selected][0][0]]["slots"][i-1].split("_")[0]
-				item.add_style_override("panel",bg[b])
-				item.show()
-			else:
-				item.hide()
-		else:
-			item.hide()
-	
-	var k = 0
-	store_rows = HUD.get_node("Station").store_rows
-	store_cols = HUD.get_node("Station").store_cols
-	ofs = store_offset*store_cols
-	for i in range(ofs,store.size()):
-		var item = HUD.get_node("Station/Trade/GridContainer/Item"+str(k))
-		var type = store[i][TYPE]
-		item.icon = type
-		item.get_node("Number").set_text(str(store[i][AMMOUNT]))
-		if (type!=""):
-			var b = outfits[type]["type"]
-			item.get_node("Icon").set_texture(outfits[type]["icon"])
-#			if (b>=0):
-			item.add_style_override("panel",bg[b])
-			if (b!="commodity"):
-					item.get_node("Size").add_style_override("panel",icon_size[outfits[type]["size"]])
-					item.get_node("Size").show()
-			if (store_filter[b]):
-				item.show()
-				item.ID = i
-				k += 1
-				if (k>=store_rows*store_cols):
-					break
-	for i in range(k,store_rows*store_cols):
-		var item = HUD.get_node("Station/Trade/GridContainer/Item"+str(i))
-		item.hide()
-		item.ID = i
-	HUD.get_node("Station/Equipment/Texture").set_size(HUD.get_node("Station/Equipment/Texture").get_size().y*Vector2(1,1))
-	if (Player.ship_selected>=0):
-		HUD.get_node("Station/Equipment/Texture").set_texture(outfits[Player.equipment[Player.ship_selected][0][0]]["preview"])
-	else:
-		HUD.get_node("Station/Equipment/Texture").set_texture(null)
-	
-	var k = 0
-	ofs = store_offset*store_cols
-	for i in range(ofs,shipyard.size()):
-		var item = HUD.get_node("Station/Shipyard/Ships/Item"+str(k))
-		var type = shipyard[i][TYPE]
-		item.icon = type
-		item.get_node("Number").set_text(str(shipyard[i][AMMOUNT]))
-		if (type!=""):
-			item.get_node("Icon").set_texture(outfits[type]["icon"])
-			item.add_style_override("panel",bg["ship"])
-			item.show()
-			item.ID = i
-			k += 1
-			if (k>=store_rows*store_cols):
-				break
-	for i in range(k,store_rows*store_cols):
-		var item = HUD.get_node("Station/Shipyard/Ships/Item"+str(i))
-		item.hide()
-		item.ID = i
-	
-	var k = 0
-	if (Player.equipment.size()>0):
-		ofs = inventory_offset*inventory_cols
-		for i in range(ofs,Player.equipment.size()):
-			var item = HUD.get_node("Station/Hangar/Hangar/Item"+str(k))
-			var type = Player.equipment[i][0][TYPE]
-			item.icon = type
-			item.get_node("Number").set_text("")
-			if (Player.ship_location[i]==Player.station):
-				item.set_opacity(1.0)
-			else:
-				item.set_opacity(0.75)
-			if (type!=""):
-				item.get_node("Icon").set_texture(outfits[type]["icon"])
-				item.add_style_override("panel",bg["ship"])
-				item.show()
-				item.ID = i
-				k += 1
-				if (k>=store_rows*store_cols):
-					break
-	for i in range(k,inventory_rows*inventory_cols):
-		var item = HUD.get_node("Station/Hangar/Hangar/Item"+str(i))
-		item.hide()
-		item.ID = i
-	if (Player.ship_selected>=0):
-		HUD.get_node("Station/Hangar/Hangar/Item"+str(Player.ship_selected)+"/Selected").show()
-	
-	update_stats()
-	
-	HUD.get_node("Station/Inventory/Gold").set_text(str(Player.credits)+units["price"])
-	HUD.get_node("Station/Crew/Text").clear()
-	if (Player.ship_selected>=0):
-		HUD.get_node("Station/Crew/Text").add_text(tr("CREW")+": "+str(Player.ship_crew[Player.ship_selected])+" / "+str(player_bunks)+"\n"+tr("min_crew")+": "+str(player_crew)+"\n"+tr("PASSENGERS")+": "+str(Player.passengers)+"\n"+tr("FREE_BUNKS")+": "+str(player_bunks-Player.ship_crew[Player.ship_selected]))
 
 
 # tooltips

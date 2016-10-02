@@ -13,12 +13,17 @@ const MISSIONS = 7
 
 var commodity = "food"
 var menu = OVERVIEW
+var inventory_offset = 0
 var inventory_rows = 0
 var inventory_cols = 0
+var equipment_offset = 0
 var equipment_rows = 0
 var equipment_cols = 0
+var store_offset = 0
 var store_rows = 0
 var store_cols = 0
+var store_filter = {"ship":true,"weapon":true,"turret":true,"missile":true,
+"reactor":true,"engine":true,"internal":true,"external":true,"commodity":true}
 var mission_selected = -1
 
 var item = load("res://scenes/hud/item.tscn")
@@ -65,9 +70,9 @@ func show_trade():
 	get_node("Missions").hide()
 	get_node("Map").hide()
 	HUD.hide_map()
-	Equipment.equipment_offset = 0
-	Equipment.store_offset = 0
-	Equipment.update_icons()
+	equipment_offset = 0
+	store_offset = 0
+	update_icons()
 
 func show_equipment():
 	menu = EQUIPMENT
@@ -82,9 +87,9 @@ func show_equipment():
 	get_node("Missions").hide()
 	get_node("Map").hide()
 	HUD.hide_map()
-	Equipment.equipment_offset = 0
-	Equipment.store_offset = 0
-	Equipment.update_icons()
+	equipment_offset = 0
+	store_offset = 0
+	update_icons()
 
 func show_shipyard():
 	menu = SHIPYARD
@@ -99,9 +104,9 @@ func show_shipyard():
 	get_node("Missions").hide()
 	get_node("Map").hide()
 	HUD.hide_map()
-	Equipment.equipment_offset = 0
-	Equipment.store_offset = 0
-	Equipment.update_icons()
+	equipment_offset = 0
+	store_offset = 0
+	update_icons()
 
 func show_crew():
 	menu = CREW
@@ -152,63 +157,63 @@ func select_commodity(type):
 	commodity = type
 
 func store_offset(offset):
-	var ofs = Equipment.store_offset
-	Equipment.store_offset = clamp(ofs+offset,0,max(ceil(Equipment.store.size()/Equipment.store_cols-Equipment.store_rows),0))
-	if (Equipment.store_offset!=ofs):
-		Equipment.update_icons()
+	var ofs = store_offset
+	store_offset = clamp(ofs+offset,0,max(ceil(Equipment.store.size()/store_cols-store_rows),0))
+	if (store_offset!=ofs):
+		update_icons()
 
 func inventory_offset(offset):
-	var ofs = Equipment.inventory_offset
-	Equipment.inventory_offset = clamp(ofs+offset,0,max(ceil(Equipment.inventory.size()/Equipment.inventory_cols-Equipment.inventory_rows),0))
-	if (Equipment.inventory_offset!=ofs):
-		Equipment.update_icons()
+	var ofs = inventory_offset
+	inventory_offset = clamp(ofs+offset,0,max(ceil(Player.inventory.size()/inventory_cols-inventory_rows),0))
+	if (inventory_offset!=ofs):
+		update_icons()
 
 func equipment_offset(offset):
-	var ofs = Equipment.equipment_offset
-	Equipment.equipment_offset = clamp(ofs+offset,0,max(ceil(Equipment.equipment.size()/Equipment.equipment_cols-Equipment.equipment_rows),0))
-	if (Equipment.equipment_offset!=ofs):
-		Equipment.update_icons()
+	var ofs = equipment_offset
+	equipment_offset = clamp(ofs+offset,0,max(ceil(Player.equipment[Player.ship_selected].size()/equipment_cols-equipment_rows),0))
+	if (equipment_offset!=ofs):
+		update_icons()
 
 func shipyard_offset(offset):
-	var ofs = Equipment.store_offset
-	Equipment.store_offset = clamp(ofs+offset,0,max(ceil(Equipment.shipyard.size()/Equipment.store_cols-Equipment.store_rows),0))
-	if (Equipment.store_offset!=ofs):
-		Equipment.update_icons()
+	var ofs = store_offset
+	store_offset = clamp(ofs+offset,0,max(ceil(Equipment.shipyard.size()/store_cols-store_rows),0))
+	if (store_offset!=ofs):
+		update_icons()
 
 func hangar_offset(offset):
-	var ofs = Equipment.inventory_offset
-	Equipment.inventory_offset = clamp(ofs+offset,0,max(ceil(Equipment.equipment.size()/Equipment.inventory_cols-Equipment.inventory_rows),0))
-	if (Equipment.inventory_offset!=ofs):
-		Equipment.update_icons()
+	var ofs = inventory_offset
+	inventory_offset = clamp(ofs+offset,0,max(ceil(Player.equipment.size()/inventory_cols-inventory_rows),0))
+	if (inventory_offset!=ofs):
+		update_icons()
 
 func toggle_commodities_filter(pressed):
-	Equipment.store_filter["commodity"] = pressed
-	Equipment.update_icons()
+	store_filter["commodity"] = pressed
+	update_icons()
 
 func toggle_weapon_filter(pressed):
-	Equipment.store_filter["weapon"] = pressed
-	Equipment.store_filter["turret"] = pressed
-	Equipment.update_icons()
+	store_filter["weapon"] = pressed
+	store_filter["turret"] = pressed
+	update_icons()
 
 func toggle_missile_filter(pressed):
-	Equipment.store_filter["missile"] = pressed
-	Equipment.update_icons()
+	store_filter["missile"] = pressed
+	update_icons()
 
 func toggle_reactor_filter(pressed):
-	Equipment.store_filter["reactor"] = pressed
-	Equipment.update_icons()
+	store_filter["reactor"] = pressed
+	update_icons()
 
 func toggle_engine_filter(pressed):
-	Equipment.store_filter["engine"] = pressed
-	Equipment.update_icons()
+	store_filter["engine"] = pressed
+	update_icons()
 
 func toggle_internal_filter(pressed):
-	Equipment.store_filter["internal"] = pressed
-	Equipment.update_icons()
+	store_filter["internal"] = pressed
+	update_icons()
 
 func toggle_external_filter(pressed):
-	Equipment.store_filter["external"] = pressed
-	Equipment.update_icons()
+	store_filter["external"] = pressed
+	update_icons()
 
 func hire_crew():
 	Equipment.hire_crew()
@@ -223,7 +228,7 @@ func accept_mission():
 	Missions.call(Missions.missions_available[mission_selected]["on_accept"],mission_selected)
 	update_missions()
 	deselect_mission()
-	Equipment.update_icons()
+	update_icons()
 
 func abord_mission():
 	Missions.call(Missions.missions_available[mission_selected]["on_abord"],mission_selected)
@@ -303,6 +308,140 @@ func update_missions():
 			bi.get_node("Text").set_text(Missions.missions[i]["title"])
 	for i in range(Missions.missions.size(),get_node("Missions/ScrollContainer/VBoxContainer/Accepted").get_child_count()):
 		get_node("Missions/ScrollContainer/VBoxContainer/Accepted/Mission"+str(i+1)).queue_free()
+
+func update_icons():
+	# update inventory/equipment/store icons
+	var ofs
+	ofs = inventory_offset*inventory_cols
+	for i in range(inventory_rows*inventory_cols):
+		var item = get_node("Inventory/GridContainer/Item"+str(i))
+		if (Player.inventory.size()>i+ofs):
+			var type = Player.inventory[i+ofs][Equipment.TYPE]
+			item.get_node("Number").set_text(str(Player.inventory[i+ofs][Equipment.AMMOUNT]))
+			item.icon = type
+			if (type!=""):
+				var b = Equipment.outfits[type]["type"]
+				item.get_node("Icon").set_texture(Equipment.outfits[type]["icon"])
+				item.add_style_override("panel",Equipment.bg[b])
+				if (b!="commodity"):
+					item.get_node("Size").add_style_override("panel",Equipment.icon_size[Equipment.outfits[type]["size"]])
+					item.get_node("Size").show()
+				item.show()
+			else:
+				item.hide()
+		else:
+			item.hide()
+	
+	ofs = equipment_offset*equipment_cols
+	for i in range(1,equipment_rows*equipment_cols+1):
+		var item = get_node("Equipment/GridContainer/Item"+str(i))
+		if (Player.ship_selected>=0 && Player.equipment[Player.ship_selected].size()>i+ofs):
+			var type = Player.equipment[Player.ship_selected][i+ofs][Equipment.TYPE]
+			if (Player.equipment[Player.ship_selected][i+ofs][Equipment.AMMOUNT]>1):
+				item.get_node("Number").set_text(str(Player.equipment[Player.ship_selected][i+ofs][Equipment.AMMOUNT]))
+			else:
+				item.get_node("Number").set_text("")
+			item.icon = type
+			if (type!=""):
+				item.get_node("Icon").set_texture(Equipment.outfits[type]["icon"])
+			else:
+				item.get_node("Icon").set_texture(null)
+			var size = Equipment.outfits[Player.equipment[Player.ship_selected][0][Equipment.TYPE]]["slots"][i-1].split("_")[1]
+			item.get_node("Size").add_style_override("panel",Equipment.icon_size[size])
+			item.get_node("Size").show()
+			if (Equipment.outfits[Player.equipment[Player.ship_selected][0][0]]["slots"].size()+1>i):
+				var b = Equipment.outfits[Player.equipment[Player.ship_selected][0][0]]["slots"][i-1].split("_")[0]
+				item.add_style_override("panel",Equipment.bg[b])
+				item.show()
+			else:
+				item.hide()
+		else:
+			item.hide()
+	
+	var k = 0
+	ofs = store_offset*store_cols
+	for i in range(ofs,Equipment.store.size()):
+		var item = get_node("Trade/GridContainer/Item"+str(k))
+		var type = Equipment.store[i][Equipment.TYPE]
+		item.icon = type
+		item.get_node("Number").set_text(str(Equipment.store[i][Equipment.AMMOUNT]))
+		if (type!=""):
+			var b = Equipment.outfits[type]["type"]
+			item.get_node("Icon").set_texture(Equipment.outfits[type]["icon"])
+#			if (b>=0):
+			item.add_style_override("panel",Equipment.bg[b])
+			if (b!="commodity"):
+					item.get_node("Size").add_style_override("panel",Equipment.icon_size[Equipment.outfits[type]["size"]])
+					item.get_node("Size").show()
+			if (store_filter[b]):
+				item.show()
+				item.ID = i
+				k += 1
+				if (k>=store_rows*store_cols):
+					break
+	for i in range(k,store_rows*store_cols):
+		var item = get_node("Trade/GridContainer/Item"+str(i))
+		item.hide()
+		item.ID = i
+	get_node("Equipment/Texture").set_size(get_node("Equipment/Texture").get_size().y*Vector2(1,1))
+	if (Player.ship_selected>=0):
+		get_node("Equipment/Texture").set_texture(Equipment.outfits[Player.equipment[Player.ship_selected][0][0]]["preview"])
+	else:
+		get_node("Equipment/Texture").set_texture(null)
+	
+	var k = 0
+	ofs = store_offset*store_cols
+	for i in range(ofs,Equipment.shipyard.size()):
+		var item = get_node("Shipyard/Ships/Item"+str(k))
+		var type = Equipment.shipyard[i][Equipment.TYPE]
+		item.icon = type
+		item.get_node("Number").set_text(str(Equipment.shipyard[i][Equipment.AMMOUNT]))
+		if (type!=""):
+			item.get_node("Icon").set_texture(Equipment.outfits[type]["icon"])
+			item.add_style_override("panel",Equipment.bg["ship"])
+			item.show()
+			item.ID = i
+			k += 1
+			if (k>=store_rows*store_cols):
+				break
+	for i in range(k,store_rows*store_cols):
+		var item = get_node("Shipyard/Ships/Item"+str(i))
+		item.hide()
+		item.ID = i
+	
+	var k = 0
+	if (Player.equipment.size()>0):
+		ofs = inventory_offset*inventory_cols
+		for i in range(ofs,Player.equipment.size()):
+			var item = get_node("Hangar/Hangar/Item"+str(k))
+			var type = Player.equipment[i][0][Equipment.TYPE]
+			item.icon = type
+			item.get_node("Number").set_text("")
+			if (Player.ship_location[i]==Player.station):
+				item.set_opacity(1.0)
+			else:
+				item.set_opacity(0.75)
+			if (type!=""):
+				item.get_node("Icon").set_texture(Equipment.outfits[type]["icon"])
+				item.add_style_override("panel",Equipment.bg["ship"])
+				item.show()
+				item.ID = i
+				k += 1
+				if (k>=store_rows*store_cols):
+					break
+	for i in range(k,inventory_rows*inventory_cols):
+		var item = get_node("Hangar/Hangar/Item"+str(i))
+		item.hide()
+		item.ID = i
+	if (Player.ship_selected>=0):
+		get_node("Hangar/Hangar/Item"+str(Player.ship_selected)+"/Selected").show()
+	
+	Equipment.update_stats()
+	
+	get_node("Inventory/Credits").set_text(str(Player.credits)+Equipment.units["price"])
+	get_node("Crew/Text").clear()
+	if (Player.ship_selected>=0):
+		get_node("Crew/Text").add_text(tr("CREW")+": "+str(Player.ship_crew[Player.ship_selected])+" / "+str(Equipment.player_bunks)+"\n"+tr("min_crew")+": "+str(Equipment.player_crew)+"\n"+tr("PASSENGERS")+": "+str(Player.passengers)+"\n"+tr("FREE_BUNKS")+": "+str(Equipment.player_bunks-Player.ship_crew[Player.ship_selected]))
 
 func _resize():
 	var ms = (OS.get_video_mode_size().x/800.0+OS.get_video_mode_size().y/600.0)/2.0

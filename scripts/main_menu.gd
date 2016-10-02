@@ -560,34 +560,31 @@ func hide_menu():
 
 func show_load():
 	update_files()
-	get_node("Files").set_title(tr("LOAD"))
-	get_node("Files/Button").set_text(tr("LOAD"))
+	get_node("Files/Title").set_text(tr("LOAD"))
+	get_node("Files/ButtonConfirm").set_text(tr("LOAD"))
 	mode = LOAD
 	get_node("Files").set_pos(Vector2(112,184))
-	get_node("Files").popup()
+	get_node("Files").show()
 
 func show_save():
 	var date = OS.get_date()
 	var time = OS.get_time()
 	update_files()
 	file_selected = Player.first+"-"+Player.last+"_"+str(date["day"])+"-"+str(date["month"])+"-"+str(date["year"])+"_"+str(time["hour"])+"-"+str(time["minute"])+".sav"
-	get_node("Files").set_title(tr("SAVE"))
-	get_node("Files/Button").set_text(tr("SAVE"))
+	get_node("Files/Title").set_text(tr("SAVE"))
+	get_node("Files/ButtonConfirm").set_text(tr("SAVE"))
 	get_node("Files/LineEdit").set_text(file_selected)
 	mode = SAVE
 	get_node("Files").set_pos(Vector2(112,184))
-	get_node("Files").popup()
+	get_node("Files").show()
 
 func show_options():
 	get_node("Options").set_pos(Vector2(112,184))
-	get_node("Options").popup()
+	get_node("Options").show()
 
 func show_new():
 	get_node("New").set_pos(Vector2(112,184))
-	get_node("New").popup()
-
-func hide_new():
-	get_node("New").hide()
+	get_node("New").show()
 
 func toggle_options_video(pressed):
 	if (pressed):

@@ -115,7 +115,7 @@ func player_landed(autosave=true):
 			Equipment.store += [[c,stations_comm[Player.station][c]]]
 	Equipment.store += stations_outfits[Player.station]
 	Equipment.shipyard = stations_ships[Player.station]
-	Equipment.update_icons()
+	HUD.get_node("Station").update_icons()
 	HUD.hide_map()
 	HUD.hide_hud()
 	Player.ship_crew[Player.ship_selected] = max(Player.ship_crew[Player.ship_selected],Equipment.player_crew)

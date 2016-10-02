@@ -75,7 +75,7 @@ func _resize():
 	get_node("Map/Map").set_rect(Rect2(Vector2(0,0),get_node("Map").get_rect().size))
 	
 	get_node("Station")._resize()
-	Equipment.update_icons()
+	get_node("Station").update_icons()
 
 func _input(event):
 	if (event.type==InputEvent.MOUSE_BUTTON):

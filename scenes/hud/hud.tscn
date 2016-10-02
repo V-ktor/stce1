@@ -1848,7 +1848,7 @@ size_flags/vertical = -2147483648
 margin/left = 4.0
 margin/top = 4.0
 margin/right = 4.0
-margin/bottom = 4.0
+margin/bottom = 0.0
 custom_styles/panel = SubResource( 28 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Station/Trade"]
@@ -2045,9 +2045,9 @@ focus/stop_mouse = true
 size_flags/horizontal = -2147483648
 size_flags/vertical = -2147483648
 margin/left = 0.0
-margin/top = 16.0
+margin/top = 4.0
 margin/right = 0.0
-margin/bottom = -16.0
+margin/bottom = -4.0
 
 [node name="Title" type="Panel" parent="Station/Trade"]
 
@@ -2133,7 +2133,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Gold" type="Label" parent="Station/Inventory"]
+[node name="Credits" type="Label" parent="Station/Inventory"]
 
 anchor/top = 1
 anchor/right = 1
@@ -2757,8 +2757,25 @@ size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 200.0
-margin/bottom = 11.0
+margin/bottom = 47.0
 alignment = 0
+
+[node name="Label1" type="Label" parent="Station/Missions/ScrollContainer/VBoxContainer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 200.0
+margin/bottom = 14.0
+text = "ACTIVE"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Accepted" type="VBoxContainer" parent="Station/Missions/ScrollContainer/VBoxContainer"]
 
@@ -2767,9 +2784,9 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 18.0
 margin/right = 200.0
-margin/bottom = 0.0
+margin/bottom = 18.0
 alignment = 0
 
 [node name="HSeparator" type="HSeparator" parent="Station/Missions/ScrollContainer/VBoxContainer"]
@@ -2779,9 +2796,26 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 4.0
+margin/top = 22.0
 margin/right = 200.0
-margin/bottom = 7.0
+margin/bottom = 25.0
+
+[node name="Label2" type="Label" parent="Station/Missions/ScrollContainer/VBoxContainer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 29.0
+margin/right = 200.0
+margin/bottom = 43.0
+text = "OFFERED"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="Available" type="VBoxContainer" parent="Station/Missions/ScrollContainer/VBoxContainer"]
 
@@ -2790,9 +2824,9 @@ focus/stop_mouse = false
 size_flags/horizontal = 3
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 11.0
+margin/top = 47.0
 margin/right = 200.0
-margin/bottom = 11.0
+margin/bottom = 47.0
 alignment = 0
 
 [node name="Mission0" type="Panel" parent="Station/Missions/ScrollContainer/VBoxContainer/Available"]

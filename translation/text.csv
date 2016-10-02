@@ -8,6 +8,7 @@ QUIT,quit
 QUIT?,Quit?
 OK,OK
 Cancel,Cancel
+BACK,back
 VIDEO,video
 RESOLUTION,resolution
 FULLSCREEN,fullscreen
@@ -203,6 +204,8 @@ ENEMY_HAS_BEEN_DEFEATED,The enemy has been defeated.
 LOST_CREW,You lost a crewman.
 DEFEATED_ENEMY_CREW,You defeated an enemy crewman.
 ENEMY_PREVENTS_YOU_FROM_DETACHING_DOCKING_CLAMPS,The enemy prevents you from detaching the docking clamps!
+ACTIVE,active
+OFFERED,offered
 ACCEPT_MISSION,accept mission
 ABORD_MISSION,abord mission
 MISSION_ACCEPTED,Mission Accepted!
