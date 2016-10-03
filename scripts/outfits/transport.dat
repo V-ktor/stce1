@@ -1,7 +1,7 @@
 {
 	"tag":"tr1",
 	"type":"ship",
-	"ship_class":"CLASS_TRANSPORTER",
+	"ship_class":"CLASS_TRANSPORT",
 	"slots":
 	[
 		"turret_small",

@@ -58,7 +58,7 @@ border_size = 0
 border_blend = false
 draw_bg = true
 
-[sub_resource type="StyleBoxTexture" id=66]
+[sub_resource type="StyleBoxTexture" id=2]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -773,7 +773,7 @@ WindowDialog/icons/close = ExtResource( 30 )
 WindowDialog/icons/close_hilite = ExtResource( 31 )
 WindowDialog/styles/panel = SubResource( 35 )
 
-[sub_resource type="StyleBoxTexture" id=53]
+[sub_resource type="StyleBoxTexture" id=37]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -790,7 +790,7 @@ expand_margin/top = 20.0
 expand_margin/bottom = 14.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=37]
+[sub_resource type="StyleBoxTexture" id=38]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -807,30 +807,13 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=38]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 34 )
-margin/left = 23.0
-margin/right = 23.0
-margin/top = 3.0
-margin/bottom = 3.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
 [sub_resource type="StyleBoxTexture" id=39]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 35 )
+texture = ExtResource( 34 )
 margin/left = 23.0
 margin/right = 23.0
 margin/top = 3.0
@@ -847,7 +830,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 36 )
+texture = ExtResource( 35 )
 margin/left = 23.0
 margin/right = 23.0
 margin/top = 3.0
@@ -864,6 +847,23 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
+texture = ExtResource( 36 )
+margin/left = 23.0
+margin/right = 23.0
+margin/top = 3.0
+margin/bottom = 3.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=42]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
 texture = ExtResource( 33 )
 margin/left = 25.0
 margin/right = 25.0
@@ -875,7 +875,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=42]
+[sub_resource type="StyleBoxTexture" id=43]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -892,7 +892,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=43]
+[sub_resource type="StyleBoxTexture" id=44]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -909,7 +909,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=61]
+[sub_resource type="StyleBoxTexture" id=45]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -926,7 +926,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=62]
+[sub_resource type="StyleBoxTexture" id=46]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -943,7 +943,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=63]
+[sub_resource type="StyleBoxTexture" id=47]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -960,7 +960,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=64]
+[sub_resource type="StyleBoxTexture" id=48]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -977,7 +977,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=65]
+[sub_resource type="StyleBoxTexture" id=49]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -994,7 +994,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=44]
+[sub_resource type="StyleBoxTexture" id=50]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1011,7 +1011,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=45]
+[sub_resource type="StyleBoxTexture" id=51]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1028,7 +1028,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=46]
+[sub_resource type="StyleBoxTexture" id=52]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1045,7 +1045,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=47]
+[sub_resource type="StyleBoxTexture" id=53]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1062,7 +1062,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=48]
+[sub_resource type="StyleBoxTexture" id=54]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1079,7 +1079,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=49]
+[sub_resource type="StyleBoxTexture" id=55]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1096,7 +1096,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=50]
+[sub_resource type="StyleBoxTexture" id=56]
 
 content_margin/left = 24.0
 content_margin/right = -1.0
@@ -1113,7 +1113,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="Theme" id=51]
+[sub_resource type="Theme" id=57]
 
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
@@ -1121,19 +1121,19 @@ Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 44 )
-Button/styles/focus = SubResource( 45 )
-Button/styles/hover = SubResource( 46 )
-Button/styles/normal = SubResource( 47 )
-Button/styles/pressed = SubResource( 48 )
+Button/styles/disabled = SubResource( 50 )
+Button/styles/focus = SubResource( 51 )
+Button/styles/hover = SubResource( 52 )
+Button/styles/normal = SubResource( 53 )
+Button/styles/pressed = SubResource( 54 )
 LineEdit/colors/cursor_color = Color( 0.941176, 0.941176, 0.941176, 1 )
 LineEdit/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 LineEdit/colors/font_color_selected = Color( 0, 0, 0, 1 )
 LineEdit/colors/selection_color = Color( 0.490196, 0.490196, 0.490196, 1 )
 LineEdit/constants/minimum_spaces = 12
 LineEdit/fonts/font = null
-LineEdit/styles/focus = SubResource( 49 )
-LineEdit/styles/normal = SubResource( 50 )
+LineEdit/styles/focus = SubResource( 55 )
+LineEdit/styles/normal = SubResource( 56 )
 LineEdit/styles/read_only = null
 Panel/styles/panel = SubResource( 28 )
 Panel/styles/panelf = null
@@ -1148,13 +1148,13 @@ WindowDialog/icons/close = ExtResource( 30 )
 WindowDialog/icons/close_hilite = ExtResource( 31 )
 WindowDialog/styles/panel = SubResource( 35 )
 
-[sub_resource type="Animation" id=52]
+[sub_resource type="Animation" id=58]
 
 length = 0.4
 loop = true
 step = 0.1
 
-[sub_resource type="StyleBoxTexture" id=54]
+[sub_resource type="StyleBoxTexture" id=59]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1171,7 +1171,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=55]
+[sub_resource type="StyleBoxTexture" id=60]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1188,7 +1188,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=56]
+[sub_resource type="StyleBoxTexture" id=61]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1205,7 +1205,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=57]
+[sub_resource type="StyleBoxTexture" id=62]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1222,7 +1222,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=58]
+[sub_resource type="StyleBoxTexture" id=63]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1239,7 +1239,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=59]
+[sub_resource type="StyleBoxTexture" id=64]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1256,7 +1256,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=60]
+[sub_resource type="StyleBoxTexture" id=65]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -1313,7 +1313,7 @@ margin/left = 300.0
 margin/top = 150.0
 margin/right = 100.0
 margin/bottom = -150.0
-custom_styles/panel = SubResource( 66 )
+custom_styles/panel = SubResource( 2 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Buttons" type="VBoxContainer" parent="Menu"]
@@ -1656,7 +1656,7 @@ margin/left = 112.0
 margin/top = 184.0
 margin/right = 312.0
 margin/bottom = 184.0
-custom_styles/panel = SubResource( 53 )
+custom_styles/panel = SubResource( 37 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Title" type="Label" parent="Files"]
@@ -1691,8 +1691,8 @@ margin/left = -5.0
 margin/top = 12.0
 margin/right = 126.0
 margin/bottom = -12.0
-custom_styles/focus = SubResource( 37 )
-custom_styles/normal = SubResource( 38 )
+custom_styles/focus = SubResource( 38 )
+custom_styles/normal = SubResource( 39 )
 placeholder/alpha = 0.6
 focus_mode = 2
 caret/caret_blink = true
@@ -1714,11 +1714,11 @@ margin/left = 148.0
 margin/top = 12.0
 margin/right = 58.0
 margin/bottom = -12.0
-custom_styles/hover = SubResource( 39 )
-custom_styles/pressed = SubResource( 40 )
-custom_styles/focus = SubResource( 41 )
-custom_styles/disabled = SubResource( 42 )
-custom_styles/normal = SubResource( 43 )
+custom_styles/hover = SubResource( 40 )
+custom_styles/pressed = SubResource( 41 )
+custom_styles/focus = SubResource( 42 )
+custom_styles/disabled = SubResource( 43 )
+custom_styles/normal = SubResource( 44 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1741,11 +1741,11 @@ margin/left = 80.0
 margin/top = 12.0
 margin/right = 0.0
 margin/bottom = -12.0
-custom_styles/hover = SubResource( 61 )
-custom_styles/pressed = SubResource( 62 )
-custom_styles/focus = SubResource( 63 )
-custom_styles/disabled = SubResource( 64 )
-custom_styles/normal = SubResource( 65 )
+custom_styles/hover = SubResource( 45 )
+custom_styles/pressed = SubResource( 46 )
+custom_styles/focus = SubResource( 47 )
+custom_styles/disabled = SubResource( 48 )
+custom_styles/normal = SubResource( 49 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1947,7 +1947,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = SubResource( 51 )
+theme/theme = SubResource( 57 )
 margin/left = 125.0
 margin/top = 50.0
 margin/right = -125.0
@@ -1998,7 +1998,7 @@ stretch_mode = 0
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/glow = SubResource( 52 )
+anims/glow = SubResource( 58 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -2020,7 +2020,7 @@ margin/left = 112.0
 margin/top = 184.0
 margin/right = 312.0
 margin/bottom = 184.0
-custom_styles/panel = SubResource( 53 )
+custom_styles/panel = SubResource( 37 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Title" type="Label" parent="Options"]
@@ -2171,11 +2171,11 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 609.0
 margin/bottom = 24.0
-custom_styles/hover = SubResource( 54 )
-custom_styles/pressed = SubResource( 55 )
-custom_styles/focus = SubResource( 56 )
-custom_styles/disabled = SubResource( 57 )
-custom_styles/normal = SubResource( 58 )
+custom_styles/hover = SubResource( 59 )
+custom_styles/pressed = SubResource( 60 )
+custom_styles/focus = SubResource( 61 )
+custom_styles/disabled = SubResource( 62 )
+custom_styles/normal = SubResource( 63 )
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -2411,11 +2411,11 @@ margin/left = 0.0
 margin/top = 93.0
 margin/right = 609.0
 margin/bottom = 117.0
-custom_styles/hover = SubResource( 54 )
-custom_styles/pressed = SubResource( 55 )
-custom_styles/focus = SubResource( 56 )
-custom_styles/disabled = SubResource( 57 )
-custom_styles/normal = SubResource( 58 )
+custom_styles/hover = SubResource( 59 )
+custom_styles/pressed = SubResource( 60 )
+custom_styles/focus = SubResource( 61 )
+custom_styles/disabled = SubResource( 62 )
+custom_styles/normal = SubResource( 63 )
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -2698,11 +2698,11 @@ margin/left = 0.0
 margin/top = 186.0
 margin/right = 609.0
 margin/bottom = 210.0
-custom_styles/hover = SubResource( 54 )
-custom_styles/pressed = SubResource( 55 )
-custom_styles/focus = SubResource( 56 )
-custom_styles/disabled = SubResource( 57 )
-custom_styles/normal = SubResource( 58 )
+custom_styles/hover = SubResource( 59 )
+custom_styles/pressed = SubResource( 60 )
+custom_styles/focus = SubResource( 61 )
+custom_styles/disabled = SubResource( 62 )
+custom_styles/normal = SubResource( 63 )
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -2813,11 +2813,11 @@ margin/left = 0.0
 margin/top = 251.0
 margin/right = 609.0
 margin/bottom = 275.0
-custom_styles/hover = SubResource( 54 )
-custom_styles/pressed = SubResource( 55 )
-custom_styles/focus = SubResource( 56 )
-custom_styles/disabled = SubResource( 57 )
-custom_styles/normal = SubResource( 58 )
+custom_styles/hover = SubResource( 59 )
+custom_styles/pressed = SubResource( 60 )
+custom_styles/focus = SubResource( 61 )
+custom_styles/disabled = SubResource( 62 )
+custom_styles/normal = SubResource( 63 )
 toggle_mode = true
 is_pressed = true
 enabled_focus_mode = 2
@@ -2924,7 +2924,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = SubResource( 51 )
+theme/theme = SubResource( 57 )
 margin/left = 125.0
 margin/top = 50.0
 margin/right = -125.0
@@ -2987,7 +2987,7 @@ margin/left = 112.0
 margin/top = 184.0
 margin/right = 312.0
 margin/bottom = 184.0
-custom_styles/panel = SubResource( 53 )
+custom_styles/panel = SubResource( 37 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Button1" type="Button" parent="New"]
@@ -3139,8 +3139,8 @@ margin/left = 189.0
 margin/top = 0.0
 margin/right = 349.0
 margin/bottom = 24.0
-custom_styles/focus = SubResource( 59 )
-custom_styles/normal = SubResource( 60 )
+custom_styles/focus = SubResource( 64 )
+custom_styles/normal = SubResource( 65 )
 placeholder/text = "FIRST"
 placeholder/alpha = 0.6
 focus_mode = 2
@@ -3186,8 +3186,8 @@ margin/left = 399.0
 margin/top = 0.0
 margin/right = 559.0
 margin/bottom = 24.0
-custom_styles/focus = SubResource( 59 )
-custom_styles/normal = SubResource( 60 )
+custom_styles/focus = SubResource( 64 )
+custom_styles/normal = SubResource( 65 )
 placeholder/text = "LAST"
 placeholder/alpha = 0.6
 focus_mode = 2
@@ -3270,7 +3270,7 @@ text = "FIGHTER"
 flat = false
 align = 0
 selected = 0
-items = [ "FIGHTER", null, false, 0, false, "FREIGHTER", null, false, 1, false, "TRANSPORTER", null, false, 2, false ]
+items = [ "FIGHTER", null, false, 0, false, "FREIGHTER", null, false, 1, false, "TRANSPORT", null, false, 2, false ]
 
 [node name="Quit" type="ConfirmationDialog" parent="."]
 
@@ -3285,7 +3285,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-theme/theme = SubResource( 51 )
+theme/theme = SubResource( 57 )
 margin/left = 126.0
 margin/top = 50.0
 margin/right = -124.0
@@ -3338,7 +3338,7 @@ __meta__ = { "_edit_lock_":true }
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/glow = SubResource( 52 )
+anims/glow = SubResource( 58 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

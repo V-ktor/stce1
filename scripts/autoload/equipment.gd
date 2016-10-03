@@ -38,8 +38,8 @@ const units = {"mass":"t","price":" Credits","armor":"MJ","repair":"MW",
 "damage":"MJ","disable":"MJ","impact_heat":"MJ","dmgps":"MW","disps":"MW","ihtps":"MW",
 "fire_rate":"Hz","speed":"m/s","spread":"°","range":"km","rays":"","life_time":"s","ammo":""}
 const stats_tooltip = ["min_crew","bunks","armor","repair","rotation_speed","energy","power",
-"thrust_power","enps",
-"max_temperature","heat","thrust_heat","heat_dissipation","htps",
+"thrust_power","steering_power","enps",
+"max_temperature","heat","thrust_heat","steering_heat","heat_dissipation","htps",
 "damping","thrust","steering",
 "dmgps","disps","ihtps","fire_rate","range","speed","spread","rays","life_time","ammo",
 "cargo_space","resistance_impact","resistance_plasma","resistance_explosive",
@@ -658,10 +658,10 @@ func tooltip_comm(type,ID):
 		tooltip.get_node("VBoxContainer/Line6/Number").set_text(str(Player.inventory[ID][AMMOUNT]))
 		tooltip.get_node("VBoxContainer/Line6").show()
 		tooltip.get_node("VBoxContainer/Line7").hide()
-	for i in range(8,27):
+	for i in range(8,29):
 		tooltip.get_node("VBoxContainer/Line"+str(i)).hide()
 	
-	var height = 10
+	var height = 12
 	tooltip.show()
 	for i in range(1,8):
 		if (tooltip.get_node("VBoxContainer/Line"+str(i)).is_visible()):
@@ -708,11 +708,9 @@ func show_tooltip(type,ID):
 	tooltip.get_node("VBoxContainer/Line2").show()
 	if (values.has("ship_class")):
 		tooltip.get_node("VBoxContainer/Line3/Text").set_text(tr("SHIP_CLASS")+": "+tr(values["ship_class"]))
-#		tooltip.get_node("VBoxContainer/Line3/Number").set_text("")
 		tooltip.get_node("VBoxContainer/Line3").show()
 	elif (values.has("slot")):
 		tooltip.get_node("VBoxContainer/Line3/Text").set_text(tr("REQUIRES")+" "+tr(values["slot"]))
-#		tooltip.get_node("VBoxContainer/Line3/Number").set_text("")
 		tooltip.get_node("VBoxContainer/Line3").show()
 	else:
 		tooltip.get_node("VBoxContainer/Line3").hide()
@@ -759,10 +757,10 @@ func show_tooltip(type,ID):
 		tooltip.get_node("VBoxContainer/Line"+str(lines)).show()
 		lines += 1
 	
-	for i in range(lines,27):
+	for i in range(lines,29):
 		tooltip.get_node("VBoxContainer/Line"+str(i)).hide()
 	
-	var height = 10
+	var height = 12
 	tooltip.show()
 	for i in range(1,lines+1):
 		if (tooltip.get_node("VBoxContainer/Line"+str(i)).is_visible()):

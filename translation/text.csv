@@ -51,7 +51,7 @@ LAST,last
 SHIP,ship
 FIGHTER,Figter
 FREIGHTER,Freighter
-TRANSPORTER,Transporter
+TRANSPORT,Transport
 food,food
 metal,metal
 energy_cells,energy cells
@@ -106,9 +106,13 @@ max_heat,max. heat
 firing_heat,firing heat
 htps,firing heat
 thrust,thrust
+thrust_power,thrust power
+thrust_heat,thrust heat
 acceleration,acceleration
 max_velocity,max. velocity
 steering,steering
+steering_power,steering power
+steering_heat,steering heat
 turning_speed,turning speed
 rotation_speed,rotation speed
 damping,damping
@@ -179,6 +183,8 @@ CLASS_HEAVY_FIGHTER,heavy fighter
 CLASS_BOMBER,bomber
 CLASS_CORVETTE,corvette
 CLASS_DESTROYER,destroyer
+CLASS_FREIGHTER,freighter
+CLASS_TRANSPORT,transport
 NOT_ENOUGH_CARGO_SPACE,Not enough cargo space!
 NOT_ENOUGH_POWER,Not enough power!
 NOT_ENOUGH_CAPACITY,Not enough capacity!

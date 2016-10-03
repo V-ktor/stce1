@@ -565,6 +565,8 @@ func show_load():
 	mode = LOAD
 	get_node("Files").set_pos(Vector2(112,184))
 	get_node("Files").show()
+	get_node("Options").hide()
+	get_node("New").hide()
 
 func show_save():
 	var date = OS.get_date()
@@ -577,14 +579,20 @@ func show_save():
 	mode = SAVE
 	get_node("Files").set_pos(Vector2(112,184))
 	get_node("Files").show()
+	get_node("Options").hide()
+	get_node("New").hide()
 
 func show_options():
 	get_node("Options").set_pos(Vector2(112,184))
 	get_node("Options").show()
+	get_node("Files").hide()
+	get_node("New").hide()
 
 func show_new():
 	get_node("New").set_pos(Vector2(112,184))
 	get_node("New").show()
+	get_node("Options").hide()
+	get_node("Files").hide()
 
 func toggle_options_video(pressed):
 	if (pressed):

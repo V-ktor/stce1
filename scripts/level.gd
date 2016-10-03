@@ -63,10 +63,9 @@ const stations = [
 "Planet3/Shipyard","Planet3/Station01","Planet3/Station02","Planet3/Solar01",
 "Planet4/Station01","Planet4/Farm01","Planet4/Solar01","Planet4/Mine01","Planet4/Mine02",
 "Planet5/Mine01","Planet5/Refinery01","Planet5/Refinery02",
-"Planet6/Station01","Planet6/Refinery01","Planet6/Refinery02","Planet6/Farm01","Planet6/Farm02","Planet6/Solar01",
+"Planet6/Station01","Planet6/Shipyard","Planet6/Refinery01","Planet6/Refinery02","Planet6/Farm01","Planet6/Farm02","Planet6/Solar01",
 "Planet7/Refinery01","Planet7/Mine01","Planet7/Solar01","Planet7/Solar02",
-"Planet8/Mine01","Planet8/Mine02"
-]
+"Planet8/Mine01","Planet8/Mine02"]
 var stations_icon = {
 "Planet1/Solar01":"res://images/stations/solar02_icon.png",
 "Planet1/Solar02":"res://images/stations/solar02_icon.png",
@@ -93,6 +92,7 @@ var stations_icon = {
 "Planet5/Refinery01":"res://images/stations/station02_icon.png",
 "Planet5/Refinery02":"res://images/stations/station02_icon.png",
 "Planet6/Station01":"res://images/stations/station01_icon.png",
+"Planet6/Shipyard":"res://images/stations/shipyard_icon.png",
 "Planet6/Refinery01":"res://images/stations/station02_icon.png",
 "Planet6/Refinery02":"res://images/stations/station02_icon.png",
 "Planet6/Farm01":"res://images/stations/farm01_icon.png",
@@ -130,6 +130,7 @@ const stations_prod = {
 "Planet5/Refinery01":{"chemicals":350,"oxygen":150},
 "Planet5/Refinery02":{"chemicals":350,"oxygen":150},
 "Planet6/Station01":{"food":250,"metal":600,"energy_cells":500,"electronics":400,"luxury_goods":200,"chemicals":200,"radioactives":100,"oxygen":100,"textiles":250,"medicine":400},
+"Planet6/Shipyard":{},
 "Planet6/Refinery01":{"chemicals":350,"oxygen":150},
 "Planet6/Refinery02":{"chemicals":350,"oxygen":150},
 "Planet6/Farm01":{"food":80,"oxygen":50,"textiles":25},
@@ -140,8 +141,7 @@ const stations_prod = {
 "Planet7/Solar01":{"energy_cells":130},
 "Planet7/Solar02":{"energy_cells":400},
 "Planet8/Mine01":{"metal":250,"radioactives":30},
-"Planet8/Mine02":{"metal":250,"radioactives":30}
-}
+"Planet8/Mine02":{"metal":250,"radioactives":30}}
 const stations_cons = {
 "Planet1/Solar01":{"food":36,"metal":200,"chemicals":150,"oxygen":24,"textiles":12,"medicine":6},
 "Planet1/Solar02":{"food":36,"metal":200,"chemicals":150,"oxygen":24,"textiles":12,"medicine":6},
@@ -168,6 +168,7 @@ const stations_cons = {
 "Planet5/Refinery01":{"food":54,"energy_cells":200,"oxygen":36,"textiles":18,"medicine":9},
 "Planet5/Refinery02":{"food":54,"energy_cells":200,"oxygen":36,"textiles":18,"medicine":9},
 "Planet6/Station01":{"food":250,"metal":500,"energy_cells":300,"luxury_goods":400,"radioactives":300,"oxygen":200,"textiles":50,"medicine":100},
+"Planet6/Shipyard":{"food":144,"metal":400,"energy_cells":300,"electronics":250,"chemicals":150,"radioactives":300,"oxygen":96,"textiles":48,"medicine":24},
 "Planet6/Refinery01":{"food":54,"energy_cells":200,"oxygen":36,"textiles":18,"medicine":9},
 "Planet6/Refinery02":{"food":54,"energy_cells":200,"oxygen":36,"textiles":18,"medicine":9},
 "Planet6/Farm01":{"food":18,"energy_cells":75,"oxygen":12,"textiles":6,"medicine":3},
@@ -178,8 +179,7 @@ const stations_cons = {
 "Planet7/Solar01":{"food":18,"metal":66,"chemicals":50,"oxygen":12,"textiles":6,"medicine":3},
 "Planet7/Solar02":{"food":36,"metal":200,"chemicals":150,"oxygen":24,"textiles":12,"medicine":6},
 "Planet8/Mine01":{"food":36,"energy_cells":175,"oxygen":24,"textiles":12,"medicine":6},
-"Planet8/Mine02":{"food":36,"energy_cells":175,"oxygen":24,"textiles":12,"medicine":6},
-}
+"Planet8/Mine02":{"food":36,"energy_cells":175,"oxygen":24,"textiles":12,"medicine":6}}
 const stations_cargo = {
 "Planet1/Solar01":{"food":4000,"metal":4000,"energy_cells":8000,"chemicals":3000,"oxygen":2400,"textiles":2400,"medicine":2400},
 "Planet1/Solar02":{"food":4000,"metal":4000,"energy_cells":8000,"chemicals":3000,"oxygen":2400,"textiles":2400,"medicine":2400},
@@ -206,6 +206,7 @@ const stations_cargo = {
 "Planet5/Refinery01":{"food":3000,"energy_cells":3500,"chemicals":5500,"oxygen":6000,"textiles":2000,"medicine":2000},
 "Planet5/Refinery02":{"food":3000,"energy_cells":3500,"chemicals":5500,"oxygen":6000,"textiles":2000,"medicine":2000},
 "Planet6/Station01":{"food":10000,"metal":15000,"energy_cells":10000,"electronics":15000,"luxury_goods":10000,"chemicals":15000,"radioactives":10000,"oxygen":10000,"textiles":12000,"medicine":15000},
+"Planet6/Shipyard":{"food":10000,"metal":10000,"energy_cells":10000,"electronics":10000,"chemicals":10000,"radioactives":10000,"oxygen":6000,"textiles":5000,"medicine":5000},
 "Planet6/Refinery01":{"food":3000,"energy_cells":3500,"chemicals":5500,"oxygen":6000,"textiles":2000,"medicine":2000},
 "Planet6/Refinery02":{"food":3000,"energy_cells":3500,"chemicals":5500,"oxygen":6000,"textiles":2000,"medicine":2000},
 "Planet6/Farm01":{"food":4500,"energy_cells":3000,"oxygen":2500,"textiles":2500,"medicine":1300},
@@ -216,8 +217,7 @@ const stations_cargo = {
 "Planet7/Solar01":{"food":2000,"metal":1500,"energy_cells":4500,"chemicals":1400,"oxygen":1400,"textiles":1400,"medicine":1400},
 "Planet7/Solar02":{"food":4000,"metal":4000,"energy_cells":8000,"chemicals":3000,"oxygen":2400,"textiles":2400,"medicine":2400},
 "Planet8/Mine01":{"food":4000,"metal":8000,"energy_cells":4000,"radioactives":3000,"oxygen":2400,"textiles":2400,"medicine":2400},
-"Planet8/Mine02":{"food":4000,"metal":8000,"energy_cells":4000,"radioactives":3000,"oxygen":2400,"textiles":2400,"medicine":2400},
-}
+"Planet8/Mine02":{"food":4000,"metal":8000,"energy_cells":4000,"radioactives":3000,"oxygen":2400,"textiles":2400,"medicine":2400}}
 const stations_comm = {
 "Planet1/Solar01":{"metal":1484,"energy_cells":7488,"medicine":1661,"food":2465,"chemicals":1552,"textiles":1518,"oxygen":1678},
 "Planet1/Solar02":{"metal":1515,"energy_cells":7423,"medicine":1654,"food":2627,"chemicals":1526,"textiles":1433,"oxygen":1616},
@@ -244,6 +244,7 @@ const stations_comm = {
 "Planet5/Refinery01":{"energy_cells":1075,"medicine":1238,"food":1601,"chemicals":3900,"oxygen":4164,"textiles":958},
 "Planet5/Refinery02":{"energy_cells":1085,"medicine":1242,"food":1578,"chemicals":3871,"oxygen":3833,"textiles":950},
 "Planet6/Station01":{"metal":6800,"electronics":12402,"luxury_goods":2626,"energy_cells":5088,"radioactives":2988,"medicine":9366,"food":5852,"chemicals":13391,"textiles":7449,"oxygen":6425},
+"Planet6/Shipyard":{"electronics":8347,"metal":4227,"energy_cells":3423,"radioactives":4945,"medicine":3098,"food":5897,"chemicals":4927,"textiles":2792,"oxygen":3826},
 "Planet6/Solar01":{"metal":2028,"energy_cells":3313,"medicine":1674,"food":2519,"chemicals":2905,"oxygen":1558,"textiles":1593},
 "Planet6/Farm01":{"energy_cells":1617,"medicine":907,"food":2731,"textiles":1448,"oxygen":1498},
 "Planet6/Farm02":{"energy_cells":1641,"medicine":891,"food":2529,"oxygen":1402,"textiles":1596},
@@ -254,8 +255,7 @@ const stations_comm = {
 "Planet7/Mine01":{"metal":5000,"energy_cells":3175,"radioactives":2796,"medicine":866,"food":1182,"textiles":917,"oxygen":1447},
 "Planet7/Refinery01":{"energy_cells":2899,"medicine":796,"food":1000,"chemicals":4000,"textiles":677,"oxygen":3292},
 "Planet8/Mine01":{"metal":6433,"energy_cells":0,"medicine":454,"radioactives":2384,"food":1056,"oxygen":856,"textiles":817},
-"Planet8/Mine02":{"metal":6435,"energy_cells":0,"radioactives":2384,"medicine":456,"food":1056,"textiles":916,"oxygen":812}
-}
+"Planet8/Mine02":{"metal":6435,"energy_cells":0,"radioactives":2384,"medicine":456,"food":1056,"textiles":916,"oxygen":812}}
 const stations_ballance = {
 "Planet1/Solar01":0,
 "Planet1/Solar02":0,
@@ -282,6 +282,7 @@ const stations_ballance = {
 "Planet5/Refinery01":0,
 "Planet5/Refinery02":0,
 "Planet6/Station01":350,
+"Planet6/Shipyard":0,
 "Planet6/Refinery01":0,
 "Planet6/Refinery02":0,
 "Planet6/Farm01":0,
@@ -292,8 +293,7 @@ const stations_ballance = {
 "Planet7/Solar01":0,
 "Planet7/Solar02":0,
 "Planet8/Mine01":0,
-"Planet8/Mine02":0
-}
+"Planet8/Mine02":0}
 var stations_outfits = {
 "Planet1/Solar01":[],
 "Planet1/Solar02":[],
@@ -320,6 +320,7 @@ var stations_outfits = {
 "Planet5/Refinery01":[],
 "Planet5/Refinery02":[],
 "Planet6/Station01":[]+Equipment.base_weapons+Equipment.good_weapons+Equipment.base_turrets+Equipment.good_turrets+Equipment.good_missiles+Equipment.base_missiles+Equipment.base_reactors+Equipment.base_engines+Equipment.base_internal+Equipment.base_external,
+"Planet6/Shipyard":[]+Equipment.base_weapons+Equipment.good_weapons+Equipment.base_turrets+Equipment.good_turrets+Equipment.base_missiles+Equipment.good_missiles+Equipment.base_reactors+Equipment.base_engines+Equipment.good_engines+Equipment.base_internal+Equipment.base_external,
 "Planet6/Refinery01":[],
 "Planet6/Refinery02":[],
 "Planet6/Farm01":[],
@@ -330,8 +331,7 @@ var stations_outfits = {
 "Planet7/Solar01":[],
 "Planet7/Solar02":[],
 "Planet8/Mine01":[],
-"Planet8/Mine02":[]
-}
+"Planet8/Mine02":[]}
 var stations_ships = {
 "Planet1/Solar01":[],
 "Planet1/Solar02":[],
@@ -358,6 +358,7 @@ var stations_ships = {
 "Planet5/Refinery01":[],
 "Planet5/Refinery02":[],
 "Planet6/Station01":[],
+"Planet6/Shipyard":[]+Equipment.civil_ships1,
 "Planet6/Refinery01":[],
 "Planet6/Refinery02":[],
 "Planet6/Farm01":[],
@@ -368,8 +369,7 @@ var stations_ships = {
 "Planet7/Solar01":[],
 "Planet7/Solar02":[],
 "Planet8/Mine01":[],
-"Planet8/Mine02":[]
-}
+"Planet8/Mine02":[]}
 const stations_services = {
 "Planet1/Solar01":["bar","trader","missions","crew"],
 "Planet1/Solar02":["bar","trader","missions","crew"],
@@ -396,6 +396,7 @@ const stations_services = {
 "Planet5/Refinery01":["bar","trader","missions","crew"],
 "Planet5/Refinery02":["bar","trader","missions","crew"],
 "Planet6/Station01":["bar","trader","missions","outfitter","shipyard","crew"],
+"Planet6/Shipyard":["trader","missions","outfitter","shipyard","crew"],
 "Planet6/Refinery01":["bar","trader","missions"],
 "Planet6/Refinery02":["bar","trader","missions"],
 "Planet6/Farm01":["trader","missions"],
@@ -406,122 +407,121 @@ const stations_services = {
 "Planet7/Solar01":["trader","missions"],
 "Planet7/Solar02":["bar","trader","missions"],
 "Planet8/Mine01":["bar","trader","missions","crew"],
-"Planet8/Mine02":["bar","trader","missions","crew"]
-}
+"Planet8/Mine02":["bar","trader","missions","crew"]}
 const stations_name = {
-"Planet1/Solar01":"",
-"Planet1/Solar02":"",
-"Planet1/Solar03":"",
-"Planet1/Solar04":"",
-"Planet1/Farm01":"",
-"Planet1/Farm02":"",
-"Planet2/Solar01":"",
-"Planet2/Solar02":"",
-"Planet2/Farm01":"",
-"Planet2/Farm02":"",
-"Planet2/Farm03":"",
-"Planet2/Farm04":"",
+"Planet1/Solar01":"SOLAR_PLANT_ALPHA",
+"Planet1/Solar02":"SOLAR_PLANT_BETA",
+"Planet1/Solar03":"SOLAR_PLANT_DELTA",
+"Planet1/Solar04":"SOLAR_PLANT_GAMMA",
+"Planet1/Farm01":"FARMING_STATION_ALPHA",
+"Planet1/Farm02":"FARMING_STATION_BETA",
+"Planet2/Solar01":"SOLAR_PLANT_ALPHA",
+"Planet2/Solar02":"SOLAR_PLANT_BETA",
+"Planet2/Farm01":"FARMING_STATION_ALPHA",
+"Planet2/Farm02":"FARMING_STATION_BETA",
+"Planet2/Farm03":"FARMING_STATION_GAMMA",
+"Planet2/Farm04":"FARMING_STATION_DELTA",
 "Planet3/Shipyard":"SHIPYARD",
 "Planet3/Station01":"STATION01",
-"Planet3/Station02":"",
-"Planet3/Solar01":"",
-"Planet4/Station01":"",
-"Planet4/Farm01":"",
-"Planet4/Solar01":"",
-"Planet4/Mine01":"",
-"Planet4/Mine02":"",
-"Planet5/Mine01":"",
-"Planet5/Refinery01":"",
-"Planet5/Refinery02":"",
-"Planet6/Station01":"",
-"Planet6/Refinery01":"",
-"Planet6/Refinery02":"",
-"Planet6/Farm01":"",
-"Planet6/Farm02":"",
-"Planet6/Solar01":"",
-"Planet7/Refinery01":"",
-"Planet7/Mine01":"",
-"Planet7/Solar01":"",
-"Planet7/Solar02":"",
-"Planet8/Mine01":"",
-"Planet8/Mine02":""
-}
+"Planet3/Station02":"STATION02",
+"Planet3/Solar01":"SOLAR_PLANT_ALPHA",
+"Planet4/Station01":"STATION03",
+"Planet4/Farm01":"FARMING_STATION_ALPHA",
+"Planet4/Solar01":"SOLAR_PLANT_ALPHA",
+"Planet4/Mine01":"MINE_ALPHA",
+"Planet4/Mine02":"MINE_BETA",
+"Planet5/Mine01":"MINE_ALPHA",
+"Planet5/Refinery01":"REFINING_PLANT_ALPHA",
+"Planet5/Refinery02":"REFINING_PLANT_BETA",
+"Planet6/Station01":"STATION04",
+"Planet6/Shipyard":"SHIPYARD",
+"Planet6/Refinery01":"REFINING_PLANT_ALPHA",
+"Planet6/Refinery02":"REFINING_PLANT_BETA",
+"Planet6/Farm01":"FARMING_STATION_ALPHA",
+"Planet6/Farm02":"FARMING_STATION_BETA",
+"Planet6/Solar01":"SOLAR_PLANT_ALPHA",
+"Planet7/Refinery01":"REFINING_PLANT_ALPHA",
+"Planet7/Mine01":"MINE_ALPHA",
+"Planet7/Solar01":"SOLAR_PLANT_ALPHA",
+"Planet7/Solar02":"SOLAR_PLANT_BETA",
+"Planet8/Mine01":"MINE_ALPHA",
+"Planet8/Mine02":"MINE_BETA"}
 const stations_desc = {
-"Planet1/Solar01":"",
-"Planet1/Solar02":"",
-"Planet1/Solar03":"",
-"Planet1/Solar04":"",
-"Planet1/Farm01":"",
-"Planet1/Farm02":"",
-"Planet2/Solar01":"",
-"Planet2/Solar02":"",
-"Planet2/Farm01":"",
-"Planet2/Farm02":"",
-"Planet2/Farm03":"",
-"Planet2/Farm04":"",
+"Planet1/Solar01":"SOLAR_PLANT_DESC",
+"Planet1/Solar02":"SOLAR_PLANT_DESC",
+"Planet1/Solar03":"SOLAR_PLANT_DESC",
+"Planet1/Solar04":"SOLAR_PLANT_DESC",
+"Planet1/Farm01":"FARMING_STATION_DESC",
+"Planet1/Farm02":"FARMING_STATION_DESC",
+"Planet2/Solar01":"SOLAR_PLANT_DESC",
+"Planet2/Solar02":"SOLAR_PLANT_DESC",
+"Planet2/Farm01":"FARMING_STATION_DESC",
+"Planet2/Farm02":"FARMING_STATION_DESC",
+"Planet2/Farm03":"FARMING_STATION_DESC",
+"Planet2/Farm04":"FARMING_STATION_DESC",
 "Planet3/Shipyard":"SHIPYARD_DESC",
 "Planet3/Station01":"STATION01_DESC",
-"Planet3/Station02":"",
-"Planet3/Solar01":"",
-"Planet4/Station01":"",
-"Planet4/Farm01":"",
-"Planet4/Solar01":"",
-"Planet4/Mine01":"",
-"Planet4/Mine02":"",
-"Planet5/Mine01":"",
-"Planet5/Refinery01":"",
-"Planet5/Refinery02":"",
-"Planet6/Station01":"",
-"Planet6/Refinery01":"",
-"Planet6/Refinery02":"",
-"Planet6/Farm01":"",
-"Planet6/Farm02":"",
-"Planet6/Solar01":"",
-"Planet7/Refinery01":"",
-"Planet7/Mine01":"",
-"Planet7/Solar01":"",
-"Planet7/Solar02":"",
-"Planet8/Mine01":"",
-"Planet8/Mine02":""
-}
+"Planet3/Station02":"STATION02_DESC",
+"Planet3/Solar01":"SOLAR_PLANT_DESC",
+"Planet4/Station01":"STATION03_DESC",
+"Planet4/Farm01":"FARMING_STATION_DESC",
+"Planet4/Solar01":"SOLAR_PLANT_DESC",
+"Planet4/Mine01":"MINE_DESC",
+"Planet4/Mine02":"MINE_DESC",
+"Planet5/Mine01":"MINE_DESC",
+"Planet5/Refinery01":"REFINING_PLANT_DESC",
+"Planet5/Refinery02":"REFINING_PLANT_DESC",
+"Planet6/Station01":"STATION04_DESC",
+"Planet6/Shipyard":"SHIPYARD_DESC",
+"Planet6/Refinery01":"REFINING_PLANT_DESC",
+"Planet6/Refinery02":"REFINING_PLANT_DESC",
+"Planet6/Farm01":"FARMING_STATION_DESC",
+"Planet6/Farm02":"FARMING_STATION_DESC",
+"Planet6/Solar01":"SOLAR_PLANT_DESC",
+"Planet7/Refinery01":"REFINING_PLANT_DESC",
+"Planet7/Mine01":"MINE_DESC",
+"Planet7/Solar01":"SOLAR_PLANT_DESC",
+"Planet7/Solar02":"SOLAR_PLANT_DESC",
+"Planet8/Mine01":"MINE_DESC",
+"Planet8/Mine02":"MINE_DESC"}
 const stations_bar = {
-"Planet1/Solar01":"",
-"Planet1/Solar02":"",
+"Planet1/Solar01":"SOLAR_PLANT_BAR",
+"Planet1/Solar02":"SOLAR_PLANT_BAR",
 "Planet1/Solar03":"",
-"Planet1/Solar04":"",
+"Planet1/Solar04":"SOLAR_PLANT_BAR",
 "Planet1/Farm01":"",
-"Planet1/Farm02":"",
-"Planet2/Solar01":"",
-"Planet2/Solar02":"",
-"Planet2/Farm01":"",
-"Planet2/Farm02":"",
+"Planet1/Farm02":"FARMING_STATION_BAR",
+"Planet2/Solar01":"SOLAR_PLANT_BAR",
+"Planet2/Solar02":"SOLAR_PLANT_BAR",
+"Planet2/Farm01":"FARMING_STATION_BAR",
+"Planet2/Farm02":"FARMING_STATION_BAR",
 "Planet2/Farm03":"",
 "Planet2/Farm04":"",
 "Planet3/Shipyard":"",
 "Planet3/Station01":"STATION01_BAR",
-"Planet3/Station02":"",
+"Planet3/Station02":"STATION02_BAR",
 "Planet3/Solar01":"",
-"Planet4/Station01":"",
-"Planet4/Farm01":"",
-"Planet4/Solar01":"",
-"Planet4/Mine01":"",
-"Planet4/Mine02":"",
-"Planet5/Mine01":"",
-"Planet5/Refinery01":"",
-"Planet5/Refinery02":"",
-"Planet6/Station01":"",
-"Planet6/Refinery01":"",
-"Planet6/Refinery02":"",
+"Planet4/Station01":"STATION03_BAR",
+"Planet4/Farm01":"FARMING_STATION_BAR",
+"Planet4/Solar01":"SOLAR_PLANT_BAR",
+"Planet4/Mine01":"MINE_BAR",
+"Planet4/Mine02":"MINE_BAR",
+"Planet5/Mine01":"MINE_BAR",
+"Planet5/Refinery01":"REFINING_PLANT_BAR",
+"Planet5/Refinery02":"REFINING_PLANT_BAR",
+"Planet6/Station01":"STATION04_BAR",
+"Planet6/Shipyard":"",
+"Planet6/Refinery01":"REFINING_PLANT_BAR",
+"Planet6/Refinery02":"REFINING_PLANT_BAR",
 "Planet6/Farm01":"",
 "Planet6/Farm02":"",
 "Planet6/Solar01":"",
-"Planet7/Refinery01":"",
-"Planet7/Mine01":"",
+"Planet7/Refinery01":"REFINING_PLANT_BAR",
+"Planet7/Mine01":"MINE_BAR",
 "Planet7/Solar01":"",
-"Planet7/Solar02":"",
-"Planet8/Mine01":"",
-"Planet8/Mine02":""
-}
+"Planet7/Solar02":"SOLAR_PLANT_BAR",
+"Planet8/Mine01":"MINE_BAR",
+"Planet8/Mine02":"MINE_BAR"}
 var stations_image = {
 "Planet1/Solar01":"",
 "Planet1/Solar02":"",
@@ -548,6 +548,7 @@ var stations_image = {
 "Planet5/Refinery01":"",
 "Planet5/Refinery02":"",
 "Planet6/Station01":"",
+"Planet6/Shipyard":"",
 "Planet6/Refinery01":"",
 "Planet6/Refinery02":"",
 "Planet6/Farm01":"",
@@ -558,8 +559,7 @@ var stations_image = {
 "Planet7/Solar01":"",
 "Planet7/Solar02":"",
 "Planet8/Mine01":"",
-"Planet8/Mine02":""
-}
+"Planet8/Mine02":""}
 
 
 # data #
@@ -592,7 +592,6 @@ func delete_objects():
 func update_objects():
 	remove_asteroids()
 	remove_ships()
-	
 	yield(get_tree(),"idle_frame")
 	
 	add_asteroids()
@@ -836,14 +835,6 @@ func _process(delta):
 	var camera = get_node("Camera")
 	
 	HUD.get_node("Text2").set_text(str(OS.get_frames_per_second()))
-#	HUD.get_node("Text3").clear()
-#	if (has_node("Player")):
-#		var player = get_node("Player")
-#		HUD.get_node("Text3").add_text("equipment: "+str(player.ship_type)+", "+str(player.reactors+player.engines+player.internal+player.external+player.weapons+player.turrets+player.missiles)+"\ninventory: "+str(player.inventory)+"\nmass: "+str(player.mass)+"\nmax hp: "+str(player.hp_max)+"\nhr: "+str(player.hr)+"\nmax sp: "+str(player.sp_max)+"\nsr: "+str(player.sr)+"\nep max: "+str(player.ep_max)+"\ner: "+str(player.er)+"\nmax temp: "+str(player.temp_max)+"\nheat: "+str(player.heat)+"\nheat dissipation: "+str(player.heat_dissipation)+"\nradar range: "+str(player.radar)+"\nstealth: "+str(player.stealth)+"\nacceleration: "+str(player.la)+"\nthrust power: "+str(player.thrust_power)+"\nthrust heat: "+str(player.thrust_heat)+"\nrotation speed: "+str(player.ts)+"\nsteering power: "+str(player.steering_power)+"\nsteering heat: "+str(player.steering_heat)+"\ndamping: "+str(player.damping)+"\nimpact resistance: "+str(player.resist_impact)+"\nplasma resistance: "+str(player.resist_plasma)+"\nexplosive resistance: "+str(player.resist_explosive)+"\ncargo space: "+str(player.cargo)+"\nmin crew: "+str(player.crew_min))
-#		HUD.get_node("Text3").newline()
-#		HUD.get_node("Text3").newline()
-#	for o in ships+objects+missiles:
-#		HUD.get_node("Text3").add_text(o.get_name()+"\n")
 	
 	if (Player.docked):
 		camera.set_pos(get_node(Player.parent).get_global_pos())
@@ -906,4 +897,3 @@ func _ready():
 				cons += stations_cons[s][c]
 		print("total "+c+" produktion: "+str(prod))
 		print("total "+c+" consumption: "+str(cons))
-	HUD.get_node("Text3").hide()

@@ -2832,7 +2832,7 @@ alignment = 0
 [node name="Mission0" type="Panel" parent="Station/Missions/ScrollContainer/VBoxContainer/Available"]
 
 visibility/visible = false
-rect/min_size = Vector2( 0, 48 )
+rect/min_size = Vector2( 0, 52 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -2840,7 +2840,7 @@ size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 200.0
-margin/bottom = 48.0
+margin/bottom = 52.0
 
 [node name="Text" type="Label" parent="Station/Missions/ScrollContainer/VBoxContainer/Available/Mission0"]
 
@@ -2854,7 +2854,7 @@ margin/left = 2.0
 margin/top = 2.0
 margin/right = 2.0
 margin/bottom = 2.0
-text = "mission name\nline 2"
+text = "mission name\nline 2\nline 3"
 align = 1
 valign = 1
 autowrap = true
