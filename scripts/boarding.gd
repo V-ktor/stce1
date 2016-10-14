@@ -83,6 +83,7 @@ func undock():
 	player.boarding = false
 	enemy.boarding = false
 	enemy.credits = 0
+	enemy.boarded = true
 	enemy.recalc()
 	player.recalc()
 	hide()
@@ -265,6 +266,7 @@ func _process(delta):
 			player_defeated = true
 			text_log.push_color(Color(1.0,0.4,0.4))
 			text_log.add_text(tr("YOU_ARE_DEFEATED")+"\n")
+			player.emit_signal("captured")
 			steal_player_equipment()
 			steal_player_cargo()
 			steal_player_cash()
@@ -276,6 +278,7 @@ func _process(delta):
 			enemy_defeated = true
 			text_log.push_color(Color(0.4,1.0,0.4))
 			text_log.add_text(tr("ENEMY_HAS_BEEN_DEFEATED")+"\n")
+			enemy.emit_signal("captured")
 			steal_enemy_equipment()
 			steal_enemy_cargo()
 			steal_enemy_cash()

@@ -18,7 +18,7 @@ func find_nav_point():
 
 func search_target():
 	var pos = get_global_pos()
-	var dist = 1e4
+	var dist = 1e2
 	var target_old = target
 	target = null
 	missile_target = null

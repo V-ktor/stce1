@@ -69,7 +69,7 @@ func basic_escort_mission_on_take_off(station,ID):
 
 func basic_escort_mission_done(ID):
 	var data = missions[ID]
-	missions.erase(data)
+	missions[ID] = null
 
 func basic_escort_mission_on_land(station,ID):
 	var data = missions[ID]

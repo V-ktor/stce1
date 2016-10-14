@@ -98,6 +98,7 @@ var grappling_hook_delay = 1.0
 var attack_bonus = 1.0
 var defense_bonus = 1.0
 var credits = 0
+var boarded = false
 
 var thrust = false
 var reverse_thrust = false
@@ -748,6 +749,7 @@ func init():
 	pass
 
 func _ready():
+	add_user_signal("captured")
 	recalc()
 	hp = hp_max
 	ep = ep_max

@@ -189,7 +189,7 @@ func pirate_name():
 func create_rnd_pirate(pos,v):
 	var s = pirate_ships[randi()%(pirate_ships.size())]
 	var crew = clamp(round(pirate_crew[s]*rand_range(0.75,1.25)),2,Equipment.outfits[s]["bunks"])
-	var p = create_ship(s,eq_rnd_pirate(s),inv_rnd_pirate(s),script_pirate,get_node("/root/Factions").PIRATES,pos,2*PI*randf(),v,pirate_name(),crew)
+	var p = create_ship(s,eq_rnd_pirate(s),inv_rnd_pirate(s),script_pirate,Factions.PIRATES,pos,2*PI*randf(),v,pirate_name(),crew)
 	p.credits = pirate_credits[s]*rand_range(0.8,1.2)*rand_range(0.9,1.1)
 	return p
 

@@ -8,9 +8,26 @@ var missions_finished = []
 
 func create_random_missions():
 	missions_available.clear()
+	create_random_bounty_missions()
 	create_random_escort_missions()
 	create_random_transport_missions()
 	create_random_passenger_missions()
+
+func create_random_bounty_missions():
+	var num_basic_bounty_missions = randi()%3
+	var num_alive_bounty_missions = randi()%2
+	var index = missions_available.size()
+	var num_missions = num_basic_bounty_missions+num_alive_bounty_missions
+	missions_available.resize(missions_available.size()+num_missions)
+	for i in range(index,index+num_basic_bounty_missions):
+		var data = basic_bounty_mission_init()
+		missions_available[i] = data
+	index += num_basic_bounty_missions
+	for i in range(index,index+num_alive_bounty_missions):
+		var data = alive_bounty_mission_init()
+		missions_available[i] = data
+	index += num_alive_bounty_missions
+	
 
 func create_random_escort_missions():
 	var num_basic_escort_missions = randi()%3
@@ -80,12 +97,18 @@ func landed(station):
 		var data = missions[i]
 		if (data.has("on_land")):
 			call(data["on_land"],station,i)
+	for i in range(missions.size()-1,-1,-1):
+		if (missions[i]==null):
+			missions.remove(i)
 
 func take_off(station):
 	for i in range(missions.size()-1,-1,-1):
 		var data = missions[i]
 		if (data.has("on_take_off")):
 			call(data["on_take_off"],station,i)
+	for i in range(missions.size()-1,-1,-1):
+		if (missions[i]==null):
+			missions.remove(i)
 
 func _ready():
 	var script = GDScript.new()

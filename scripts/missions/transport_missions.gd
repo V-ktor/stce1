@@ -57,7 +57,8 @@ func basic_transport_mission_accept(ID):
 func basic_transport_mission_done(ID):
 	var data = missions[ID]
 	Equipment.remove_item([data["cargo_type"],data["cargo_space"]])
-	missions.erase(data)
+#	missions[ID] = null
+	missions[ID] = null
 	Player.free_cargo_space += data["cargo_space"]
 
 func basic_transport_mission_on_land(station,ID):
@@ -200,7 +201,7 @@ func basic_passenger_mission_accept(ID):
 func basic_passenger_mission_done(ID):
 	var data = missions[ID]
 	Player.passengers -= data["passengers"]
-	missions.erase(data)
+	missions[ID] = null
 	Player.free_bunks += data["passengers"]
 
 func basic_passenger_mission_on_land(station,ID):
@@ -255,7 +256,7 @@ func cargo_passenger_mission_done(ID):
 	var data = missions[ID]
 	Equipment.remove_item([data["cargo_type"],data["cargo_space"]])
 	Player.passengers -= data["passengers"]
-	missions.erase(data)
+	missions[ID] = null
 	Player.free_bunks += data["passengers"]
 	Player.free_cargo_space += data["cargo_space"]
 

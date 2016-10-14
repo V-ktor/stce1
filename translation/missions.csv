@@ -41,3 +41,12 @@ THE_FREIGHTERS_ARE_READY_TO_TAKE_OFF_ESCORT_THEM_TO_<destination>,The freighters
 ESCORT_THE_FREIGHTERS_SAFELY_TO_<destination>,Escort the freighters safely to <destination>.
 AFTER_YOU_LANDED_ON_<destination>_THE_CAPTAIN_OF_ONE_OF_THE_FREIGHTERS_PAYS_YOU_<payment>_AND_THANKS_YOU_FOR_YOUR_ESCORT_SERVICE,After you landed on <destination> the captain of one of the freighters pays you <payment> and thanks you for your escort service.
 THE_CAPTAIN_OF_ONE_OF_THE_FREIGHTERS_THANKS_YOU_FOR_ESCORTING_THEM_SAFELY_TO_<destination>_AND_HANDS_YOU_<payment>,The captain of one of the freighters thanks you for escorting them safely to <destination> and hands you <payment>.
+DESTROY_THE_PIRATE_VESSEL_<name>_NEAR_<destination>,Destroy the pirate vessel <name> near <destination>.
+AUTHORITIES_OF_<destination>_WANT_<name>_DEAD_OR_ALIVE,Authorities of <destination> want <name> dead or alive.
+THE_PIRATE_KNOWN_AS_<name>_WAS_SPOTTED_NEAR_<destination>_KILL_OR_CAPTURE_<name>_AND_RETURN_TO_<destination>,The pirate known as <name> was spotted near <destination>. Kill or capture <name> and return to <destination>.
+THE_PIRATE_VESSEL_<name>_HAS_BEEN_ATTACKING_MERCHANTS_NEAR_<destination>_DESTROY_IT_OR_CAPTURE_THEIR_LEADER_AND_RETURN_TO_<destination>,The pirate vessel <name> has been attacking merchants near <destination> destroy it or capture their leader and return to <destination>.
+AFTER_AN_OFFICER_VERIFIED_THAT_YOU_KILLED_<name>_HE_HANDS_YOU_<reward>,After an officer verified that you killed <name> he hands you <reward>.
+YOU_TAKE_THE_CAPTURED_PIRATE_TO_<destination>_WHERE_AN_OFFICER_TAKES_<name>_INTO_CUSTODY_AND_PAYS_YOU_<reward>,You take the captured pirate to <destination> where an officer takes <name> into custody and pays you <reward>.
+CAPTURE_<name>_NEAR_<destination>_ALIVE,Capture <name> near <destination> alive.
+AUTHORITIES_OF_<destination>_WANT_<name>_ALIVE,Authorities of <destination> want <name> alive.
+YOU_HAVE_CAPTURED_THE_CAPTAIN_OF,You have captured the captain of

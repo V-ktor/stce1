@@ -598,7 +598,7 @@ func update_objects():
 	yield(get_tree(),"idle_frame")
 	add_pirates()
 	yield(get_tree(),"idle_frame")
-	add_republic_ships()
+#	add_republic_ships()
 	yield(get_tree(),"idle_frame")
 	add_civil_ships()
 
