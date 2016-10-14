@@ -144,7 +144,7 @@ func _process(delta):
 	if (radar_range<=0):
 		return
 	for ship in get_node("/root/Main").ships+get_node("/root/Main").objects:
-		if (pos.distance_squared_to(ship.get_global_pos())<(radar_range-ship.stealth)*(radar_range-ship.stealth)):
+		if (true || pos.distance_squared_to(ship.get_global_pos())<(radar_range-ship.stealth)*(radar_range-ship.stealth)):
 			ship.icon.set_pos(ship.get_global_pos()*map_scale*map_zoom+center)
 			ship.icon.set_rot(ship.get_rot())
 			ship.icon.show()

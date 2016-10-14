@@ -54,9 +54,6 @@ func change_weapon_group():
 func start_boarding():
 	if (boarding):
 		return
-	if (board_target.boarded):
-		disable_grappling_hook()
-		return
 	
 	HUD.get_node("Boarding").enemy = board_target
 	HUD.get_node("Boarding")._start(true)

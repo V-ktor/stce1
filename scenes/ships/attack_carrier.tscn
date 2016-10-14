@@ -1,0 +1,1041 @@
+[gd_scene load_steps=45 format=1]
+
+[ext_resource path="res://images/particles/thrust04.png" type="Texture" id=1]
+[ext_resource path="res://images/particles/steering01.png" type="Texture" id=2]
+[ext_resource path="res://scripts/shader/ship.tres" type="Shader" id=3]
+[ext_resource path="res://images/ships/attack_carrier_n.png" type="Texture" id=4]
+[ext_resource path="res://images/ships/attack_carrier_c.png" type="Texture" id=5]
+[ext_resource path="res://images/lights/light02.png" type="Texture" id=6]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -416, 16, -452, 84, -380 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -84, -380, -16, -452, -16, -416 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 336, 320, 336, 404, 308, 376 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -308, 376, -336, 404, -336, 320 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 12, 412, 12, 428, -12, 428, -12, 412 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 336, 320, 308, 376, 236, 348, 280, 152 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -236, 348, -308, 376, -336, 320, -280, 152 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 8, -296, 8, -404, 16, -416, 84, -380, 84, -268, 16, -292 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 108, -220, 16, -268, 16, -292, 84, -268, 108, -248 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -84, -268, -84, -380, -16, -416, -8, -404, -8, -296, -16, -292 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -84, -268, -16, -292, -16, -268 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 280, 152, 236, 348, 196, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -196, 348, -236, 348, -280, 152 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 124, 384, 112, 412, 48, 412, 40, 392, 124, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -128, -36, 128, -36, 40, 392, 32, 412, 12, 412, -40, 392, -124, 348, -216, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -12, 412, -32, 412, -40, 392 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -40, 392, -48, 412, -112, 412, -124, 384, -124, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 196, 348, 196, 388, 192, 396, 184, 396, 180, 388, 180, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 280, 152, 196, 348, 180, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 152, 348, 152, 388, 148, 396, 140, 396, 136, 388, 136, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -136, 348, -136, 388, -140, 396, -148, 396, -152, 388, -152, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -180, 348, -180, 388, -184, 396, -192, 396, -196, 388, -196, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -180, 348, -196, 348, -280, 152 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 280, 152, 180, 348, 152, 348, 216, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -152, 348, -180, 348, -280, 152, -216, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 216, 32, 152, 348, 136, 348 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 216, 32, 136, 348, 124, 348, 128, -36 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 128, -36, 124, 348, 40, 392 )
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -136, 348, -152, 348, -216, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=30]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -124, 348, -136, 348, -216, 32 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16, -268, 108, -220, 128, -204, 128, -36, -16, -268 )
+
+[sub_resource type="ConvexPolygonShape2D" id=32]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 84, -268, 92, -268, 108, -248 )
+
+[sub_resource type="ConvexPolygonShape2D" id=33]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -128, -36, -128, -204, -108, -220, 128, -36 )
+
+[sub_resource type="ConvexPolygonShape2D" id=34]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -108, -248, -92, -268, -84, -268, 128, -36, -108, -220 )
+
+[sub_resource type="ConvexPolygonShape2D" id=35]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -84, -268, -16, -268, 128, -36 )
+
+[sub_resource type="ConvexPolygonShape2D" id=36]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -40, 392, 12, 412, -12, 412 )
+
+[sub_resource type="CanvasItemMaterial" id=37]
+
+shader/shader = ExtResource( 3 )
+shader/shading_mode = 0
+shader_param/normal = ExtResource( 4 )
+
+[sub_resource type="OccluderPolygon2D" id=38]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( -16, -268, 16, -268, 16, -292, 8, -296, 8, -404, 16, -416, 16, -452, 28, -440, 28, -452, 72, -408, 72, -396, 84, -384, 84, -268, 96, -268, 108, -252, 108, -220, 132, -204, 132, -32, 216, 32, 280, 152, 336, 320, 336, 404, 312, 380, 236, 348, 200, 348, 200, 368, 196, 368, 196, 392, 192, 396, 184, 396, 180, 392, 180, 368, 176, 368, 176, 348, 156, 348, 156, 368, 152, 368, 152, 392, 148, 396, 140, 396, 136, 392, 136, 368, 132, 368, 132, 348, 124, 348, 124, 384, 112, 412, 48, 412, 40, 392, 32, 412, 12, 412, 12, 428, -12, 428, -12, 412, -32, 412, -40, 392, -48, 412, -112, 412, -124, 384, -124, 348, -132, 348, -132, 368, -136, 368, -136, 392, -140, 396, -148, 396, -151.434, 392.566, -152, 392, -152, 368, -156, 368, -156, 348, -176, 348, -176, 368, -180, 368, -180, 392, -184, 396, -192, 396, -196, 392, -196, 368, -200, 368, -200, 348, -236, 348, -308, 380, -336, 404, -336, 320, -280, 152, -216, 32, -132, -32, -132, -204, -108, -220, -108, -248, -96, -268, -84, -268, -84, -384, -72, -396, -72, -408, -28, -452, -28, -440, -16, -452, -16, -416, -8, -404, -8, -296, -16, -292 )
+
+[node name="C01" type="RigidBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 5 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 6 )
+shapes/5/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/5/trigger = false
+shapes/6/shape = SubResource( 7 )
+shapes/6/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/6/trigger = false
+shapes/7/shape = SubResource( 8 )
+shapes/7/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/7/trigger = false
+shapes/8/shape = SubResource( 9 )
+shapes/8/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/8/trigger = false
+shapes/9/shape = SubResource( 10 )
+shapes/9/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/9/trigger = false
+shapes/10/shape = SubResource( 11 )
+shapes/10/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/10/trigger = false
+shapes/11/shape = SubResource( 12 )
+shapes/11/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/11/trigger = false
+shapes/12/shape = SubResource( 13 )
+shapes/12/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/12/trigger = false
+shapes/13/shape = SubResource( 14 )
+shapes/13/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/13/trigger = false
+shapes/14/shape = SubResource( 15 )
+shapes/14/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/14/trigger = false
+shapes/15/shape = SubResource( 16 )
+shapes/15/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/15/trigger = false
+shapes/16/shape = SubResource( 17 )
+shapes/16/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/16/trigger = false
+shapes/17/shape = SubResource( 18 )
+shapes/17/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/17/trigger = false
+shapes/18/shape = SubResource( 19 )
+shapes/18/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/18/trigger = false
+shapes/19/shape = SubResource( 20 )
+shapes/19/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/19/trigger = false
+shapes/20/shape = SubResource( 21 )
+shapes/20/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/20/trigger = false
+shapes/21/shape = SubResource( 22 )
+shapes/21/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/21/trigger = false
+shapes/22/shape = SubResource( 23 )
+shapes/22/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/22/trigger = false
+shapes/23/shape = SubResource( 24 )
+shapes/23/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/23/trigger = false
+shapes/24/shape = SubResource( 25 )
+shapes/24/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/24/trigger = false
+shapes/25/shape = SubResource( 26 )
+shapes/25/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/25/trigger = false
+shapes/26/shape = SubResource( 27 )
+shapes/26/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/26/trigger = false
+shapes/27/shape = SubResource( 28 )
+shapes/27/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/27/trigger = false
+shapes/28/shape = SubResource( 29 )
+shapes/28/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/28/trigger = false
+shapes/29/shape = SubResource( 30 )
+shapes/29/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/29/trigger = false
+shapes/30/shape = SubResource( 31 )
+shapes/30/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/30/trigger = false
+shapes/31/shape = SubResource( 32 )
+shapes/31/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/31/trigger = false
+shapes/32/shape = SubResource( 33 )
+shapes/32/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/32/trigger = false
+shapes/33/shape = SubResource( 34 )
+shapes/33/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/33/trigger = false
+shapes/34/shape = SubResource( 35 )
+shapes/34/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/34/trigger = false
+shapes/35/shape = SubResource( 36 )
+shapes/35/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/35/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 2
+mass = 4.0
+friction = 1.0
+bounce = 1.0
+gravity_scale = 1.0
+custom_integrator = true
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+__meta__ = { "__editor_plugin_screen__":"Script" }
+
+[node name="Engine" type="Node2D" parent="."]
+
+[node name="Thrust1" type="Sprite" parent="Engine"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -80, 456 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+
+[node name="Thrust2" type="Sprite" parent="Engine"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 0, 456 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+
+[node name="Thrust3" type="Sprite" parent="Engine"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 80, 456 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+
+[node name="SteeringLeft" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Steering1" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 100, -339.5 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering2" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 100, -323.5 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering3" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 100, -307.5 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering4" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 100, -291.5 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering5" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 100, -275.5 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering6" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -212, 360.5 )
+transform/rot = 270.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering7" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -168, 360.5 )
+transform/rot = 270.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering8" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -75, 366 )
+transform/rot = 270.0
+transform/scale = Vector2( 2, 1.5 )
+z/z = 1
+texture = ExtResource( 2 )
+
+[node name="Steering9" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -331.5, 292 )
+transform/rot = 180.0
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Steering10" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -315.5, 244 )
+transform/rot = 180.0
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Steering11" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 300.5, 388 )
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering12" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 284.5, 380 )
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering13" type="Sprite" parent="SteeringLeft"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 268.5, 372 )
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="SteeringRight" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Steering1" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -100, -339.5 )
+transform/rot = -90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering2" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -100, -323.5 )
+transform/rot = -90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering3" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -100, -307.5 )
+transform/rot = -90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering4" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -100, -291.5 )
+transform/rot = -90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering5" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -100, -275.5 )
+transform/rot = -90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering6" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 168, 360.5 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering7" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 212, 360.5 )
+transform/rot = 90.0
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering8" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 75, 366 )
+transform/rot = 90.0
+transform/scale = Vector2( 2, 1.5 )
+z/z = 1
+texture = ExtResource( 2 )
+
+[node name="Steering9" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 331.5, 292 )
+transform/rot = -180.0
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Steering10" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( 315.5, 244 )
+transform/rot = -180.0
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+
+[node name="Steering11" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -300.5, 388 )
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering12" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -284.5, 380 )
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Steering13" type="Sprite" parent="SteeringRight"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 0
+transform/pos = Vector2( -268.5, 372 )
+transform/scale = Vector2( 1.5, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+material/material = SubResource( 37 )
+transform/pos = Vector2( 0, -16 )
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="LightFront1" type="Light2D" parent="."]
+
+transform/pos = Vector2( -98, -1040 )
+transform/rot = -86.5
+transform/scale = Vector2( 5, 4 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightFront2" type="Light2D" parent="."]
+
+transform/pos = Vector2( 98, -1040 )
+transform/rot = -93.5
+transform/scale = Vector2( 5, 4 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightFrontLeft" type="Light2D" parent="."]
+
+transform/pos = Vector2( -289.038, -598.351 )
+transform/rot = -80.0
+transform/scale = Vector2( 5, 5 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightFrontRight" type="Light2D" parent="."]
+
+transform/pos = Vector2( 289.038, -598.351 )
+transform/rot = -100.0
+transform/scale = Vector2( 5, 5 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightLeft1" type="Light2D" parent="."]
+
+transform/pos = Vector2( -660.739, -143.446 )
+transform/rot = -30.0
+transform/scale = Vector2( 4, 8 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightLeft2" type="Light2D" parent="."]
+
+transform/pos = Vector2( -792, 244 )
+transform/scale = Vector2( 4, 8 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightRight1" type="Light2D" parent="."]
+
+transform/pos = Vector2( 660.739, -143.446 )
+transform/rot = -150.0
+transform/scale = Vector2( 4, 8 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightRight2" type="Light2D" parent="."]
+
+transform/pos = Vector2( 792, 244 )
+transform/rot = 180.0
+transform/scale = Vector2( 4, 8 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightBack1" type="Light2D" parent="."]
+
+transform/pos = Vector2( -358.571, 817.494 )
+transform/rot = 70.0
+transform/scale = Vector2( 4, 8 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="LightBack2" type="Light2D" parent="."]
+
+transform/pos = Vector2( 358.571, 817.494 )
+transform/rot = 110.0
+transform/scale = Vector2( 4, 8 )
+enabled = true
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+visibility/visible = false
+build_mode = 0
+polygon = Vector2Array( -16, -268, 16, -268, 16, -292, 8, -296, 8, -404, 16, -416, 16, -452, 84, -380, 84, -268, 92, -268, 108, -248, 108, -220, 128, -204, 128, -36, 216, 32, 280, 152, 336, 320, 336, 404, 308, 376, 236, 348, 196, 348, 196, 388, 192, 396, 184, 396, 180, 388, 180, 348, 152, 348, 152, 388, 148, 396, 140, 396, 136, 388, 136, 348, 124, 348, 124, 384, 112, 412, 48, 412, 40, 392, 32, 412, 12, 412, 12, 428, -12, 428, -12, 412, -32, 412, -40, 392, -48, 412, -112, 412, -124, 384, -124, 348, -136, 348, -136, 388, -140, 396, -148, 396, -152, 388, -152, 348, -180, 348, -180, 388, -184, 396, -192, 396, -196, 388, -196, 348, -236, 348, -308, 376, -336, 404, -336, 320, -280, 152, -216, 32, -128, -36, -128, -204, -108, -220, -108, -248, -92, -268, -84, -268, -84, -380, -16, -452, -16, -416, -8, -404, -8, -296, -16, -292 )
+shape_range = Vector2( 0, 35 )
+trigger = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+
+visibility/visible = false
+visibility/light_mask = 2
+occluder = SubResource( 38 )
+light_mask = 2
+
+[node name="Weapon1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -122, -218 )
+
+[node name="Weapon2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 122, -218 )
+
+[node name="Reactor1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -78, -18 )
+
+[node name="Reactor2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 78, -18 )
+
+[node name="Engine1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -82, 362 )
+
+[node name="Engine2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, 362 )
+
+[node name="Engine3" type="Position2D" parent="."]
+
+transform/pos = Vector2( 82, 362 )
+
+[node name="External1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -274, 262 )
+
+[node name="External2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 274, 262 )
+
+[node name="External3" type="Position2D" parent="."]
+
+transform/pos = Vector2( -226, 114 )
+
+[node name="External4" type="Position2D" parent="."]
+
+transform/pos = Vector2( 226, 114 )
+
+[node name="External5" type="Position2D" parent="."]
+
+transform/pos = Vector2( -78, -126 )
+
+[node name="External6" type="Position2D" parent="."]
+
+transform/pos = Vector2( 78, -126 )
+
+[node name="Internal1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -166, 194 )
+
+[node name="Internal2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 166, 194 )
+
+[node name="Internal3" type="Position2D" parent="."]
+
+transform/pos = Vector2( -82, 102 )
+
+[node name="Internal4" type="Position2D" parent="."]
+
+transform/pos = Vector2( -82, 166 )
+
+[node name="Internal5" type="Position2D" parent="."]
+
+transform/pos = Vector2( -82, 230 )
+
+[node name="Internal6" type="Position2D" parent="."]
+
+transform/pos = Vector2( 82, 102 )
+
+[node name="Internal7" type="Position2D" parent="."]
+
+transform/pos = Vector2( 82, 166 )
+
+[node name="Internal8" type="Position2D" parent="."]
+
+transform/pos = Vector2( 82, 230 )
+
+[node name="Turret1" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, -96 )
+
+[node name="Turret2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, -147 )
+
+[node name="Turret3" type="Position2D" parent="."]
+
+transform/pos = Vector2( -142, 130 )
+
+[node name="Turret4" type="Position2D" parent="."]
+
+transform/pos = Vector2( 142, 130 )
+
+[node name="Turret5" type="Position2D" parent="."]
+
+transform/pos = Vector2( -22, -16 )
+
+[node name="Turret6" type="Position2D" parent="."]
+
+transform/pos = Vector2( 22, -16 )
+
+[node name="Turret7" type="Position2D" parent="."]
+
+transform/pos = Vector2( -50, -326 )
+
+[node name="Turret8" type="Position2D" parent="."]
+
+transform/pos = Vector2( -50, -290 )
+
+[node name="Turret9" type="Position2D" parent="."]
+
+transform/pos = Vector2( 50, -326 )
+
+[node name="Turret10" type="Position2D" parent="."]
+
+transform/pos = Vector2( 50, -290 )
+
+[node name="Missile1" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, -270 )
+
+[node name="Missile2" type="Position2D" parent="."]
+
+transform/pos = Vector2( -54, -434 )
+
+[node name="Missile3" type="Position2D" parent="."]
+
+transform/pos = Vector2( 54, -434 )
+
+[node name="Missile4" type="Position2D" parent="."]
+
+transform/pos = Vector2( -98, -270 )
+
+[node name="Missile5" type="Position2D" parent="."]
+
+transform/pos = Vector2( 98, -270 )
+
+[node name="GrapplingHook1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -98, -222 )
+
+[node name="GrapplingHook2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 98, -222 )
+
+[node name="GrapplingHook3" type="Position2D" parent="."]
+
+transform/pos = Vector2( -310, 334 )
+
+[node name="GrapplingHook4" type="Position2D" parent="."]
+
+transform/pos = Vector2( 310, 334 )
+
+[node name="GrapplingHook5" type="Position2D" parent="."]
+
+transform/pos = Vector2( -226, 114 )
+
+[node name="GrapplingHook6" type="Position2D" parent="."]
+
+transform/pos = Vector2( 226, 114 )
+
+[node name="GrapplingHook7" type="Position2D" parent="."]
+
+transform/pos = Vector2( -42, -358 )
+
+[node name="GrapplingHook8" type="Position2D" parent="."]
+
+transform/pos = Vector2( 42, -358 )
+
+[node name="Hangar1" type="Position2D" parent="."]
+
+transform/pos = Vector2( -157, 34 )
+
+[node name="Hangar2" type="Position2D" parent="."]
+
+transform/pos = Vector2( 157, 34 )
+
+

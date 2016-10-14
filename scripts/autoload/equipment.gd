@@ -102,7 +102,7 @@ const base_external = [
 const republic_ships1 = [
 ["sos",10],["srf",8],["rpf",6],["hwf",8],["b01",6]]
 const repulic_military1 = [
-["sos-m",10],["srf-m",8],["rpf-m",6],["hwf-m",8],["b01-m",6]]
+["sos-m",10],["srf-m",8],["rpf-m",6],["hwf-m",8],["b01-m",6],["lac",2]]
 const ships2 = [
 ["exs",10],["f07",8],["b02",6],["c01",4]]
 const civil_ships1 = [

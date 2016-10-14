@@ -29,7 +29,8 @@ const republic_military_ships = [
 [["hwf-m",1],["plc",1],["plc",1],["plg",1],["plg",1],["siw",4],["rbm",1],["shs",1],["fcs",1],["egm",1],["egm",1],["apm",1],["apm",1]],
 [["hwf-m",1],["shr",1],["shr",1],["paa",1],["paa",1],["siw",4],["rgm",1],["shs",1],["cld",1],["egm",1],["egm",1],["apm",1],["bom",1]],
 [["hwf-m",1],["iog",1],["iog",1],["chg",1],["chg",1],["siw",4],["rgm",1],["shs",1],["bas",1],["egm",1],["egm",1],["asm",1],["stm",1]],
-[["b01-m",1],["plc",1],["plc",1],["mtr",8],["mtr",8],["drt",8],["siw",4],["drt",8],["siw",4],["rgm",1],["shs",1],["shs",1],["egm",1],["egm",1],["apm",1],["apm",1]]
+[["b01-m",1],["plc",1],["plc",1],["mtr",8],["mtr",8],["drt",8],["siw",4],["drt",8],["siw",4],["rgm",1],["shs",1],["shs",1],["egm",1],["egm",1],["apm",1],["apm",1]],
+[["lac",1],["pbc",1],["pbc",1],["ebt",1],["ebt",1],["ebt",1],["ebt",1],["flk",1],["flk",1],["mlt",1],["mlt",1],["plt",1],["plt",1],["siw",4],["siw",4],["siw",4],["siw",4],["siw",4],["rbh",1],["rbh",1],["shh",1],["buh",1],["cel",1],["cel",1],["bal",1],["bal",1],["bal",1],["bal",1],["ebh",1],["ebh",1],["ebh",1],["aph",1],["aph",1],["asl",1],["asl",1],["scl",1],["scl",1]]
 ]
 const civil_trader_ships = [
 [["fr1",1],["chg",1],["chg",1],["plt",1],["cgt",1],["plt",1],["mis",4],["rbs",1],["rbs",1],["rbs",1],["shm",1],["cem",1],["cem",1],["ebm",1],["ebm",1],["ebm",1],["apm",1],["apm",1]],
@@ -598,7 +599,7 @@ func update_objects():
 	yield(get_tree(),"idle_frame")
 	add_pirates()
 	yield(get_tree(),"idle_frame")
-#	add_republic_ships()
+	add_republic_ships()
 	yield(get_tree(),"idle_frame")
 	add_civil_ships()
 
